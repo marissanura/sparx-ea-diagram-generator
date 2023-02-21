@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="use_case_generator_tree_view">
+      <field name="name">use.case.generator.tree.view</field>
+      <field name="model">use.case.generator</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="module_name"/>
+          <field name="project_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="use_case_generator_form_view">
+      <field name="name">use.case.generator.form.view</field>
+      <field name="model">use.case.generator</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <button name="generate_structure"
+                string="Generate EA Structure"
+                type="object"
+            />
+          </header>
+          <sheet>
+            <group>
+              <field name="module_name"/>
+              <field name="project_id"/>
+              <field name="description"/>
+              <field name="use_case_structure_filename" invisible="1"/>
+              <field name="use_case_structure" filename="use_case_structure_filename" required="1"/>
+              <field name="generated_structure_filename" invisible="1"/>
+              <field name="generated_structure" filename="generated_structure_filename" readonly="1"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record id="use_case_generator_action" model="ir.actions.act_window">
+      <field name="name">Use Case Generator</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree,form</field>
+      <field name="res_model">use.case.generator</field>
+    </record>
+
+
+
+    <!-- server action to the one above -->
+<!-- 
+    <record model="ir.actions.server" id="nti_enterprise_architecture.action_server">
+      <field name="name">nti_enterprise_architecture server</field>
+      <field name="model_id" ref="model_nti_enterprise_architecture_nti_enterprise_architecture"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+    <menuitem id="enterprise_architecture_menu_root" 
+              web_icon="nti_centerprise_architecture,static/description/ea.png"
+              name="Enterprise Architecture"/>
+                
+    <menuitem id="use_case_generator_menu"
+              name="Use Case Generator"
+              parent="enterprise_architecture_menu_root"
+              action="use_case_generator_action"
+              sequence="1"/>
+
+  </data>
+</odoo>
