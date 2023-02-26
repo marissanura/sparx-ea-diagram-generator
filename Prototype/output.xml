@@ -1,0 +1,13 @@
+<xmi:XMI xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1554" />
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+		</elements>
+		<connectors>
+		</connectors>
+		<diagrams>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>
