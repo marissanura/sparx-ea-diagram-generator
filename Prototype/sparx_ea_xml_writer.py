@@ -12,6 +12,12 @@ class SparxEAXMLWriter(XMLWriter):
         ElementTree.register_namespace('thecustomprofile', "http://www.sparxsystems.com/profiles/thecustomprofile/1.0")
         tree = ElementTree.parse('template.xml')
         self.xml_tree = tree.getroot()
+
+        for listing in self.xml_tree.findall("listing"):
+            self.model = listing.find('uml:Model')
+            self.elements = listing.find('elements')
+            self.connectors = listing.find('connectors')
+            self.diagrams = listing.find('diagrams')
     
     # override
     def tostring(self):
