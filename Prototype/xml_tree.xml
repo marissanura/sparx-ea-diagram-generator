@@ -2,7 +2,7 @@
 <UseCaseDiagram>
    <SS-01 name="Subsistem 1" actor="" ket="">
       <UC-01 name="Modul 1" actor="" ket="">
-         <SubModul1 name="Sub Modul 1" actor="" ket="">
+         <Submodul1 name="Submodul 1" actor="" ket="">
             <UC-01-01 name="Proses 1" actor="Administrator" ket=""/>
             <UC-01-02 name="Proses 2" actor="Administrator" ket=""/>
             <UC-01-03 name="Proses 3" actor="Administrator" ket=""/>
@@ -16,22 +16,22 @@
             <UC-01-11 name="Proses 11" actor="Administrator" ket=""/>
             <UC-01-12 name="Proses 12" actor="Administrator" ket=""/>
             <UC-01-13 name="Proses 13" actor="Administrator" ket=""/>
-         </SubModul1>
-         <SubModul2 name="Sub Modul 2" actor="" ket="">
+         </Submodul1>
+         <Submodul2 name="Submodul 2" actor="" ket="">
             <UC-01-14 name="Proses 14" actor="Administrator" ket=""/>
             <UC-01-15 name="Proses 15" actor="Administrator" ket=""/>
             <UC-01-16 name="Proses 16" actor="Administrator" ket=""/>
             <UC-01-17 name="Proses 17" actor="User" ket=""/>
             <UC-01-18 name="Proses 18" actor="Administrator" ket=""/>
-         </SubModul2>
-         <SubModul3 name="Sub Modul 3" actor="" ket="">
+         </Submodul2>
+         <Submodul3 name="Submodul 3" actor="" ket="">
             <UC-01-19 name="Proses 19" actor="Administrator" ket=""/>
             <UC-01-20 name="Proses 20" actor="Administrator" ket=""/>
             <UC-01-21 name="Proses 21" actor="Administrator" ket=""/>
-         </SubModul3>
+         </Submodul3>
       </UC-01>
       <UC-02 name="Modul 2" actor="" ket="">
-         <SubModul4 name="Sub Modul 4" actor="" ket="">
+         <Submodul4 name="Submodul 4" actor="" ket="">
             <UC-02-01 name="Proses 22" actor="Administrator" ket=""/>
             <UC-02-02 name="Proses 23" actor="User" ket=""/>
             <UC-02-03 name="Proses 24" actor="Approver" ket=""/>
@@ -40,15 +40,15 @@
             <UC-02-06 name="Proses 27" actor="Administrator" ket=""/>
             <UC-02-07 name="Proses 28" actor="User" ket=""/>
             <UC-02-08 name="Proses 29" actor="Approver" ket=""/>
-         </SubModul4>
-         <SubModul5 name="Sub Modul 5" actor="" ket="">
+         </Submodul4>
+         <Submodul5 name="Submodul 5" actor="" ket="">
             <UC-02-09 name="Proses 30" actor="User" ket=""/>
             <UC-02-10 name="Proses 31" actor="Approver" ket=""/>
             <UC-02-11 name="Proses 32" actor="Administrator" ket=""/>
-         </SubModul5>
+         </Submodul5>
       </UC-02>
       <UC-03 name="Modul 3" actor="" ket="">
-         <SubModul6 name="Sub Modul 6" actor="" ket="">
+         <Submodul6 name="Submodul 6" actor="" ket="">
             <UC-03-01 name="Proses 33" actor="Administrator" ket=""/>
             <UC-03-02 name="Proses 34" actor="Administrator" ket=""/>
             <UC-03-03 name="Proses 35" actor="Administrator" ket=""/>
@@ -64,8 +64,8 @@
             <UC-03-13 name="Proses 45" actor="Approver" ket=""/>
             <UC-03-14 name="Proses 46" actor="Approver" ket=""/>
             <UC-03-15 name="Proses 47" actor="User, Creator" ket=""/>
-         </SubModul6>
-         <PayrollReport name="Payroll Report" actor="" ket="">
+         </Submodul6>
+         <Submodul7 name="Submodul 7" actor="" ket="">
             <UC-03-16 name="Proses 48" actor="Reviewer" ket=""/>
             <UC-03-17 name="Proses 49" actor="Reviewer" ket=""/>
             <UC-03-18 name="Proses 50" actor="Reviewer" ket=""/>
@@ -73,12 +73,12 @@
             <UC-03-20 name="Proses 52" actor="Reviewer" ket=""/>
             <UC-03-21 name="Proses 53" actor="Reviewer" ket=""/>
             <UC-03-22 name="Proses 54" actor="Reviewer" ket=""/>
-         </PayrollReport>
+         </Submodul7>
       </UC-03>
    </SS-01>
    <SS-02 name="Subsistem 2" actor="" ket="">
       <UC-04 name="Modul 4" actor="" ket="">
-         <Submodul7 name="Submodul 7" actor="" ket="">
+         <Submodul8 name="Submodul 8" actor="" ket="">
             <UC-04-01 name="Proses 55" actor="Administrator" ket=""/>
             <UC-04-02 name="Proses 56" actor="Administrator" ket=""/>
             <UC-04-03 name="Proses 57" actor="Creator" ket=""/>
@@ -91,8 +91,8 @@
             <UC-04-10 name="Proses 64" actor="Creator" ket=""/>
             <UC-04-11 name="Proses 65" actor="Reviewer" ket=""/>
             <UC-04-12 name="Proses 66" actor="Reviewer" ket=""/>
-         </Submodul7>
-         <Submodul8 name="Submodul 8" actor="" ket="">
+         </Submodul8>
+         <Submodul9 name="Submodul 9" actor="" ket="">
             <UC-04-13 name="Proses 67" actor="Creator" ket=""/>
             <UC-04-14 name="Proses 68" actor="User" ket=""/>
             <UC-04-15 name="Proses 69" actor="Reviewer" ket=""/>
@@ -100,12 +100,12 @@
             <UC-04-17 name="Proses 71" actor="Reviewer" ket=""/>
             <UC-04-18 name="Proses 72" actor="Reviewer" ket=""/>
             <UC-04-19 name="Proses 73" actor="Reviewer" ket=""/>
-         </Submodul8>
+         </Submodul9>
       </UC-04>
    </SS-02>
    <SS-03 name="Subsistem 3" actor="" ket="">
       <UC-09 name="Modul 5" actor="" ket="">
-         <Submodul9 name="Submodul 9" actor="" ket="">
+         <Submodul10 name="Submodul 10" actor="" ket="">
             <UC-09-01 name="Proses 74" actor="Administrator" ket=""/>
             <UC-09-02 name="Proses 75" actor="Administrator" ket=""/>
             <UC-09-03 name="Proses 76" actor="Administrator" ket=""/>
@@ -123,8 +123,8 @@
             <UC-09-15 name="Proses 88" actor="Viewer, Reviewer" ket=""/>
             <UC-09-16 name="Proses 89" actor="Viewer, Reviewer" ket=""/>
             <UC-09-17 name="Proses 90" actor="Viewer, Reviewer" ket=""/>
-         </Submodul9>
-         <ApplicantEvaluation name="Applicant Evaluation" actor="" ket="">
+         </Submodul10>
+         <Submodul11 name="Submodul 11" actor="" ket="">
             <UC-09-18 name="Proses 91" actor="Creator" ket=""/>
             <UC-09-19 name="Proses 92" actor="User" ket=""/>
             <UC-09-20 name="Proses 93" actor="Creator" ket=""/>
@@ -138,7 +138,7 @@
             <UC-09-28 name="Proses 101" actor="Creator" ket=""/>
             <UC-09-29 name="Proses 102" actor="Creator" ket=""/>
             <UC-09-30 name="Proses 103" actor="Reviewer" ket=""/>
-         </ApplicantEvaluation>
+         </Submodul11>
       </UC-09>
    </SS-03>
 </UseCaseDiagram>

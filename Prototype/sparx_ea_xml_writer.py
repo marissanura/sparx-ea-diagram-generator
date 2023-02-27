@@ -7,10 +7,14 @@ class SparxEAXMLWriter(XMLWriter):
 
     def csv_tree_to_xml(self):
         self.init_template()
-        print(self.tree)
-        for elem in self.tree.iter():
-            print(elem.tag, elem.attrib.get('name'))
+        if len(list(self.tree)) > 0: self.tree_traverse(self.tree, self.tree[0], 0)
+        
     
+    def tree_traverse(self, parent, node, index):
+        print(parent, node, index)
+        if len(list(node)) > 0: self.tree_traverse(node, node[0], 0)
+        if len(list(parent)) - 1 > index: self.tree_traverse(parent, parent[index + 1], index+1)
+
     def init_template(self):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")
         ElementTree.register_namespace('uml', "http://schema.omg.org/spec/UML/2.1")
