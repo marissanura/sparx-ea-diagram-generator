@@ -2,6 +2,7 @@ from xml.dom import minidom
 from xml.etree import ElementTree
 from csv_reader import CSVReader
 from xml.etree.ElementTree import ( Element, SubElement )
+import uuid
 import re
 
 class CSVReader(CSVReader):
@@ -41,6 +42,7 @@ class CSVReader(CSVReader):
     
     def add_element(self, parent, data):
         temp = Element(data[0] if (data[0] != '') else (data[1].replace(" ", "")))
+        temp.set('id', str(uuid.uuid4()))
         temp.set('name', data[1])
         temp.set('actor', data[2])
         temp.set('ket', data[3])

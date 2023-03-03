@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:thecustomprofile="http://www.sparxsystems.com/profiles/thecustomprofile/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1554"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model">
+	<packagedElement xmi:type="uml:Package" xmi:id="EAPK_B11CC55A_7C55_4955_B3BC_20F344783AB5" name="Application Use Case">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_A3C0925A_0CF3_4c07_8EE3_D252606B38A5" name="Actor">
+			<packagedElement xmi:type="uml:Actor" xmi:id="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD" name="Actor1"/>
+			<packagedElement xmi:type="uml:Actor" xmi:id="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66" name="Actor2"/>
+			<packagedElement xmi:type="uml:Actor" xmi:id="EAID_70E93217_3A18_4b9d_BE18_A9DDC8FE6AA2" name="Sistem 1"/>
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C118BAFF_25EB_4fe4_A6E2_C4D09AB16363" name="Catalog Actor"/>
+		</packagedElement>
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E" name="Use Case">
+			<packagedElement xmi:type="uml:Class" xmi:id="EAID_C6AA68FD_E519_42e2_904E_4BEE078225C7" name="Use Case Diagram"/>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_2D4E5B90_7434_4354_8539_8B21B919D8C5" name="Proses 1">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_082F38D4_2326_468c_85E7_7040CD4935B0" name="Proses 1"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_5F416DAD_11EA_41d8_B1E1_74D8C68F28C6">
+					<memberEnd xmi:idref="EAID_dst416DAD_11EA_41d8_B1E1_74D8C68F28C6"/>
+					<memberEnd xmi:idref="EAID_src416DAD_11EA_41d8_B1E1_74D8C68F28C6"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src416DAD_11EA_41d8_B1E1_74D8C68F28C6" association="EAID_5F416DAD_11EA_41d8_B1E1_74D8C68F28C6">
+						<type xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst416DAD_11EA_41d8_B1E1_74D8C68F28C6" association="EAID_5F416DAD_11EA_41d8_B1E1_74D8C68F28C6">
+						<type xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_98F4AC84_D1B0_4be3_AD46_D534B36A4887">
+					<memberEnd xmi:idref="EAID_dstF4AC84_D1B0_4be3_AD46_D534B36A4887"/>
+					<memberEnd xmi:idref="EAID_srcF4AC84_D1B0_4be3_AD46_D534B36A4887"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcF4AC84_D1B0_4be3_AD46_D534B36A4887" association="EAID_98F4AC84_D1B0_4be3_AD46_D534B36A4887">
+						<type xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstF4AC84_D1B0_4be3_AD46_D534B36A4887" association="EAID_98F4AC84_D1B0_4be3_AD46_D534B36A4887">
+						<type xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_3E048DD8_83A9_4d1b_A579_2FA0A3A26D91" name="Proses 2">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_50F7D57B_0A6E_479b_909E_216A0C265378" name="Proses 2"/>
+				<generalization xmi:type="uml:Generalization" xmi:id="EAID_FD98D25F_E047_4a47_8E11_601DFF9C778B" general="EAID_082F38D4_2326_468c_85E7_7040CD4935B0"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_88DABF08_5A40_4528_8C8D_CD9D95255A4C">
+					<memberEnd xmi:idref="EAID_dstDABF08_5A40_4528_8C8D_CD9D95255A4C"/>
+					<memberEnd xmi:idref="EAID_srcDABF08_5A40_4528_8C8D_CD9D95255A4C"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcDABF08_5A40_4528_8C8D_CD9D95255A4C" association="EAID_88DABF08_5A40_4528_8C8D_CD9D95255A4C">
+						<type xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstDABF08_5A40_4528_8C8D_CD9D95255A4C" association="EAID_88DABF08_5A40_4528_8C8D_CD9D95255A4C">
+						<type xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_C34C39CE_6DEB_4f6c_92FF_18DB90F002B0">
+					<memberEnd xmi:idref="EAID_dst4C39CE_6DEB_4f6c_92FF_18DB90F002B0"/>
+					<memberEnd xmi:idref="EAID_src4C39CE_6DEB_4f6c_92FF_18DB90F002B0"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src4C39CE_6DEB_4f6c_92FF_18DB90F002B0" association="EAID_C34C39CE_6DEB_4f6c_92FF_18DB90F002B0">
+						<type xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst4C39CE_6DEB_4f6c_92FF_18DB90F002B0" association="EAID_C34C39CE_6DEB_4f6c_92FF_18DB90F002B0">
+						<type xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_8436FB12_5D63_42df_8DA8_1ECD5BCB7E8F" name="Proses 3">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4" name="Proses 3"/>
+				<include xmi:type="uml:Include" xmi:id="EAID_828D3337_718F_4b99_BC2B_6B79ADFCA121" addition="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_6CF54785_6A92_4b32_876C_EEC33CBC1C95">
+					<memberEnd xmi:idref="EAID_dstF54785_6A92_4b32_876C_EEC33CBC1C95"/>
+					<memberEnd xmi:idref="EAID_srcF54785_6A92_4b32_876C_EEC33CBC1C95"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcF54785_6A92_4b32_876C_EEC33CBC1C95" association="EAID_6CF54785_6A92_4b32_876C_EEC33CBC1C95">
+						<type xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstF54785_6A92_4b32_876C_EEC33CBC1C95" association="EAID_6CF54785_6A92_4b32_876C_EEC33CBC1C95">
+						<type xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_91FEAA8C_7699_47b7_96DE_CC7D3AD63517">
+					<memberEnd xmi:idref="EAID_dstFEAA8C_7699_47b7_96DE_CC7D3AD63517"/>
+					<memberEnd xmi:idref="EAID_srcFEAA8C_7699_47b7_96DE_CC7D3AD63517"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcFEAA8C_7699_47b7_96DE_CC7D3AD63517" association="EAID_91FEAA8C_7699_47b7_96DE_CC7D3AD63517">
+						<type xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstFEAA8C_7699_47b7_96DE_CC7D3AD63517" association="EAID_91FEAA8C_7699_47b7_96DE_CC7D3AD63517">
+						<type xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_0B8465D2_D762_4724_AC2D_860E61207D19" name="Proses 4">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF" name="Proses 4"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_39B38E93_77A1_4d21_AED3_B2BBD7201270">
+					<memberEnd xmi:idref="EAID_dstB38E93_77A1_4d21_AED3_B2BBD7201270"/>
+					<memberEnd xmi:idref="EAID_srcB38E93_77A1_4d21_AED3_B2BBD7201270"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcB38E93_77A1_4d21_AED3_B2BBD7201270" association="EAID_39B38E93_77A1_4d21_AED3_B2BBD7201270">
+						<type xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstB38E93_77A1_4d21_AED3_B2BBD7201270" association="EAID_39B38E93_77A1_4d21_AED3_B2BBD7201270">
+						<type xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_87812463_E85F_4be4_AB3B_16E102CA5F32">
+					<memberEnd xmi:idref="EAID_dst812463_E85F_4be4_AB3B_16E102CA5F32"/>
+					<memberEnd xmi:idref="EAID_src812463_E85F_4be4_AB3B_16E102CA5F32"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src812463_E85F_4be4_AB3B_16E102CA5F32" association="EAID_87812463_E85F_4be4_AB3B_16E102CA5F32">
+						<type xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst812463_E85F_4be4_AB3B_16E102CA5F32" association="EAID_87812463_E85F_4be4_AB3B_16E102CA5F32">
+						<type xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_FAFC9074_056C_46de_B184_696927EB932D" name="Proses 5">
+				<packagedElement xmi:type="uml:UseCase" xmi:id="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC" name="Proses 5"/>
+				<extend xmi:type="uml:Extend" xmi:id="EAID_F1044182_2173_4ca2_8F2F_3D1F67B70A1A" extendedCase="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+				<packagedElement xmi:type="uml:Usage" xmi:id="EAID_8DFCD2D4_C06F_4e9c_A7F9_FAF8C63CA45D" supplier="EAID_70E93217_3A18_4b9d_BE18_A9DDC8FE6AA2" client="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC"/>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_9B555A7D_370F_4650_8209_5EE71ED593EE">
+					<memberEnd xmi:idref="EAID_dst555A7D_370F_4650_8209_5EE71ED593EE"/>
+					<memberEnd xmi:idref="EAID_src555A7D_370F_4650_8209_5EE71ED593EE"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src555A7D_370F_4650_8209_5EE71ED593EE" association="EAID_9B555A7D_370F_4650_8209_5EE71ED593EE">
+						<type xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dst555A7D_370F_4650_8209_5EE71ED593EE" association="EAID_9B555A7D_370F_4650_8209_5EE71ED593EE">
+						<type xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_CFF58273_D543_462d_A518_69764DB2A1A3">
+					<memberEnd xmi:idref="EAID_dstF58273_D543_462d_A518_69764DB2A1A3"/>
+					<memberEnd xmi:idref="EAID_srcF58273_D543_462d_A518_69764DB2A1A3"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcF58273_D543_462d_A518_69764DB2A1A3" association="EAID_CFF58273_D543_462d_A518_69764DB2A1A3">
+						<type xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_dstF58273_D543_462d_A518_69764DB2A1A3" association="EAID_CFF58273_D543_462d_A518_69764DB2A1A3">
+						<type xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+		</packagedElement>
+		<thecustomprofile:include base_Include="EAID_828D3337_718F_4b99_BC2B_6B79ADFCA121"/>
+		<thecustomprofile:extend base_Extend="EAID_F1044182_2173_4ca2_8F2F_3D1F67B70A1A"/>
+	</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_A3C0925A_0CF3_4c07_8EE3_D252606B38A5" xmi:type="uml:Package" name="Actor">
+				<model package="EAPK_83F59FEF_8168_490c_915B_391C76D7E7E0"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_C118BAFF_25EB_4fe4_A6E2_C4D09AB16363" xmi:type="uml:Boundary" name="Catalog Actor">
+				<model package="EAPK_B11CC55A_7C55_4955_B3BC_20F344783AB5"/>
+				<properties sType="Boundary"/>
+			</element>
+			<element xmi:idref="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E" xmi:type="uml:Package" name="Use Case">
+				<model package="EAPK_83F59FEF_8168_490c_915B_391C76D7E7E0"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_C6AA68FD_E519_42e2_904E_4BEE078225C7" xmi:type="uml:Boundary" name="Use Case Diagram">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Boundary"/>
+			</element>
+			<element xmi:idref="EAPK_2D4E5B90_7434_4354_8539_8B21B919D8C5" xmi:type="uml:Package" name="Proses 1">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0" xmi:type="uml:UseCase" name="Proses 1">
+				<model package="EAPK_2D4E5B90_7434_4354_8539_8B21B919D8C5"/>
+				<properties sType="UseCase"/>
+				<extendedProperties diagram="EAID_A7439569_82BD_4a5e_BC42_A7CC657198E2"/>
+			</element>
+			<element xmi:idref="EAPK_3E048DD8_83A9_4d1b_A579_2FA0A3A26D91" xmi:type="uml:Package" name="Proses 2">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378" xmi:type="uml:UseCase" name="Proses 2">
+				<model package="EAPK_3E048DD8_83A9_4d1b_A579_2FA0A3A26D91"/>
+				<properties sType="UseCase"/>
+				<extendedProperties diagram="EAID_CFFACA07_4D01_4484_A0B9_EF1D1A713E86"/>
+			</element>
+			<element xmi:idref="EAPK_8436FB12_5D63_42df_8DA8_1ECD5BCB7E8F" xmi:type="uml:Package" name="Proses 3">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4" xmi:type="uml:UseCase" name="Proses 3">
+				<model package="EAPK_8436FB12_5D63_42df_8DA8_1ECD5BCB7E8F"/>
+				<properties sType="UseCase"/>
+				<extendedProperties diagram="EAID_C00B3B61_AE8E_4318_A218_00AE0E43459D"/>
+			</element>
+			<element xmi:idref="EAPK_0B8465D2_D762_4724_AC2D_860E61207D19" xmi:type="uml:Package" name="Proses 4">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF" xmi:type="uml:UseCase" name="Proses 4">
+				<model package="EAPK_0B8465D2_D762_4724_AC2D_860E61207D19"/>
+				<properties sType="UseCase"/>
+				<extendedProperties diagram="EAID_E801D246_5202_489c_8403_21515E323BBB"/>
+			</element>
+			<element xmi:idref="EAPK_FAFC9074_056C_46de_B184_696927EB932D" xmi:type="uml:Package" name="Proses 5">
+				<model package2="EAID_FAFC9074_056C_46de_B184_696927EB932D" package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC" xmi:type="uml:UseCase" name="Proses 5">
+				<model package="EAPK_FAFC9074_056C_46de_B184_696927EB932D"/>
+				<properties sType="UseCase"/>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_5F416DAD_11EA_41d8_B1E1_74D8C68F28C6">
+				<source xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD">
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0">
+					<model type="UseCase" name="Proses 1"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_98F4AC84_D1B0_4be3_AD46_D534B36A4887">
+				<source xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66">
+					<model type="Actor" name="Actor2"/>
+				</source>
+				<target xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0">
+					<model type="UseCase" name="Proses 1"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_FD98D25F_E047_4a47_8E11_601DFF9C778B">
+				<source xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378">
+					<model type="UseCase" name="Proses 2"/>
+				</source>
+				<target xmi:idref="EAID_082F38D4_2326_468c_85E7_7040CD4935B0">
+					<model type="UseCase" name="Proses 1"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_88DABF08_5A40_4528_8C8D_CD9D95255A4C">
+				<source xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD">
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378">
+					<model type="UseCase" name="Proses 2"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_C34C39CE_6DEB_4f6c_92FF_18DB90F002B0">
+				<source xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66">
+					<model type="Actor" name="Actor2"/>
+				</source>
+				<target xmi:idref="EAID_50F7D57B_0A6E_479b_909E_216A0C265378">
+					<model type="UseCase" name="Proses 2"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_828D3337_718F_4b99_BC2B_6B79ADFCA121">
+				<source xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4">
+					<model type="UseCase" name="Proses 3"/>
+				</source>
+				<target xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF">
+					<model type="UseCase" name="Proses 4"/>
+				</target>
+				<properties subtype="Includes" stereotype="include" direction="Source -&gt; Destination"/>
+			</connector>
+			<connector xmi:idref="EAID_6CF54785_6A92_4b32_876C_EEC33CBC1C95">
+				<source xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD">
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4">
+					<model type="UseCase" name="Proses 3"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_91FEAA8C_7699_47b7_96DE_CC7D3AD63517">
+				<source xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66">
+					<model type="Actor" name="Actor2"/>
+				</source>
+				<target xmi:idref="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4">
+					<model type="UseCase" name="Proses 3"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_39B38E93_77A1_4d21_AED3_B2BBD7201270">
+				<source xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66">
+					<model type="Actor" name="Actor2"/>
+				</source>
+				<target xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF">
+					<model type="UseCase" name="Proses 4"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_87812463_E85F_4be4_AB3B_16E102CA5F32">
+				<source xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD">
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF">
+					<model type="UseCase" name="Proses 4"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_F1044182_2173_4ca2_8F2F_3D1F67B70A1A">
+				<source xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC">
+					<model type="UseCase" name="Proses 5"/>
+				</source>
+				<target xmi:idref="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF">
+					<model type="UseCase" name="Proses 4"/>
+				</target>
+				<properties subtype="Extends" stereotype="extend" direction="Source -&gt; Destination"/>
+			</connector>
+			<connector xmi:idref="EAID_8DFCD2D4_C06F_4e9c_A7F9_FAF8C63CA45D">
+				<source xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC">
+					<model type="UseCase" name="Proses 5"/>
+				</source>
+				<target xmi:idref="EAID_70E93217_3A18_4b9d_BE18_A9DDC8FE6AA2">
+					<model type="Actor" name="Sistem 1"/>
+				</target>
+				<properties ea_type="Usage" direction="Source -&gt; Destination"/>
+			</connector>
+			<connector xmi:idref="EAID_9B555A7D_370F_4650_8209_5EE71ED593EE">
+				<source xmi:idref="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD">
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC">
+					<model type="UseCase" name="Proses 5"/>
+				</target>
+			</connector>
+			<connector xmi:idref="EAID_CFF58273_D543_462d_A518_69764DB2A1A3">
+				<source xmi:idref="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66">
+					<model type="Actor" name="Actor2"/>
+				</source>
+				<target xmi:idref="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC">
+					<model type="UseCase" name="Proses 5"/>
+				</target>
+			</connector>
+		</connectors>
+		<diagrams>
+			<diagram xmi:id="EAID_E22B3205_C999_47ce_8BB7_2A1C78932504">
+				<model package="EAPK_A3C0925A_0CF3_4c07_8EE3_D252606B38A5" owner="EAPK_A3C0925A_0CF3_4c07_8EE3_D252606B38A5"/>
+				<properties name="Catalog Actor" type="Use Case"/>
+				<elements>
+					<element geometry="Left=304;Top=85;Right=349;Bottom=175;" subject="EAID_70E93217_3A18_4b9d_BE18_A9DDC8FE6AA2" style="DUID=0843AEDD;ImageID=0;BCol=15453831;"/>
+					<element geometry="Left=196;Top=85;Right=241;Bottom=175;" subject="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					<element geometry="Left=90;Top=85;Right=135;Bottom=175;" subject="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					<element geometry="Left=39;Top=32;Right=421;Bottom=222;" subject="EAID_C118BAFF_25EB_4fe4_A6E2_C4D09AB16363"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_D629BF6B_B496_48f4_A066_8549A4652E80">
+				<model package="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E" owner="EAPK_BADBE5ED_3171_4bf5_851C_DD12B9D5314E"/>
+				<properties name="Use Case" type="Use Case"/>
+				<style1 value="HideParents=0;"/>
+				<elements>
+					<element geometry="Left=500;Top=464;Right=545;Bottom=554;" subject="EAID_70E93217_3A18_4b9d_BE18_A9DDC8FE6AA2"/>
+					<element geometry="Left=502;Top=260;Right=547;Bottom=350;" subject="EAID_73A8BFEF_F544_4bf2_9D47_CBBD09609A66"/>
+					<element geometry="Left=29;Top=262;Right=74;Bottom=352;" subject="EAID_AC47D488_C8B8_4339_BB83_9A8BAAA182DD"/>
+					<element geometry="Left=228;Top=484;Right=333;Bottom=554;" subject="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC"/>
+					<element geometry="Left=228;Top=374;Right=333;Bottom=444;" subject="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+					<element geometry="Left=228;Top=270;Right=333;Bottom=340;" subject="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4"/>
+					<element geometry="Left=228;Top=173;Right=333;Bottom=243;" subject="EAID_50F7D57B_0A6E_479b_909E_216A0C265378"/>
+					<element geometry="Left=228;Top=74;Right=333;Bottom=144;" subject="EAID_082F38D4_2326_468c_85E7_7040CD4935B0"/>
+					<element geometry="Left=132;Top=24;Right=419;Bottom=590;" subject="EAID_C6AA68FD_E519_42e2_904E_4BEE078225C7"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_6CF54785_6A92_4b32_876C_EEC33CBC1C95"/>
+					<element geometry="SX=0;SY=0;EX=-52;EY=0;" subject="EAID_88DABF08_5A40_4528_8C8D_CD9D95255A4C"/>
+					<element geometry="SX=0;SY=0;EX=-52;EY=0;" subject="EAID_5F416DAD_11EA_41d8_B1E1_74D8C68F28C6"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_F1044182_2173_4ca2_8F2F_3D1F67B70A1A"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_828D3337_718F_4b99_BC2B_6B79ADFCA121"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_FD98D25F_E047_4a47_8E11_601DFF9C778B"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_8DFCD2D4_C06F_4e9c_A7F9_FAF8C63CA45D"/>
+					<element geometry="SX=0;SY=0;EX=52;EY=0;" subject="EAID_CFF58273_D543_462d_A518_69764DB2A1A3"/>
+					<element geometry="SX=0;SY=0;EX=52;EY=0;" subject="EAID_39B38E93_77A1_4d21_AED3_B2BBD7201270"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject="EAID_91FEAA8C_7699_47b7_96DE_CC7D3AD63517"/>
+					<element geometry="SX=0;SY=0;EX=52;EY=0;" subject="EAID_C34C39CE_6DEB_4f6c_92FF_18DB90F002B0"/>
+					<element geometry="SX=0;SY=0;EX=52;EY=0;" subject="EAID_98F4AC84_D1B0_4be3_AD46_D534B36A4887"/>
+					<element geometry="SX=0;SY=0;EX=-52;EY=0;" subject="EAID_9B555A7D_370F_4650_8209_5EE71ED593EE"/>
+					<element geometry="SX=0;SY=0;EX=-52;EY=0;" subject="EAID_87812463_E85F_4be4_AB3B_16E102CA5F32"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_A7439569_82BD_4a5e_BC42_A7CC657198E2">
+				<model package="EAPK_2D4E5B90_7434_4354_8539_8B21B919D8C5" owner="EAPK_2D4E5B90_7434_4354_8539_8B21B919D8C5" parent="EAID_082F38D4_2326_468c_85E7_7040CD4935B0"/>
+				<properties name="Proses 1" type="Use Case"/>
+			</diagram>
+			<diagram xmi:id="EAID_CFFACA07_4D01_4484_A0B9_EF1D1A713E86">
+				<model package="EAPK_3E048DD8_83A9_4d1b_A579_2FA0A3A26D91" owner="EAPK_3E048DD8_83A9_4d1b_A579_2FA0A3A26D91" parent="EAID_50F7D57B_0A6E_479b_909E_216A0C265378"/>
+				<properties name="Proses 2" type="Use Case"/>
+			</diagram>
+			<diagram xmi:id="EAID_C00B3B61_AE8E_4318_A218_00AE0E43459D">
+				<model package="EAPK_8436FB12_5D63_42df_8DA8_1ECD5BCB7E8F" owner="EAPK_8436FB12_5D63_42df_8DA8_1ECD5BCB7E8F" parent="EAID_AE3F6C6B_C7BC_457f_914C_272A02C453F4"/>
+				<properties name="Proses 3" type="Use Case"/>
+			</diagram>
+			<diagram xmi:id="EAID_E801D246_5202_489c_8403_21515E323BBB">
+				<model package="EAPK_0B8465D2_D762_4724_AC2D_860E61207D19" owner="EAPK_0B8465D2_D762_4724_AC2D_860E61207D19" parent="EAID_213D2DFB_5B00_410f_929F_6974E2A31BCF"/>
+				<properties name="Proses 4" type="Use Case"/>
+			</diagram>
+			<diagram xmi:id="EAID_E5A285D5_E908_447b_9B0C_0DF2DCECCC21">
+				<model package="EAPK_FAFC9074_056C_46de_B184_696927EB932D" owner="EAPK_FAFC9074_056C_46de_B184_696927EB932D" parent="EAID_7D88869C_BFEC_418e_99E2_6B206D353DCC"/>
+				<properties name="Proses 5" type="Use Case"/>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

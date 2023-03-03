@@ -9,6 +9,7 @@ class UseCaseGenerator:
         folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
 
         # xml_filename = input("Input XML filename:")
-        SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy)).write("output.xml")
+        use_case = SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy))
+        use_case.write(filename="output.xml")
     except AttributeError:
         print("Please select the right file!")

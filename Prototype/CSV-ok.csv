@@ -2,8 +2,8 @@
 SS-01;Subsistem 1;;
 UC-01;Modul 1;;
 ;Submodul 1;;
-UC-01-01;Proses 1;Administrator;
-UC-01-02;Proses 2;Administrator;
+UC-01-01;Proses 1;Administrator, User;
+UC-01-02;Proses 2;Administrator, Sistem 1;
 UC-01-03;Proses 3;Administrator;
 UC-01-04;Proses 4;Administrator;
 UC-01-05;Proses 5;Administrator;
