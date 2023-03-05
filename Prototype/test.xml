@@ -1,0 +1,144 @@
+<?xml version="1.0" ?>
+<UseCaseDiagram actor="Administrator, User, Sistem 1, Approver, Reviewer, Creator, Viewer">
+   <SS-01 id="0a514e8b-db9a-47b1-b046-234cd9aac60a" name="Subsistem 1" actor="Administrator, User, Sistem 1, Approver, Reviewer, Creator" ket="">
+      <UC-01 id="a34eaa7b-b556-4481-b6e8-f4db4706add9" name="Modul 1" actor="Administrator, User, Sistem 1" ket="">
+         <Submodul1 id="244de097-08b5-4436-8a71-64bc4f9f602f" name="Submodul 1" actor="Administrator, User, Sistem 1" ket="">
+            <UC-01-01 id="be02ccbc-39b3-4bb1-8d3a-aa84db3b11cc" name="Proses 1" actor="Administrator, User" ket=""/>
+            <UC-01-02 id="a691a77f-fd5d-47f1-b6ca-2e4ad39f11d7" name="Proses 2" actor="Administrator, Sistem 1" ket=""/>
+            <UC-01-03 id="e6ac6954-4798-4704-9be5-68cfc24dca2d" name="Proses 3" actor="Administrator" ket=""/>
+            <UC-01-04 id="577b2747-8ffd-4644-9aad-4acdf9464659" name="Proses 4" actor="Administrator" ket=""/>
+            <UC-01-05 id="c5ea1974-71f9-4bfe-b0ea-b6baf3319670" name="Proses 5" actor="Administrator" ket=""/>
+            <UC-01-06 id="78ca2505-e49d-4b2e-9ab4-00c68394c289" name="Proses 6" actor="Administrator" ket=""/>
+            <UC-01-07 id="b703f916-f68d-49eb-8260-dc642a418d67" name="Proses 7" actor="Administrator" ket=""/>
+            <UC-01-08 id="a54ca455-f94b-4051-8273-a3cb4c804ad1" name="Proses 8" actor="Administrator" ket=""/>
+            <UC-01-09 id="62db27ee-ea8b-49eb-8538-7444f2667c47" name="Proses 9" actor="Administrator" ket=""/>
+            <UC-01-10 id="c382cc2b-4dde-4087-967f-58ee8f81db37" name="Proses 10" actor="Administrator" ket=""/>
+            <UC-01-11 id="fbbbcdf0-fb8c-4605-a9de-10c1c5e554db" name="Proses 11" actor="Administrator" ket=""/>
+            <UC-01-12 id="7d61fd1f-7800-4ab4-96b0-8f5b9a9175f4" name="Proses 12" actor="Administrator" ket=""/>
+            <UC-01-13 id="8153c7a8-f650-4128-972f-3ffad5db6346" name="Proses 13" actor="Administrator" ket=""/>
+         </Submodul1>
+         <Submodul2 id="c6b59fdc-8e34-40be-8ad2-67f6367e4598" name="Submodul 2" actor="Administrator, User" ket="">
+            <UC-01-14 id="2e63976c-8ac6-44f7-b3bc-670f3967e57a" name="Proses 14" actor="Administrator" ket=""/>
+            <UC-01-15 id="4108458c-d012-4d31-9d5a-c24cadd1136e" name="Proses 15" actor="Administrator" ket=""/>
+            <UC-01-16 id="63c55bfd-9709-402f-a999-da5a702f5b25" name="Proses 16" actor="Administrator" ket=""/>
+            <UC-01-17 id="5b9376aa-ec5e-465a-a9e8-c463562d8a9a" name="Proses 17" actor="User" ket=""/>
+            <UC-01-18 id="44464d9b-582b-4bae-8d93-d4c45ff0c16e" name="Proses 18" actor="Administrator" ket=""/>
+         </Submodul2>
+         <Submodul3 id="1b61c521-dcbe-46d6-8266-50195233af7f" name="Submodul 3" actor="Administrator" ket="">
+            <UC-01-19 id="a26a6f18-123d-40d7-889c-0ddbca3c9496" name="Proses 19" actor="Administrator" ket=""/>
+            <UC-01-20 id="8af69226-471b-424e-9f56-c1a041c1630c" name="Proses 20" actor="Administrator" ket=""/>
+            <UC-01-21 id="d7f234fa-72ff-442d-aece-f7eba010efd6" name="Proses 21" actor="Administrator" ket=""/>
+         </Submodul3>
+      </UC-01>
+      <UC-02 id="8ea11637-bad6-4d8e-a89d-01d93ede8a80" name="Modul 2" actor="Administrator, User, Approver, Reviewer, Creator" ket="">
+         <Submodul4 id="a01ccbc0-665d-479a-9795-26078a7d723c" name="Submodul 4" actor="Administrator, User, Approver, Reviewer, Creator" ket="">
+            <UC-02-01 id="27f2a083-35d2-4ae9-a4f4-731b1165ea37" name="Proses 22" actor="Administrator" ket=""/>
+            <UC-02-02 id="dd6c9a5b-bd0e-4f05-a7d4-9e6117da2969" name="Proses 23" actor="User" ket=""/>
+            <UC-02-03 id="eefc07c2-ea84-49c4-a7aa-f5c1d87b1832" name="Proses 24" actor="Approver" ket=""/>
+            <UC-02-04 id="35fcdc8c-cbd8-4f7b-959a-90ab47c8a7bb" name="Proses 25" actor="Reviewer" ket=""/>
+            <UC-02-05 id="16f63497-8d4a-4e83-b8ec-ff2f58f23188" name="Proses 26" actor="Creator" ket=""/>
+            <UC-02-06 id="c20ec350-2b3f-4138-884b-10f222092567" name="Proses 27" actor="Administrator" ket=""/>
+            <UC-02-07 id="b0e80da6-cadb-4095-8d93-a1565b19afaf" name="Proses 28" actor="User" ket=""/>
+            <UC-02-08 id="f49684b2-73c6-4a23-8b31-5cbe7aca77a1" name="Proses 29" actor="Approver" ket=""/>
+         </Submodul4>
+         <Submodul5 id="abef5509-daff-4ea2-8ab0-8d9d9e6743cb" name="Submodul 5" actor="User, Approver, Administrator" ket="">
+            <UC-02-09 id="9faa513a-3357-4ca9-a444-bf894fc2a8be" name="Proses 30" actor="User" ket=""/>
+            <UC-02-10 id="bee18e38-399d-4598-83f7-c5b28599f07a" name="Proses 31" actor="Approver" ket=""/>
+            <UC-02-11 id="b40eb7bc-18bf-4532-814e-1dd509da2edb" name="Proses 32" actor="Administrator" ket=""/>
+         </Submodul5>
+      </UC-02>
+      <UC-03 id="09f75e14-a5f2-4e40-90d4-38feee2f9fcf" name="Modul 3" actor="Administrator, Creator, Approver, User, Reviewer" ket="">
+         <Submodul6 id="dadbed2b-478a-4a7e-badb-ae49da1bf56b" name="Submodul 6" actor="Administrator, Creator, Approver, User" ket="">
+            <UC-03-01 id="6791b316-2017-4bfa-98e6-390642a94d60" name="Proses 33" actor="Administrator" ket=""/>
+            <UC-03-02 id="db8965ce-a610-4e5e-9bf6-9e8e519266d8" name="Proses 34" actor="Administrator" ket=""/>
+            <UC-03-03 id="8f410c1a-49f0-40fa-a504-2219562971e1" name="Proses 35" actor="Administrator" ket=""/>
+            <UC-03-04 id="b9c8f8ac-74a5-4b26-affe-a572ab163959" name="Proses 36" actor="Administrator" ket=""/>
+            <UC-03-05 id="fd45fdd5-b63c-42a0-8bd5-71ab4289c639" name="Proses 37" actor="Administrator" ket=""/>
+            <UC-03-06 id="cc5e62dd-17d1-4ab0-9d17-e155a82988f8" name="Proses 38" actor="Administrator" ket=""/>
+            <UC-03-07 id="abd29d8e-8e7e-4348-97ed-ce466ead4907" name="Proses 39" actor="Administrator" ket=""/>
+            <UC-03-08 id="13cdd0a3-752a-4e97-9beb-825bfdbfd6d9" name="Proses 40" actor="Administrator" ket=""/>
+            <UC-03-09 id="23929604-a937-45a1-b585-88087edb0464" name="Proses 41" actor="Creator" ket=""/>
+            <UC-03-10 id="26d2cb38-0d38-4eb7-8290-292361b762a7" name="Proses 42" actor="Creator" ket=""/>
+            <UC-03-11 id="22f6a8ad-9d33-4b2e-9b37-6a4cf0368992" name="Proses 43" actor="Creator" ket=""/>
+            <UC-03-12 id="fc65828c-59c2-43b9-afd2-a3ab35719361" name="Proses 44" actor="Creator" ket=""/>
+            <UC-03-13 id="03235b16-6975-479a-90cf-c44514fd791c" name="Proses 45" actor="Approver" ket=""/>
+            <UC-03-14 id="847b5efb-c796-419e-b4fa-abccc4c6417d" name="Proses 46" actor="Approver" ket=""/>
+            <UC-03-15 id="8468a612-6259-4f55-918f-07c6d379830a" name="Proses 47" actor="User, Creator" ket=""/>
+         </Submodul6>
+         <Submodul7 id="2958028f-4a50-47a0-8869-b8e8fe9e53e0" name="Submodul 7" actor="Reviewer" ket="">
+            <UC-03-16 id="9b476422-e729-4c9f-b771-ab3c28c8516b" name="Proses 48" actor="Reviewer" ket=""/>
+            <UC-03-17 id="8a2cc602-dc67-43ae-96a7-a6844ea29ab8" name="Proses 49" actor="Reviewer" ket=""/>
+            <UC-03-18 id="a14ca822-5f5c-4ec0-8bd2-5d53488da7f3" name="Proses 50" actor="Reviewer" ket=""/>
+            <UC-03-19 id="c8534281-e2bf-4296-b7e2-694f0a6a64a9" name="Proses 51" actor="Reviewer" ket=""/>
+            <UC-03-20 id="ff31950a-5220-434f-8e1c-105ad73b8bd1" name="Proses 52" actor="Reviewer" ket=""/>
+            <UC-03-21 id="9dc0931f-d157-4d0c-b30c-0e62edd52605" name="Proses 53" actor="Reviewer" ket=""/>
+            <UC-03-22 id="2a372dd9-2e7c-43a5-8bbb-00e23ac35193" name="Proses 54" actor="Reviewer" ket=""/>
+         </Submodul7>
+      </UC-03>
+   </SS-01>
+   <SS-02 id="d7f7b65f-4522-4ed5-b639-d4eb586264b4" name="Subsistem 2" actor="Administrator, Creator, Reviewer, User" ket="">
+      <UC-04 id="b84998a8-c2ed-4259-ba71-d8920450b9f4" name="Modul 4" actor="Administrator, Creator, Reviewer, User" ket="">
+         <Submodul8 id="5591fa41-3cc8-4ebb-a32c-b7ef480da5dc" name="Submodul 8" actor="Administrator, Creator, Reviewer" ket="">
+            <UC-04-01 id="dd9701c3-650f-4858-9119-5ce07e0bc7b6" name="Proses 55" actor="Administrator" ket=""/>
+            <UC-04-02 id="cfc50b70-efce-4b85-9319-b4232462e96f" name="Proses 56" actor="Administrator" ket=""/>
+            <UC-04-03 id="88782e60-b703-43eb-8e11-bf4dde636568" name="Proses 57" actor="Creator" ket=""/>
+            <UC-04-04 id="dc8e0e9a-498c-4db8-988c-5c73563e7349" name="Proses 58" actor="Creator" ket=""/>
+            <UC-04-05 id="954bc1f9-6823-481b-afa8-eea280639f2a" name="Proses 59" actor="Creator" ket=""/>
+            <UC-04-06 id="663ddd13-ed58-4fc3-9716-f5b1a9e4d8b3" name="Proses 60" actor="Creator" ket=""/>
+            <UC-04-07 id="ee9c23eb-4b62-4cbf-9b26-bf32939c0e44" name="Proses 61" actor="Creator" ket=""/>
+            <UC-04-08 id="19ad5723-aa0d-4ffb-a836-f43fbeeb6b18" name="Proses 62" actor="Reviewer" ket=""/>
+            <UC-04-09 id="5a70ba98-b70c-46f9-992d-325b2fea1121" name="Proses 63" actor="Creator" ket=""/>
+            <UC-04-10 id="ab7761cd-e9a1-4027-aa77-577a1e3ed4b3" name="Proses 64" actor="Creator" ket=""/>
+            <UC-04-11 id="bfe21abd-d20c-4fc8-9471-2db48ba875f5" name="Proses 65" actor="Reviewer" ket=""/>
+            <UC-04-12 id="b7da152e-9ea8-435c-9291-41b0a5bf6694" name="Proses 66" actor="Reviewer" ket=""/>
+         </Submodul8>
+         <Submodul9 id="9544a302-74b8-4b68-8a19-54cb02cac11c" name="Submodul 9" actor="Creator, User, Reviewer" ket="">
+            <UC-04-13 id="d1121b06-51a5-4a7e-b957-7961d7c9f3fc" name="Proses 67" actor="Creator" ket=""/>
+            <UC-04-14 id="c0130206-5d01-48df-aa30-f0c22e47cbdd" name="Proses 68" actor="User" ket=""/>
+            <UC-04-15 id="f549f321-b782-4ea0-b899-81806d8e76ef" name="Proses 69" actor="Reviewer" ket=""/>
+            <UC-04-16 id="b7fd1d64-0ee9-438f-a8c9-60d0964f6334" name="Proses 70" actor="Reviewer" ket=""/>
+            <UC-04-17 id="3493ff02-30e2-4cf0-89dc-4f383db5059f" name="Proses 71" actor="Reviewer" ket=""/>
+            <UC-04-18 id="a746c2c8-d7d8-4b05-9012-11584497bcb6" name="Proses 72" actor="Reviewer" ket=""/>
+            <UC-04-19 id="905d69b0-2204-4216-a6d4-99df0cbfe263" name="Proses 73" actor="Reviewer" ket=""/>
+         </Submodul9>
+      </UC-04>
+   </SS-02>
+   <SS-03 id="fb788bec-b6ea-46f7-9e5f-8adac4bd3093" name="Subsistem 3" actor="Administrator, Viewer, User, Reviewer, Approver, Creator" ket="">
+      <UC-09 id="9fe6b6f3-e10c-4b93-9e32-48040487cbd9" name="Modul 5" actor="Administrator, Viewer, User, Reviewer, Approver, Creator" ket="">
+         <Submodul10 id="f7c088af-fd8a-4764-beb2-429ef73d5bc8" name="Submodul 10" actor="Administrator, Viewer, User, Reviewer" ket="">
+            <UC-09-01 id="cf34f2fc-77cc-4e37-9b83-91e75d06c698" name="Proses 74" actor="Administrator" ket=""/>
+            <UC-09-02 id="aa65cf2a-6e64-4602-a1db-61b2ecde1b1b" name="Proses 75" actor="Administrator" ket=""/>
+            <UC-09-03 id="8f470453-c964-47c0-925d-03c9bd00d6b4" name="Proses 76" actor="Administrator" ket=""/>
+            <UC-09-04 id="bcf1e516-085e-4807-8cd3-e47c4ed13ede" name="Proses 77" actor="Administrator" ket=""/>
+            <UC-09-05 id="7b74091b-102e-4679-897c-88fe86a8296b" name="Proses 78" actor="Administrator" ket=""/>
+            <UC-09-06 id="b34826c4-03c2-4f12-935e-e791fe2bc62f" name="Proses 79" actor="Administrator" ket=""/>
+            <UC-09-07 id="e47a8433-aa89-4bd6-9b5b-72c6df28e477" name="Proses 80" actor="Administrator" ket=""/>
+            <UC-09-08 id="b737b978-bdf8-45c6-baf5-ef15225650e1" name="Proses 81" actor="Viewer" ket=""/>
+            <UC-09-09 id="d3fd44fc-b6d9-47fc-938a-0c6f6057274a" name="Proses 82" actor="Viewer" ket=""/>
+            <UC-09-10 id="f0c1ce35-48a2-4844-b320-7867bd743b28" name="Proses 83" actor="User" ket=""/>
+            <UC-09-11 id="00c6c556-dae3-4932-996f-e16d84d0aa63" name="Proses 84" actor="User" ket=""/>
+            <UC-09-12 id="417c2b0f-599e-467c-ab5f-ead6e09291d9" name="Proses 85" actor="User" ket=""/>
+            <UC-09-13 id="25e0eead-da4f-4b88-ab15-3584add1a267" name="Proses 86" actor="User" ket=""/>
+            <UC-09-14 id="40599154-18c6-4ae4-88bd-d7330d0a351c" name="Proses 87" actor="User" ket=""/>
+            <UC-09-15 id="4521803b-0012-4eae-aa43-d624e126c328" name="Proses 88" actor="Viewer, Reviewer" ket=""/>
+            <UC-09-16 id="60406f82-7408-43b1-9f27-88c7172d1261" name="Proses 89" actor="Viewer, Reviewer" ket=""/>
+            <UC-09-17 id="602b1e79-74c4-46cc-8ff2-a95cf2f5d6b7" name="Proses 90" actor="Viewer, Reviewer" ket=""/>
+         </Submodul10>
+         <Submodul11 id="83386fb9-04c5-40a8-aecd-35c099a6e20c" name="Submodul 11" actor="Creator, User, Approver, Reviewer" ket="">
+            <UC-09-18 id="cb607109-f76a-4f3e-882f-9e687a747069" name="Proses 91" actor="Creator" ket=""/>
+            <UC-09-19 id="6391bece-88a6-4976-8396-b17bd77ffdfb" name="Proses 92" actor="User" ket=""/>
+            <UC-09-20 id="7be26534-ea10-43ff-9356-4a3b78c1e409" name="Proses 93" actor="Creator" ket=""/>
+            <UC-09-21 id="eba66428-a057-4e3b-988c-3a70ae840ae0" name="Proses 94" actor="Creator" ket=""/>
+            <UC-09-22 id="255c1ab5-000d-475f-a276-fc0a1b17208e" name="Proses 95" actor="Creator" ket=""/>
+            <UC-09-23 id="14b3a4a1-6cec-40e0-828f-6fdef2ae0e73" name="Proses 96" actor="Creator" ket=""/>
+            <UC-09-24 id="f44c2904-50f8-4a5c-9fa9-7fc2cb96e696" name="Proses 97" actor="Creator" ket=""/>
+            <UC-09-25 id="ae7b3fa6-8d44-4c85-8b38-1d08265b08c0" name="Proses 98" actor="Creator" ket=""/>
+            <UC-09-26 id="d17b896b-5aec-4700-8aa0-ebe53640677e" name="Proses 99" actor="User" ket=""/>
+            <UC-09-27 id="d4dbf1d9-108e-4e54-ae69-887b31a5c945" name="Proses 100" actor="Approver" ket=""/>
+            <UC-09-28 id="94138064-e969-4c8f-9ec0-2f2330109b65" name="Proses 101" actor="Creator" ket=""/>
+            <UC-09-29 id="dfd87d93-4190-4d13-a6d6-22edc8c5af2c" name="Proses 102" actor="Creator" ket=""/>
+            <UC-09-30 id="92b1092c-27cf-41b6-b92d-bff5d5495fb5" name="Proses 103" actor="Reviewer" ket=""/>
+         </Submodul11>
+      </UC-09>
+   </SS-03>
+</UseCaseDiagram>

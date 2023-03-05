@@ -4,12 +4,28 @@ from xml.etree.ElementTree import (Element, SubElement)
 from xml_writer import XMLWriter
 
 class SparxEAXMLWriter(XMLWriter):
-    actor = {"Administrator":"ADM", "User":"USR", "Creator":"CRE", "Reviewer":"REV", "Viewer":"VIE", "Approver":"APP"}
+    actor = {"Administrator":"ns", "User":"ns", "Creator":"ns", "Reviewer":"ns", "Viewer":"ns", "Approver":"ns", "Sistem 1":"s"}
 
     def csv_tree_to_xml(self):
         self.init_template()
-        root_package = self.add_packaged_element(model, {"xmi:type":"uml:Package", "xmi:id":"root", "name":self.tree.tag})
-        if len(list(self.tree)) > 0: self.tree_traverse(root_package, self.tree, self.tree[0], 0)
+        self.init_actor(self.tree, self.tree[0], 0)
+
+        global root_package
+        
+        root_package = self.add_packaged_element(model, {"xmi:type":"uml:Package", "xmi:id":"root", "name":"Application use Case Diagram"})
+        self.add_catalog_actor(root_package)
+        use_case_package = self.add_packaged_element(root_package, {"xmi:type":"uml:Package", "xmi:id":"use_case_diagram", "name":"Use Case Diagram"})
+        if len(list(self.tree)) > 0: self.tree_traverse(use_case_package, self.tree, self.tree[0], 0)
+    
+    def init_actor(self, parent, node, index):
+        if len(list(node)) > 0: self.init_actor(node, node[0], 0)
+        if parent.attrib.get('actor') == '' or parent.attrib.get('actor') == None:
+            parent.set('actor', node.attrib.get('actor')) 
+        else: 
+            new_list = list(str(parent.attrib.get('actor')).split(", ")) + list(set(list(str(node.attrib.get('actor')).split(", "))) - set(list(str(parent.attrib.get('actor')).split(", "))))
+            new_string = ', '.join(new_list)
+            parent.set('actor', new_string)
+        if len(list(parent)) - 1 > index: self.init_actor(parent, parent[index + 1], index+1)
 
     def init_template(self):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")
@@ -25,6 +41,19 @@ class SparxEAXMLWriter(XMLWriter):
         connectors = self.xml_tree[2][1]
         diagrams = self.xml_tree[2][2]    
 
+    def add_catalog_actor(self, package):
+        catalog_actor = self.add_package(package, {"id":"catalog_actor_package", "name":"Actor"})
+        use_case_diagram = self.add_use_case_diagram(catalog_actor.attrib.get('xmi:id'), catalog_actor.attrib.get('xmi:id'), {"name":catalog_actor.attrib.get('name')})
+        element_diagram = self.add_subelement(use_case_diagram, 'elements')
+        left = 50
+        right = left + 100
+        for actor in self.actor.keys():
+            self.add_packaged_element(catalog_actor, {"xmi:type":"uml:Actor", "xmi:id":actor.replace(" ", ""), "name":actor})
+            self.add_subelement(element_diagram, 'element', {"geometry":"Left=" + str(left) + ";Top=50;Right=" + str(right) + ";Bottom=100;", "subject":actor.replace(" ", "")})
+            left = left + 50
+            right = left + 50
+        self.add_boundary(catalog_actor, element_diagram, {"id": catalog_actor.attrib.get('xmi:id'), "name": catalog_actor.attrib.get('name')})
+
     def tree_traverse(self, parent_package, parent, node, index):
         print(parent, node.attrib.get('name'), index)
         curr_package = self.add_package(parent_package, {"id":node.attrib.get('id'), "name":node.attrib.get('name')})
@@ -33,12 +62,15 @@ class SparxEAXMLWriter(XMLWriter):
         if len(list(node)) > 0: self.tree_traverse(curr_package, node, node[0], 0)
         if len(list(parent)) - 1 > index: self.tree_traverse(parent_package, parent, parent[index + 1], index+1)
     
-    def add_folder_element(self, curr_package, node, isFL=False, isLeaf=False):
+    def add_folder_element(self, curr_package, node):
         use_case = self.add_use_case(curr_package, {"name":curr_package.attrib.get('name')})
         use_case_diagram = self.add_use_case_diagram(curr_package.attrib.get('xmi:id'), use_case.attrib.get('xmi:id'), {"name":curr_package.attrib.get('name')})
-        element_diagram = self.add_subelement(use_case_diagram, 'elements')
-        self.add_boundary(curr_package, element_diagram, {"id": curr_package.attrib.get('xmi:id'), "name": curr_package.attrib.get('name')})
-        self.add_diagram_element(element_diagram, node)
+        self.add_relation(curr_package, node)
+
+        if len(list(node)) != 0:
+            element_diagram = self.add_subelement(use_case_diagram, 'elements')
+            self.add_boundary(curr_package, element_diagram, {"id": curr_package.attrib.get('xmi:id'), "name": curr_package.attrib.get('name')})
+            self.add_diagram_element(element_diagram, node)
       
     def add_package(self, parent, data):
         package = self.add_packaged_element(parent, {"xmi:type":"uml:Package", "xmi:id":data.get('id'), "name":data.get('name')})
@@ -73,31 +105,72 @@ class SparxEAXMLWriter(XMLWriter):
     
     def add_diagram_element(self, use_case_diagram, node):
         top = 80
-        bottom = top + 100
-        id = node.attrib.get('id')
+        bottom = top + 90
         for uc in list(node):
             self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":"UC_" + uc.get('id')})
             top = top + 100
             bottom = bottom + 100
-
-    # def add_element_tag(self, data_package, data):
-        #  element = self.add_element(elements, 'element', {"xmi:idref":data.id, "xmi:type":("uml:" + data.type), "name": data.name})
-        # self.add_subelement(element, 'model', {"package":data_package})
-        # self.add_subelement(element, 'properties', {"sType":data.type})
+            index = 0
+            for actor in list(uc.get('actor').split(", ")):
+                self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')})
+        
+        top = 80
+        bottom = top + 90
+        for actor in list(node.attrib.get('actor').split(", ")):
+            print(actor)
+            self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":actor.replace(" ", "")})
 
     def add_packaged_element(self, parent, data):
         packagedElement = self.add_subelement(parent, "packagedElement", data)
         return packagedElement
     
-    # def add_connectors(self, id_connector, start, end):
-    #     connector = self.add_element('connector', {"xmi:idref":id_connector})
+    def add_relation(self, curr_package, node):
+        index = 0
+        print(node.attrib.get('actor').split(", "))
+        for actor in list(node.attrib.get('actor').split(", ")):
+            self.add_association(curr_package, actor, index) if self.actor.get(actor) == "ns" else self.add_usage(curr_package, actor, index)
+            index = index + 1
+        
+        index = 0
+        # for ket in list(node.attrib.get('ket'.split(", "))):
+        #     lists = ket.split(' ')
+        #     if lists[0] == "generalization": self.add_generalization()
+        #     elif lists[0] == "extend": self.add_extend()
+        #     elif lists[0] == "include": self.ad_include()
 
-    #     source = self.add_subelement(connector, 'source', {"xmi:idref":start.id})
-    #     self.add_subelement(source, 'model', {"type": start.type, "name": start.name})
-    #     target = self.add_subelement(connector, 'target', {"xmi:idref":end.id})
-    #     self.add_subelement(target, 'model', {"type": end.type, "name": end.name})
+    def add_association(self, curr_package, actor, index):
+        association = self.add_packaged_element(curr_package, {"xmi:type":"uml:Association", "xmi:id":"a" + str(index) + "_" + curr_package.attrib.get('xmi:id') })
+        self.add_subelement(association, 'memberEnd', {"xmi:idref":"src_" + association.attrib.get('xmi:id')})
+        self.add_subelement(association, 'memberEnd', {"xmi:idref":"dst_" + association.attrib.get('xmi:id')})
+        src = self.add_subelement(association, 'ownedEnd', {"xmi:type":"uml:Property", "xmi:id":"src_" + association.attrib.get('xmi:id'), "association":association.attrib.get('xmi:id')})
+        self.add_subelement(src, 'type', {"xmi:idref": "UC_" + curr_package.attrib.get('xmi:id')})
+        dst = self.add_subelement(association, 'ownedEnd', {"xmi:type":"uml:Property", "xmi:id":"dst_" + association.attrib.get('xmi:id'), "association":association.attrib.get('xmi:id')})
+        self.add_subelement(dst, 'type', {"xmi:idref":actor.replace(" ", "")})
 
-    #     connectors.append(connector)
+        self.add_connectors('association', association.attrib.get('xmi:id'), {"type":"UseCase", "id":curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"Actor", "id":actor.replace(" ", ""), "name":actor})
+    
+    def add_usage(self, curr_package, actor, index):
+        return True
+    
+    def add_generalization():
+        return True
+    
+    def add_extend():
+        return True
+    
+    def add_include():
+        return True
+    
+    def add_connectors(self, type, id_connector, start, end):
+        connector = self.add_subelement(connectors, 'connector', {"xmi:idref":id_connector})
+
+        source = self.add_subelement(connector, 'source', {"xmi:idref":start.get('id')})
+        self.add_subelement(source, 'model', {"type": start.get('type'), "name": start.get('name')})
+        target = self.add_subelement(connector, 'target', {"xmi:idref":end.get('id')})
+        self.add_subelement(target, 'model', {"type": end.get('type'), "name": end.get('name')})
+
+        if type != "association":
+            self.add_subelement(connector, 'properties', {"subtype":type.capitalize(), "stereotype":type, "direction":"Source -&gt; Destination"})
     
     def add_element(self, tag_name, val_set):
         element = Element(tag_name)

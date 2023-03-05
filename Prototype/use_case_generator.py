@@ -4,12 +4,9 @@ from sparx_ea_xml_writer import SparxEAXMLWriter
 
 class UseCaseGenerator:
     input_filename = "CSV-ok.csv"
-    try:
-        datacsv = CSVReader(input_filename)
-        folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
+    datacsv = CSVReader(input_filename)
+    folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
 
         # xml_filename = input("Input XML filename:")
-        use_case = SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy))
-        use_case.write(filename="output.xml")
-    except AttributeError:
-        print("Please select the right file!")
+    use_case = SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy))
+    use_case.write(filename="output.xml")
