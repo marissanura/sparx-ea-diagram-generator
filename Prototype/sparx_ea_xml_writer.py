@@ -55,7 +55,6 @@ class SparxEAXMLWriter(XMLWriter):
         self.add_boundary(catalog_actor, element_diagram, {"id": catalog_actor.attrib.get('xmi:id'), "name": catalog_actor.attrib.get('name')})
 
     def tree_traverse(self, parent_package, parent, node, index):
-        print(parent, node.attrib.get('name'), index)
         curr_package = self.add_package(parent_package, {"id":node.attrib.get('id'), "name":node.attrib.get('name')})
         self.add_folder_element(curr_package, node)
 
@@ -110,14 +109,21 @@ class SparxEAXMLWriter(XMLWriter):
             self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":"UC_" + uc.get('id')})
             top = top + 100
             bottom = bottom + 100
-            index = 0
+            index = 1
             for actor in list(uc.get('actor').split(", ")):
-                self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')})
+                self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
+                index = index + 1
+            if uc.get('ket') != "":
+                for ket in list(uc.attrib.get('ket').split(", ")):
+                    lists = ket.split(' ')
+                    if lists[0] == "generalization": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"g" + str(index) + "_"+ uc.get('id')})
+                    elif lists[0] == "extend": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"e" + str(index) + "_"+ uc.get('id')})
+                    elif lists[0] == "include": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"i" + str(index) + "_"+ uc.get('id')})
+                    index = index + 1
         
         top = 80
         bottom = top + 90
         for actor in list(node.attrib.get('actor').split(", ")):
-            print(actor)
             self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":actor.replace(" ", "")})
 
     def add_packaged_element(self, parent, data):
@@ -125,18 +131,18 @@ class SparxEAXMLWriter(XMLWriter):
         return packagedElement
     
     def add_relation(self, curr_package, node):
-        index = 0
-        print(node.attrib.get('actor').split(", "))
+        index = 1
         for actor in list(node.attrib.get('actor').split(", ")):
             self.add_association(curr_package, actor, index) if self.actor.get(actor) == "ns" else self.add_usage(curr_package, actor, index)
             index = index + 1
         
-        index = 0
-        # for ket in list(node.attrib.get('ket'.split(", "))):
-        #     lists = ket.split(' ')
-        #     if lists[0] == "generalization": self.add_generalization()
-        #     elif lists[0] == "extend": self.add_extend()
-        #     elif lists[0] == "include": self.ad_include()
+        if node.attrib.get('ket') != "": 
+            for ket in list(node.attrib.get('ket').split(", ")):
+                lists = ket.split(' ')
+                for tag in self.tree.iter(str(lists[1])): target = tag
+                if lists[0] == "generalization": self.add_generalization(curr_package, target, index)
+                elif lists[0] == "extend": self.add_extend(curr_package, target, index)
+                elif lists[0] == "include": self.add_include(curr_package, target, index)
 
     def add_association(self, curr_package, actor, index):
         association = self.add_packaged_element(curr_package, {"xmi:type":"uml:Association", "xmi:id":"a" + str(index) + "_" + curr_package.attrib.get('xmi:id') })
@@ -150,16 +156,22 @@ class SparxEAXMLWriter(XMLWriter):
         self.add_connectors('association', association.attrib.get('xmi:id'), {"type":"UseCase", "id":curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"Actor", "id":actor.replace(" ", ""), "name":actor})
     
     def add_usage(self, curr_package, actor, index):
-        return True
+        usage = self.add_packaged_element(curr_package, {"xmi:type":"uml:Usage", "xmi:id":"u" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "supplier":actor.replace(" ", ""), "client": "UC_" + curr_package.attrib.get('xmi:id')})
+        self.add_connectors('usage', usage.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_" + curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"Actor", "id":actor.replace(" ", ""), "name":actor})
     
-    def add_generalization():
-        return True
+    def add_generalization(self, curr_package, node_target, index):
+        generalization = self.add_subelement(curr_package, "generalization", {"xmi:type":"uml:Generalization", "xmi:id":"g" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "general":"UC_" + node_target.attrib.get('id')})
+        self.add_connectors('generalization', generalization.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_" + curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"UseCase", "id":"UC_" + node_target.attrib.get('id'), "name":node_target.attrib.get('name')})
     
-    def add_extend():
-        return True
+    def add_extend(self, curr_package, node_target, index):
+        extend = self.add_subelement(curr_package, "extend", {"xmi:type":"uml:Extend", "xmi:id":"e" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "extendedCase":"UC_" + node_target.attrib.get('id')})
+        self.add_connectors('extend', extend.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_" + curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"UseCase", "id":"UC_" + node_target.attrib.get('id'), "name":node_target.attrib.get('name')})
+        # self.add_subelement(root_package, "thecustomprofile:extend", {"base_Extend":extend.attrib.get('xmi:id')})
     
-    def add_include():
-        return True
+    def add_include(self, curr_package, node_target, index):
+        include = self.add_packaged_element(curr_package, {"xmi:type":"uml:Include", "xmi:id":"i" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "addition":"UC_" + node_target.attrib.get('id')})
+        self.add_connectors('include', include.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_"+ curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"UseCase", "id":"UC_" + node_target.attrib.get('id'), "name":node_target.attrib.get('name')})
+        # self.add_subelement(root_package, 'thecustomprofile:include', {"base_Extend":include.attrib.get('xmi:id')})
     
     def add_connectors(self, type, id_connector, start, end):
         connector = self.add_subelement(connectors, 'connector', {"xmi:idref":id_connector})
@@ -169,8 +181,10 @@ class SparxEAXMLWriter(XMLWriter):
         target = self.add_subelement(connector, 'target', {"xmi:idref":end.get('id')})
         self.add_subelement(target, 'model', {"type": end.get('type'), "name": end.get('name')})
 
-        if type != "association":
-            self.add_subelement(connector, 'properties', {"subtype":type.capitalize(), "stereotype":type, "direction":"Source -&gt; Destination"})
+        if type == "include" or type == "extend":
+            self.add_subelement(connector, 'properties', {"subtype":type.capitalize(), "stereotype":type, "direction":"Source -> Destination"})
+        elif type == "usage":
+            self.add_subelement(connector, 'properties', {"ea_type":"Usage", "direction":"Source -> Destination"})
     
     def add_element(self, tag_name, val_set):
         element = Element(tag_name)

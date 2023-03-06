@@ -10,6 +10,7 @@
 				<packagedElement xmi:type="uml:Association" xmi:id=a1_UUID_Proses_1>
 					<memberEnd xmi:idref=dst_a1_UUID_Proses_1/>
 					<memberEnd xmi:idref=src_a1_UUID_Proses_1/>
+					<ownedEnd xmi:type="uml:Property" xmi:id=src_a1_UUID_Proses_1 association=a1_UUID_Proses_1>
 						<type xmi:idref=id_asministrator/>
 					</ownedEnd>
 					<ownedEnd xmi:type="uml:Property" xmi:id=dst_a1_UUID_Proses_1 association=a1_UUID_Proses_1>

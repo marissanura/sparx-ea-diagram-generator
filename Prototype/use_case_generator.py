@@ -3,10 +3,15 @@ from use_case_csv_reader import CSVReader
 from sparx_ea_xml_writer import SparxEAXMLWriter
 
 class UseCaseGenerator:
-    input_filename = "CSV-ok.csv"
+    input_filename = input("Inputkan nama file: ")
     datacsv = CSVReader(input_filename)
     folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
 
-        # xml_filename = input("Input XML filename:")
-    use_case = SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy))
-    use_case.write(filename="output.xml")
+    try:
+        use_case = SparxEAXMLWriter(datacsv.generate_tree(folder_hierarcy))
+        print("Prose generate file " + input_filename + "\n")
+        print("generate berhasil!\nmenuliskan file xml...\n")
+        use_case.write(filename="output.xml")
+        print("hasil generate sudah tersimpan pada output.xml")
+    except AttributeError as AE:
+        print("Terdapat kesalahan pada pembacaan dan penerjemahan CSV ke XML")
