@@ -5,7 +5,7 @@ from xml.etree.ElementTree import ( Element, SubElement )
 import uuid
 import re
 
-class CSVReader(CSVReader):
+class UCCSVReader(CSVReader):
 
     def generate_tree(self, folder_hierarchy):
         global num_of_fh, num_of_line, list_of_node, fh

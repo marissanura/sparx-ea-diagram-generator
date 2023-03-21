@@ -78,12 +78,12 @@ class SparxEAXMLWriter(XMLWriter):
         self.add_subelement(el_boundary, "properties", {"name": data.get('name'), "sType":"Package"})
         return package
     
-    def add_boundary(self, parent, parent_ucd, data):
+    def add_boundary(self, parent, parent_ucd, data, geometry="Left=20;Top=20;Right=100;Bottom=100;"):
         self.add_subelement(parent, 'packagedElement', {"xmi:type":"uml:Class", "xmi:id":"B_" + data.get('id'), "name":data.get('name')})
         el_boundary = self.add_subelement(elements, 'element', {"xmi:idref":"B_" + data.get('id'), "xmi:type":"uml:Boundary", "name":data.get('name')})
         self.add_subelement(el_boundary, "model", {"package":parent.attrib.get('xmi:id')})
         self.add_subelement(el_boundary, "properties", {"name": data.get('name'), "sType":"Boundary"})
-        self.add_subelement(parent_ucd, 'element', {"geometry":"Left=200;Top=60;Right=600;Bottom=600;", "subject":"B_" + data.get('id')})
+        self.add_subelement(parent_ucd, 'element', {"geometry":geometry, "subject":"B_" + data.get('id')})
     
     def add_use_case_diagram(self, package, diagram_owner, data):
         diagram = self.add_subelement(diagrams, "diagram", {"xmi:id":("d_" + package)})
@@ -166,12 +166,10 @@ class SparxEAXMLWriter(XMLWriter):
     def add_extend(self, curr_package, node_target, index):
         extend = self.add_subelement(curr_package, "extend", {"xmi:type":"uml:Extend", "xmi:id":"e" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "extendedCase":"UC_" + node_target.attrib.get('id')})
         self.add_connectors('extend', extend.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_" + curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"UseCase", "id":"UC_" + node_target.attrib.get('id'), "name":node_target.attrib.get('name')})
-        # self.add_subelement(root_package, "thecustomprofile:extend", {"base_Extend":extend.attrib.get('xmi:id')})
     
     def add_include(self, curr_package, node_target, index):
         include = self.add_packaged_element(curr_package, {"xmi:type":"uml:Include", "xmi:id":"i" + str(index) + "_" + curr_package.attrib.get('xmi:id'), "addition":"UC_" + node_target.attrib.get('id')})
         self.add_connectors('include', include.attrib.get('xmi:id'), {"type":"UseCase", "id":"UC_"+ curr_package.attrib.get('xmi:id'), "name":curr_package.attrib.get('name')}, {"type":"UseCase", "id":"UC_" + node_target.attrib.get('id'), "name":node_target.attrib.get('name')})
-        # self.add_subelement(root_package, 'thecustomprofile:include', {"base_Extend":include.attrib.get('xmi:id')})
     
     def add_connectors(self, type, id_connector, start, end):
         connector = self.add_subelement(connectors, 'connector', {"xmi:idref":id_connector})

@@ -1,10 +1,10 @@
 
-from use_case_csv_reader import CSVReader
+from use_case_csv_reader import UCCSVReader
 from sparx_ea_xml_writer import SparxEAXMLWriter
 
 class UseCaseGenerator:
     input_filename = input("Inputkan nama file: ")
-    datacsv = CSVReader(input_filename)
+    datacsv = UCCSVReader(input_filename)
     folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
 
     try:

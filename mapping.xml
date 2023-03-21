@@ -3,8 +3,8 @@
 	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1554"/>
 	<uml:Model xmi:type="uml:Model" name="EA_Model">
 	<packagedElement xmi:type="uml:Package" xmi:id=root name="Application Use Case">
-		<packagedElement xmi:type="uml:Package" xmi:id=UUID_Modul_1 name="Use Case">
-			<packagedElement xmi:type="uml:Class" xmi:id=B_UUID_Modul_1 name="Use Case Diagram"/>
+		<packagedElement xmi:type="uml:Package" xmi:id=UUID_Submodul_1 name="Use Case">
+			<packagedElement xmi:type="uml:Class" xmi:id=B_UUID_Submodul_1 name="Use Case Diagram"/>
 			<packagedElement xmi:type="uml:Package" xmi:id=UUID_Proses_1 name="Proses 1">
 				<packagedElement xmi:type="uml:UseCase" xmi:id=UC_UUID_Proses_1 name="Proses 1"/>
 				<packagedElement xmi:type="uml:Association" xmi:id=a1_UUID_Proses_1>
@@ -70,6 +70,20 @@
 					</ownedEnd>
 				</packagedElement>
 			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id=UUID_Proses_5 name="Proses 5">
+				<packagedElement xmi:type="uml:UseCase" xmi:id=UC_UUID_Proses_5 name="Proses 5"/>
+				<packagedElement xmi:type="uml:Usage" xmi:id=u1_UUID_Proses_5 supplier=id_sistem client=UC_UUID_Proses_5/>
+				<packagedElement xmi:type="uml:Association" xmi:id=a1_UUID_Proses_5>
+					<memberEnd xmi:idref=dst_a1_UUID_Proses_5/>
+					<memberEnd xmi:idref=src_a1_UUID_Proses_5/>
+					<ownedEnd xmi:type="uml:Property" xmi:id=src_a1_UUID_Proses_5 association=a1_UUID_Proses_5>
+						<type xmi:idref=id_administrator/>
+					</ownedEnd>
+					<ownedEnd xmi:type="uml:Property" xmi:id=dst_a1_UUID_Proses_5 association=a1_UUID_Proses_5>
+						<type xmi:idref=UC_UUID_Proses_5/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
 		</packagedElement>
 		<thecustomprofile:include base_Include=i1_UUID_Proses_3/>
 		<thecustomprofile:extend base_Extend=e1_UUID_Proses_4/>
@@ -77,16 +91,16 @@
 	</uml:Model>
 	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
 		<elements>
-			<element xmi:idref=UC_UUID_Modul_1 xmi:type="uml:Package" name="Use Case">
-				<model package=UUID_Modul_1/>
+			<element xmi:idref=UC_UUID_Submodul_1 xmi:type="uml:Package" name="Use Case">
+				<model package=UUID_Submodul_1/>
 				<properties sType="Package"/>
 			</element>
-			<element xmi:idref=B_UUID_Modul_1 xmi:type="uml:Boundary" name="Use Case Diagram">
-				<model package=UUID_Modul_1/>
+			<element xmi:idref=B_UUID_Submodul_1 xmi:type="uml:Boundary" name="Use Case Diagram">
+				<model package=UUID_Submodul_1/>
 				<properties sType="Boundary"/>
 			</element>
 			<element xmi:idref=UUID_Proses_1 xmi:type="uml:Package" name="Proses 1">
-				<model package=UUID_Modul_1/>
+				<model package=UUID_Submodul_1/>
 				<properties sType="Package"/>
 			</element>
 			<element xmi:idref=UC_UUID_Proses_1 xmi:type="uml:UseCase" name="Proses 1">
@@ -95,16 +109,16 @@
 				<extendedProperties diagram=d_UUID_Proses_1/>
 			</element>
 			<element xmi:idref=UUID_Proses_2 xmi:type="uml:Package" name="Proses 2">
-				<model package=UUID_Modul_1/>
+				<model package=UUID_Submodul_1/>
 				<properties sType="Package"/>
 			</element>
 			<element xmi:idref=UC_UUID_Proses_2 xmi:type="uml:UseCase" name="Proses 2">
-				<model package=UUID_Modul_1/>
+				<model package=UUID_Submodul_1/>
 				<properties sType="UseCase"/>
 				<extendedProperties diagram=d_UUID_Proses_2/>
 			</element>
 			<element xmi:idref=UUID_Proses_3 xmi:type="uml:Package" name="Proses 3">
-				<model package=UUID_Modul_1/>
+				<model package=UUID_Submodul_1/>
 				<properties sType="Package"/>
 			</element>
 			<element xmi:idref=UC_UUID_Proses_3 xmi:type="uml:UseCase" name="Proses 3">
@@ -113,13 +127,22 @@
 				<extendedProperties diagram=d_UUID_Proses_3/>
 			</element>
 			<element xmi:idref=UUID_Proses_4 xmi:type="uml:Package" name="Proses 4">
-				<model package=UUID_Modul_1/>
+				<model package=UUID_Submodul_1/>
 				<properties sType="Package"/>
 			</element>
 			<element xmi:idref=UC_UUID_Proses_4 xmi:type="uml:UseCase" name="Proses 4">
 				<model package=UUID_Proses_4/>
 				<properties sType="UseCase"/>
 				<extendedProperties diagram=d_UUID_Proses_4/>
+			</element>
+			<element xmi:idref=UUID_Proses_5 xmi:type="uml:Package" name="Proses 5">
+				<model package=UUID_Submodul_1/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref=UC_UUID_Proses_5 xmi:type="uml:UseCase" name="Proses 5">
+				<model package=UUID_Proses_5/>
+				<properties sType="UseCase"/>
+				<extendedProperties diagram=d_UUID_Proses_5/>
 			</element>
 		</elements>
 		<connectors>
@@ -189,10 +212,27 @@
 					<model type="UseCase" name="Proses 4"/>
 				</target>
 			</connector>
+			<connector xmi:idref=u1_UUID_Proses_5>
+				<source xmi:idref=UC_UUID_Proses_5>
+					<model type="UseCase" name="Proses 5"/>
+				</source>
+				<target xmi:idref=id_sistem>
+					<model type="Actor" name="Sistem 1"/>
+				</target>
+				<properties ea_type="Usage" direction="Source -&gt; Destination"/>
+			</connector>
+			<connector xmi:idref=a1_UUID_Proses_5>
+				<source xmi:idref=id_administrator>
+					<model type="Actor" name="Actor1"/>
+				</source>
+				<target xmi:idref=UC_UUID_Proses_5>
+					<model type="UseCase" name="Proses 5"/>
+				</target>
+			</connector>
 		</connectors>
 		<diagrams>
-			<diagram xmi:id=d_UUID_Modul_1>
-				<model package=UUID_Modul_1 owner=UUID_Modul_1/>
+			<diagram xmi:id=d_UUID_Submodul_1>
+				<model package=UUID_Submodul_1 owner=UUID_Submodul_1/>
 				<properties name="Use Case" type="Use Case"/>
 				<style1 value="HideParents=0;"/>
 				<elements>
@@ -202,7 +242,7 @@
 					<element geometry="Left=228;Top=270;Right=333;Bottom=340;" subject=UC_UUID_Proses_3/>
 					<element geometry="Left=228;Top=173;Right=333;Bottom=243;" subject=UC_UUID_Proses_2/>
 					<element geometry="Left=228;Top=74;Right=333;Bottom=144;" subject=UC_UUID_Proses_1/>
-					<element geometry="Left=132;Top=24;Right=419;Bottom=590;" subject=B_UUID_Modul_1/>
+					<element geometry="Left=132;Top=24;Right=419;Bottom=590;" subject=B_UUID_Submodul_1/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject=a1_UUID_Proses_1/>
 					<element geometry="SX=0;SY=0;EX=0;EY=0;" subject=g1_UUID_Proses_2/>
 					<element geometry="SX=0;SY=0;EX=-52;EY=0;" subject=a1_UUID_Proses_2/>
@@ -228,6 +268,10 @@
 			<diagram xmi:id=d_UUID_Proses_4>
 				<model package=UUID_Proses_4 owner=UUID_Proses_4 parent=UC_UUID_Proses_4/>
 				<properties name="Proses 4" type="Use Case"/>
+			</diagram>
+			<diagram xmi:id=d_UUID_Proses_5>
+				<model package=UUID_Proses_5 owner=UUID_Proses_5 parent=UC_UUID_Proses_5/>
+				<properties name="Proses 5" type="Use Case"/>
 			</diagram>
 		</diagrams>
 	</xmi:Extension>
