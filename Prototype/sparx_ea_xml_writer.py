@@ -52,7 +52,10 @@ class SparxEAXMLWriter(XMLWriter):
             self.add_subelement(element_diagram, 'element', {"geometry":"Left=" + str(left) + ";Top=50;Right=" + str(right) + ";Bottom=100;", "subject":actor.replace(" ", "")})
             left = left + 50
             right = left + 50
-        self.add_boundary(catalog_actor, element_diagram, {"id": catalog_actor.attrib.get('xmi:id'), "name": catalog_actor.attrib.get('name')})
+        length = 20 + (len(self.actor) > 5) * 60
+        height = 20 + (len(self.actor) / 5) * 105
+        self.add_boundary(catalog_actor, {"id": catalog_actor.attrib.get('xmi:id'), "name": catalog_actor.attrib.get('name')})
+        self.add_subelement(element_diagram, 'element', {"geometry":"Left=20;Top=20;Right=" + str(length) + ";Bottom=" + str(height), "subject":"B_catalog_actor_package"})
 
     def tree_traverse(self, parent_package, parent, node, index):
         curr_package = self.add_package(parent_package, {"id":node.attrib.get('id'), "name":node.attrib.get('name')})
@@ -68,7 +71,7 @@ class SparxEAXMLWriter(XMLWriter):
 
         if len(list(node)) != 0:
             element_diagram = self.add_subelement(use_case_diagram, 'elements')
-            self.add_boundary(curr_package, element_diagram, {"id": curr_package.attrib.get('xmi:id'), "name": curr_package.attrib.get('name')})
+            self.add_boundary(curr_package, {"id": curr_package.attrib.get('xmi:id'), "name": curr_package.attrib.get('name')})
             self.add_diagram_element(element_diagram, node)
       
     def add_package(self, parent, data):
@@ -78,12 +81,11 @@ class SparxEAXMLWriter(XMLWriter):
         self.add_subelement(el_boundary, "properties", {"name": data.get('name'), "sType":"Package"})
         return package
     
-    def add_boundary(self, parent, parent_ucd, data, geometry="Left=20;Top=20;Right=100;Bottom=100;"):
+    def add_boundary(self, parent, data):
         self.add_subelement(parent, 'packagedElement', {"xmi:type":"uml:Class", "xmi:id":"B_" + data.get('id'), "name":data.get('name')})
         el_boundary = self.add_subelement(elements, 'element', {"xmi:idref":"B_" + data.get('id'), "xmi:type":"uml:Boundary", "name":data.get('name')})
         self.add_subelement(el_boundary, "model", {"package":parent.attrib.get('xmi:id')})
         self.add_subelement(el_boundary, "properties", {"name": data.get('name'), "sType":"Boundary"})
-        self.add_subelement(parent_ucd, 'element', {"geometry":geometry, "subject":"B_" + data.get('id')})
     
     def add_use_case_diagram(self, package, diagram_owner, data):
         diagram = self.add_subelement(diagrams, "diagram", {"xmi:id":("d_" + package)})
@@ -102,16 +104,83 @@ class SparxEAXMLWriter(XMLWriter):
 
         return use_case
     
+    def calculate_use_case_dimension(self, node):
+        max_uc_name = ""
+        for uc_name in list(node): max_uc_name = uc_name.get('name') if len(max_uc_name) < len(uc_name.get('name')) else max_uc_name
+        print(max_uc_name)
+        x, y = 105, 70
+        char_max = len(max_uc_name) - 40
+
+        gap = 0
+        while(char_max > 0):
+            x += 15
+            y += 10
+            char_max -= (28 + gap)
+            gap += 4 if (gap/2 == 0) else 6
+        
+        return x,y
+
     def add_diagram_element(self, use_case_diagram, node):
-        top = 80
-        bottom = top + 90
+        x, y = self.calculate_use_case_dimension(node)
+        
+        actors = list(node.attrib.get('actor').split(", "))
+        use_case = list(node)
+        actor_gap = 15
+
+        if (len(actors) > ((len(use_case) * 2) + 2)):
+            top = 50 + ((x + 15)/2)
+            height = top + ((len(use_case) - 1) * (y + 15)) + y + 30 + ((x + 15)/2)
+            actor_gap = 15
+        else:
+            top = 50
+            height = 50 + ((len(use_case) - 1) * (y + 15)) + y + 30
+            actor_gap = 15 if (len(actors) >= len(use_case) or len(actors) == 1) else ((height - 20) - (90 * len(actors))) / (len(actors) - 1)
+
+        a_top = 20
+        a_bottom =  a_top + 90
+        a_left = 20
+        a_right = a_left + 45
+        
+        actor_pos = {}
+        for actor in actors:
+            self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=" + str(a_left) + ";Top=" + str(a_top) + ";Right=" + str(a_right) + ";Bottom=" + str(a_bottom) + ";", "subject":actor.replace(" ", "")})
+            actor_pos[actor] = 'l' if (a_left < (185 + (x/2))) else 'r'
+            
+            a_top = a_bottom + actor_gap
+            a_bottom = a_top + 90
+
+            if(a_bottom > height):
+                if(a_left == (305 + x)):
+                    a_left = 125 
+                    a_right = a_left + 45
+                    a_top = height + 20
+                    a_bottom = a_top + 90
+                elif(top > height + 20):
+                    a_left = 200 + x
+                    a_right = a_left + 45
+                    a_top = height + 20
+                    a_bottom = a_top + 90
+                else:
+                    a_left = 305 + x
+                    a_right = a_left + 45
+                    a_top = 20
+                    a_bottom = a_top + y  
+
+        bottom = top + y
+        left = 185
+        right = left + x
+
+        self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=125;Top=20;Right=" + str(125 + 120 + x) + ";Bottom=" + str(height) +  ";", "subject":"B_" + node.get('id')})
+
         for uc in list(node):
-            self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":"UC_" + uc.get('id')})
-            top = top + 100
-            bottom = bottom + 100
+            self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=" + str(left) + ";Top=" + str(top) + ";Right=" + str(right) + ";Bottom=" + str(bottom) + ";", "subject":"UC_" + uc.get('id')})
+            top = bottom + 15
+            bottom = top + y
             index = 1
             for actor in list(uc.get('actor').split(", ")):
-                self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
+                ex_actor = (-x/2) if actor_pos.get(actor) == 'l' else (x/2)
+                print(ex_actor)
+                self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=" + str(ex_actor) +";EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=" + str(ex_actor) + ";SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
                 index = index + 1
             if uc.get('ket') != "":
                 for ket in list(uc.attrib.get('ket').split(", ")):
@@ -120,11 +189,6 @@ class SparxEAXMLWriter(XMLWriter):
                     elif lists[0] == "extend": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"e" + str(index) + "_"+ uc.get('id')})
                     elif lists[0] == "include": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"i" + str(index) + "_"+ uc.get('id')})
                     index = index + 1
-        
-        top = 80
-        bottom = top + 90
-        for actor in list(node.attrib.get('actor').split(", ")):
-            self.add_subelement(use_case_diagram, 'element', {"geometry":"Left=200;Top=" + str(top) + ";Right=600;Bottom=" + str(bottom) + ";", "subject":actor.replace(" ", "")})
 
     def add_packaged_element(self, parent, data):
         packagedElement = self.add_subelement(parent, "packagedElement", data)
