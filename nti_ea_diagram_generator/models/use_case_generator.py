@@ -12,11 +12,8 @@ class UseCaseGenerator(models.Model):
     _rec_name = 'module_name'
 
     module_name = fields.Char(required=True)
-    project_id = fields.Many2one(
-        comodel_name='project.project',
-        string="Project"
-    )
-    description = fields.Text(string='Description')
+    group_actor_id = fields.Many2one('group.actor', string='Group Actor')
+    hierarchy_folder_id = fields.Many2one('hierarchy.folder', string='Hierarchy Folder')
     use_case_structure = fields.Binary(string='Use Case Structure')
     use_case_structure_filename = fields.Char()
     generated_structure = fields.Binary(string='Generated Structure')
@@ -36,12 +33,12 @@ class UseCaseGenerator(models.Model):
     
     def generate_structure(self):
         datacsv = UCCSVReader(self.use_case_structure)
-        folder_hierarcy = ["\ASS-[0-9]{1,}\Z","\AUC-[0-9]{1,}\Z","\A\Z","\AUC-[0-9]{1,}-[0-9]{1,}\Z"]
+        actors = self.get_group_actor()
+        folder_hierarcy = self.get_hierarchy_folder()
 
         try:
             use_case_tree = datacsv.generate_tree(folder_hierarcy)
-            print(use_case_tree)
-            use_case = UCXMLWriter(use_case_tree)
+            use_case = UCXMLWriter(use_case_tree, actors)
 
             xml_string = use_case.write()
             output = tempfile.NamedTemporaryFile(delete=False, suffix=".xml")
@@ -56,3 +53,17 @@ class UseCaseGenerator(models.Model):
             })
         except AttributeError as AE:
             print("Terdapat kesalahan pada pembacaan dan penerjemahan CSV ke XML")
+    
+    def get_group_actor(self):
+        actors = {}
+        for actor in list(self.group_actor_id.actor_ids):
+            actors[actor.actor_name] = actor.type
+        
+        return actors
+    
+    def get_hierarchy_folder(self):
+        hierarchy_folder = []
+        for hierarchy in list(self.hierarchy_folder_id.folder_ids):
+            hierarchy_folder.append(hierarchy.regex)
+        
+        return hierarchy_folder

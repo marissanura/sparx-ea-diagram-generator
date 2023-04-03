@@ -8,7 +8,26 @@
       <field name="arch" type="xml">
         <tree>
           <field name="module_name"/>
-          <field name="project_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="group_actor_tree_view">
+      <field name="name">group.actor.tree.view</field>
+      <field name="model">group.actor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="group_name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hierarchy_folder_tree_view">
+      <field name="name">hierarchy.folder.tree.view</field>
+      <field name="model">hierarchy.folder</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="hierarchy_name"/>
         </tree>
       </field>
     </record>
@@ -27,12 +46,62 @@
           <sheet>
             <group>
               <field name="module_name"/>
+              <field name="group_actor_id"/>
+              <field name="hierarchy_folder_id"/>
               <field name="use_case_structure_filename" invisible="1"/>
               <field name="use_case_structure" filename="use_case_structure_filename" required="1"/>
               <field name="generated_structure_filename" invisible="1"/>
               <field name="generated_structure" filename="generated_structure_filename" readonly="1"/>
             </group>
           </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="group_actor_form_view">
+      <field name="name">group.actor.form.view</field>
+      <field name="model">group.actor</field>
+      <field name="arch" type="xml">
+        <form>
+            <group>
+              <field name="group_name"/>
+              <field name="actor_ids">
+                  <tree>
+                      <field name="actor_name"/>
+                      <field name="type"/>
+                  </tree>
+                  <form>
+                      <group>
+                          <field name="actor_name"/>
+                          <field name="type"/>
+                      </group>
+                  </form>
+              </field>
+            </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hierarchy_folder_form_view">
+      <field name="name">hierarchy.folder.form.view</field>
+      <field name="model">hierarchy.folder</field>
+      <field name="arch" type="xml">
+        <form>
+            <group>
+              <field name="hierarchy_name"/>
+              <field name="folder_ids">
+                  <tree>
+                      <field name="hierarchy"/>
+                      <field name="regex"/>
+                  </tree>
+                  <form>
+                      <group>
+                        <field name="hierarchy"/>
+                        <field name="regex"/>
+                      </group>
+                  </form>
+              </field>
+            </group>
         </form>
       </field>
     </record>
@@ -47,22 +116,19 @@
       <field name="res_model">use.case.generator</field>
     </record>
 
+    <record id="group_actor_action" model="ir.actions.act_window">
+      <field name="name">Group Actor</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree,form</field>
+      <field name="res_model">group.actor</field>
+    </record>
 
-
-    <!-- server action to the one above -->
-<!-- 
-    <record model="ir.actions.server" id="nti_enterprise_architecture.action_server">
-      <field name="name">nti_enterprise_architecture server</field>
-      <field name="model_id" ref="model_nti_enterprise_architecture_nti_enterprise_architecture"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record> -->
+    <record id="hierarchy_folder_action" model="ir.actions.act_window">
+      <field name="name">Hierarchy Folder</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="view_mode">tree,form</field>
+      <field name="res_model">hierarchy.folder</field>
+    </record>
 
     <menuitem id="enterprise_architecture_menu_root" 
               web_icon="nti_centerprise_architecture,static/description/ea.png"
@@ -73,6 +139,18 @@
               parent="enterprise_architecture_menu_root"
               action="use_case_generator_action"
               sequence="1"/>
+
+    <menuitem id="group_actor_menu"
+              name="Group Actor"
+              parent="enterprise_architecture_menu_root"
+              action="group_actor_action"
+              sequence="2"/>
+
+    <menuitem id="hierarchy_folder_menu"
+              name="Hierarchy Folder"
+              parent="enterprise_architecture_menu_root"
+              action="hierarchy_folder_action"
+              sequence="3"/>
 
   </data>
 </odoo>

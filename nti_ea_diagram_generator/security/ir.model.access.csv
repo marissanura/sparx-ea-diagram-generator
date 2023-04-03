@@ -1,2 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_use_case_generator,access_use_case_generator,model_use_case_generator,base.group_user,1,1,1,1
+access_group_actor,access_group_actor,model_group_actor,base.group_user,1,1,1,1
+access_actor,access_actor,model_actor,base.group_user,1,1,1,1
+access_hierarchy_folder,access_hierarchy_folder,model_hierarchy_folder,base.group_user,1,1,1,1
+access_folder,access_folder,model_folder,base.group_user,1,1,1,1

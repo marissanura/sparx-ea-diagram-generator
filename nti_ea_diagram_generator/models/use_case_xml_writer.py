@@ -7,14 +7,15 @@ from xml.etree.ElementTree import (Element, SubElement)
 from .xml_writer import XMLWriter
 
 class UCXMLWriter(XMLWriter):
-    actor = {"Administrator":"ns", "User":"ns", "Creator":"ns", "Reviewer":"ns", "Viewer":"ns", "Approver":"ns", "Sistem 1":"s"}
 
-    def csv_tree_to_xml(self):
+    def csv_tree_to_xml(self, list_actor):
         self.init_template()
         self.init_actor(self.tree, self.tree[0], 0)
-
-        global root_package
         
+
+        global root_package, actor
+
+        actor = list_actor
         root_package = self.add_packaged_element(model, {"xmi:type":"uml:Package", "xmi:id":"root", "name":"Application use Case Diagram"})
         self.add_catalog_actor(root_package)
         use_case_package = self.add_packaged_element(root_package, {"xmi:type":"uml:Package", "xmi:id":"use_case_diagram", "name":"Use Case Diagram"})

@@ -3,9 +3,9 @@ from xml.etree import ElementTree
 
 class XMLWriter():
 
-    def __init__(self, tree):
+    def __init__(self, tree, actor):
         self.tree = tree
-        self.csv_tree_to_xml()
+        self.csv_tree_to_xml(actor)
     
     @abstractmethod
     def csv_tree_to_xml(self):
