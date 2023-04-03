@@ -27,8 +27,6 @@
           <sheet>
             <group>
               <field name="module_name"/>
-              <field name="project_id"/>
-              <field name="description"/>
               <field name="use_case_structure_filename" invisible="1"/>
               <field name="use_case_structure" filename="use_case_structure_filename" required="1"/>
               <field name="generated_structure_filename" invisible="1"/>

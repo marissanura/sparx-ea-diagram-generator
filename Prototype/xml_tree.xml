@@ -1,144 +1,567 @@
 <?xml version="1.0" ?>
 <UseCaseDiagram>
-   <SS-01 id="76f9628d-f691-4633-98ab-7d9b4c8eb199" name="Subsistem 1" actor="" ket="">
-      <UC-01 id="b42d0b95-5eca-4414-8a2a-1c821976da46" name="Modulss 1" actor="" ket="">
-         <Submodul1 id="d97e6a31-9f67-4f73-860c-a84d2b81a940" name="Submodul 1" actor="" ket="">
-            <UC-01-01 id="b9f096e8-bd90-46a3-87b1-a46360250dc3" name="Menggunakan mempertanggungjawabkan kalimat yang isinya dua puluh karakter lebih kita cobain yaaaa, tapi ini masih kurang panjang sehingga kita panjangin lagi ya ges, semoga dia tambah besar seperti bola pingpong dan setinggi harapan orangtua ke anak pertama sandwich generation alias laras" actor="Administrator, User" ket=""/>
-            <UC-01-02 id="4a914559-6e4f-4aae-bd6c-e7edbcd54dee" name="Proses 2" actor="Administrator, Sistem 1" ket="generalization UC-01-01"/>
-            <UC-01-03 id="58dfb793-dc50-4642-b352-79709a45c1a1" name="Proses 3" actor="Administrator" ket="extend UC-01-02"/>
-            <UC-01-04 id="8f8cc792-1453-4406-9845-613e968f1eff" name="Proses 4" actor="Administrator" ket="include UC-01-05"/>
-            <UC-01-05 id="8eb71d0b-de8d-4170-9a3d-daf286fbbe7d" name="Proses 5" actor="Administrator" ket=""/>
-            <UC-01-06 id="0781bc94-f40e-4bc7-9557-e6292b5c99e0" name="Prosesss 6" actor="Administrator" ket=""/>
-            <UC-01-07 id="69666978-7f24-4f81-989b-d8efa5854130" name="Proses 7" actor="Administrator" ket=""/>
-            <UC-01-08 id="37d1b01d-56a4-4d9a-b450-1a00cba47517" name="Proses 8" actor="Administrator" ket=""/>
-            <UC-01-09 id="beb75cff-378b-4280-9390-f94571a8fd7f" name="Proses 9" actor="Administrator" ket=""/>
-            <UC-01-10 id="8b7c5439-8197-4526-a508-6253f4e727ae" name="Proses 10" actor="Administrator" ket=""/>
-            <UC-01-11 id="aa0f00fb-51ba-4a6a-953d-7e2d0f99db41" name="Proses 11" actor="Administrator" ket=""/>
-            <UC-01-12 id="e907cd9e-ed0d-4473-90bd-0bd093c6707a" name="Proses 12" actor="Administrator" ket=""/>
-            <UC-01-13 id="08f9b2f1-debb-41d2-a6b7-c44e36b68de0" name="Proses 13" actor="Administrator" ket=""/>
-         </Submodul1>
-         <Submoduul2 id="7ea50d2e-ff05-4ce6-97a7-815028bb0cf6" name="Submoduul 2" actor="" ket="">
-            <UC-01-14 id="07798c92-551f-4060-955f-68c738aba06c" name="Proses 14" actor="Administrator" ket=""/>
-            <UC-01-15 id="a5accf62-4bee-49bd-ac94-83c634b3cc79" name="Proses 15" actor="Administrator" ket=""/>
-            <UC-01-16 id="2dee8f67-293e-4c9f-93cf-3e664fadbb48" name="Proses 16" actor="Administrator" ket=""/>
-            <UC-01-17 id="bf141d61-327d-40c2-a9fb-dfcd0ea7e45a" name="Proses 17" actor="User" ket=""/>
-            <UC-01-18 id="0764ab52-7cd3-4317-b99f-97e8ac17f17e" name="Proses 18" actor="Administrator" ket=""/>
-         </Submoduul2>
-         <Submodul3 id="78ec29ea-c632-4716-94a4-e6dd6ef51ba3" name="Submodul 3" actor="" ket="">
-            <UC-01-19 id="56510b7b-851f-4d0d-b49f-da61efc36db1" name="Proses 19" actor="Administrator" ket=""/>
-            <UC-01-20 id="f8879d60-b777-486e-8db8-a08ef4b24dec" name="Proses 20" actor="Administrator" ket=""/>
-            <UC-01-21 id="7717e62d-7625-42f3-8ab4-2c3cf77bacd5" name="Proses 21" actor="Administrator" ket=""/>
-         </Submodul3>
+   <SS-01 id="b54f58ad-0de3-4f8d-87d1-5368a5f404b8" name="Employee &amp; Payroll Management" actor="" ket="">
+      <UC-01 id="440cda0e-35cf-4a54-a1d1-6d6a9aa2fde3" name="Employee Information" actor="" ket="">
+         <JobPosition id="b4f2c721-4459-4bde-9442-99c09bbf7902" name="Job Position" actor="" ket="">
+            <UC-01-01 id="c313630e-670e-40f5-ba08-f314c94b4bf2" name="Membuat Master Data Direktorat" actor="Administrator" ket=""/>
+            <UC-01-02 id="d7308d42-8439-49f3-8353-91580316c4c3" name="Membuat Master Data Divisi" actor="Administrator" ket=""/>
+            <UC-01-03 id="73880b6c-1315-4b1f-880b-5e94d56e310d" name="Membuat Master Data Departemen" actor="Administrator" ket=""/>
+            <UC-01-04 id="fd638967-1c2e-4d92-8501-113cc3c4bab4" name="Membuat Master Data Level Jabatan" actor="Administrator" ket=""/>
+            <UC-01-05 id="abaee1d2-6b74-47de-b859-8cb4a8b62464" name="Membuat Master Data Detail Jabatan" actor="Administrator" ket=""/>
+            <UC-01-06 id="15fe0ff3-f330-4908-83aa-906fbb57419e" name="Membuat Master Data Grade" actor="Administrator" ket=""/>
+            <UC-01-07 id="b5b4e6d9-9250-4945-99eb-c818ea10ba06" name="Membuat Master Data Family" actor="Administrator" ket=""/>
+            <UC-01-08 id="f08c3109-1a61-4090-a5e0-403acd6a8d7b" name="Membuat Master Data Clan" actor="Administrator" ket=""/>
+            <UC-01-09 id="d05ac62e-8e0f-4f10-b9c1-73405f5d6893" name="Membuat Master Data Segmentasi Jabatan" actor="Administrator" ket=""/>
+            <UC-01-10 id="c9761288-1b1c-4cb5-805e-634b1efb965d" name="Membuat Master Data Role" actor="Administrator" ket=""/>
+            <UC-01-11 id="a47f146c-a4e9-4206-894a-dc379116f385" name="Membuat Master Data Lokasi Kerja" actor="Administrator" ket=""/>
+            <UC-01-12 id="fa6140ec-92a4-4440-9cf8-53f51819ee94" name="Membuat Master Data Jabatan" actor="Administrator" ket=""/>
+            <UC-01-13 id="b76b0d9a-5800-41c5-b797-30adf72b95ed" name="Mengarsipkan Data Jabatan" actor="Administrator" ket=""/>
+            <UC-01-14 id="032436bc-8bf6-4e04-8197-20e3e92a4e2a" name="Melihat Data KPI" actor="Administrator" ket=""/>
+            <UC-01-15 id="3493e267-9914-4933-91d5-ce3c6afa72c2" name="Melihat Struktur Organisasi" actor="Administrator, Viewer, Reviewer, User, Creator, Approver" ket=""/>
+            <UC-01-16 id="8d4b6f5e-2302-44ee-9320-cb5fbb65ca7d" name="Melihat Struktur Jabatan" actor="Administrator, Viewer, Reviewer, User, Creator, Approver" ket=""/>
+         </JobPosition>
+         <JobDescription id="f7cd560b-959b-489a-a384-951e7a02c482" name="Job Description" actor="" ket="">
+            <UC-01-17 id="901f4994-a2e6-4df0-858f-e1679ffbfd06" name="Membuat Master Data Spesifikasi Pekerjaan" actor="Administrator" ket=""/>
+            <UC-01-18 id="663e1e48-d010-4f9c-a513-0c9d51380f47" name="Membuat Master Data Tanggung Jawab Pekerjaan" actor="Administrator" ket=""/>
+            <UC-01-19 id="29afc9a5-0204-4bb3-94c2-4b040a4baf58" name="Mengisi Formulir Deskripsi Pekerjaan" actor="Administrator" ket=""/>
+         </JobDescription>
+         <WorkLoadAnalysis id="c8bb5adf-c642-4173-8e97-e90c374a69ff" name="Work Load Analysis" actor="" ket="">
+            <UC-01-20 id="b50c66af-4217-42e0-9bfe-d6811a59361c" name="Membuat Master Data Hari Kerja Efektif" actor="Administrator" ket=""/>
+            <UC-01-21 id="ed56b0f4-6c4e-4ed2-b82f-f280828ca6fd" name="Membuat Analisis Beban Kerja Jabatan" actor="Administrator" ket=""/>
+            <UC-01-22 id="74d25acb-464e-4e20-92eb-a5a89a45efd1" name="Membuat Pembaruan Analisis Beban Kerja Jabatan" actor="Administrator" ket=""/>
+         </WorkLoadAnalysis>
+         <EmployeeInformation id="c799b564-8a54-4bf1-bc3a-585ba49672df" name="Employee Information" actor="" ket="">
+            <UC-01-23 id="7eb66824-2698-41c4-bd99-17404ab1044d" name="Membuat Master Data Agama" actor="Administrator" ket=""/>
+            <UC-01-24 id="98bf92be-06d6-4cdc-8cc8-139fee8d614e" name="Membuat Master Data Vaksin" actor="Administrator" ket=""/>
+            <UC-01-25 id="6cf04d11-aa10-4791-b8e7-880029043a78" name="Melihat Data Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-26 id="0a6877e7-6e0a-4f1a-8101-2fbad0f40ba8" name="Membuat Akun User" actor="Administrator" ket=""/>
+            <UC-01-27 id="c9ae655a-a713-494c-8a4e-ed4857cdf635" name="Melihat Daftar Cuti dan Izin Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-28 id="5567b7f7-df0e-4f6d-b874-38bb04da4a37" name="Melihat Daftar Dokumen Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-29 id="e89a3f43-4dea-44e5-a237-cc4cb97dda92" name="Melihat Daftar Slip Gaji Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-30 id="f8a4e818-a70b-4e4f-bafe-f3f3fc4cb51e" name="Melihat Daftar Rencana Karir Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-31 id="0a346d75-3207-4a6e-b4a0-b24f6fff156c" name="Melihat Daftar Aset Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-32 id="aad42585-7d4f-4295-927c-c0c1ecaa5966" name="Melihat Daftar Tindakan Indisipliner Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-33 id="a0ecee71-c4bd-482b-af88-a9c738a87d56" name="Melihat Daftar Rotasi/Demosi/Promosi Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-34 id="dea50e1a-f32a-4dc0-a2ca-f5461715db4e" name="Melihat Daftar Kehadiran Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-35 id="2d8eb9a8-dbd3-42a3-b4d9-0e5826280c44" name="Melihat Total Jam Kehadiran Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-36 id="31dbc33c-7a36-4bf4-a474-549005990aed" name="Melihat Daftar Lembar Waktu Kerja Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-38 id="e5c53fa2-60eb-4951-b473-c45942e57c2f" name="Mengajukan Perubahan Data Karyawan" actor="User" ket=""/>
+            <UC-01-39 id="58cd8dae-3809-4db5-9585-7702a28d0d56" name="Menyetujui Pengajuan Perubahan Data Karyawan" actor="Approver" ket=""/>
+            <UC-01-40 id="07e76a2e-4b78-4c7f-a989-39a01898a8ef" name="Mengunduh Dokumen Data Karyawan" actor="Viewer, Reviewer" ket=""/>
+            <UC-01-43 id="31477fc0-0f13-4ab5-8bfe-3221163656ec" name="Melihat Rekapitulasi Data Karyawan" actor="Reviewer" ket=""/>
+         </EmployeeInformation>
+         <EmployeeContract id="6c6bbb42-6fdb-4ac9-b2dc-34064f2972a3" name="Employee Contract" actor="" ket="">
+            <UC-01-44 id="01bdee9b-790f-44cb-bfe4-7fb31f4c7c36" name="Membuat Master Data Jenis Kontrak Karyawan" actor="Administrator" ket=""/>
+            <UC-01-45 id="5a95721c-c7e3-44e2-971c-ba5577c2fdbe" name="Melihat Dokumen Kontrak Karyawan" actor="Reviewer" ket=""/>
+            <UC-01-46 id="7174f149-64a5-4d05-aa9d-05d2e626f7b3" name="Mengunduh Dokumen Kontrak Karyawan" actor="Reviewer" ket=""/>
+            <UC-01-47 id="c7ba2bfe-b3e2-404e-a763-41277d58efa2" name="Mengunggah Dokumen Kontrak Karyawan" actor="Creator" ket=""/>
+            <UC-01-48 id="d7e24c7f-a572-4709-b980-d3aa68b9c15f" name="Melakukan Amandemen Kontrak Karyawan" actor="Creator" ket=""/>
+         </EmployeeContract>
+         <EmployeeDocument id="159a7cd5-d25f-4e22-9e6e-05b84fde3f16" name="Employee Document" actor="" ket="">
+            <UC-01-49 id="d2861d36-a5ff-4278-85f1-a37d006d4405" name="Membuat Master Data Jenis Dokumen Karyawan" actor="Administrator" ket=""/>
+            <UC-01-50 id="29ce0450-7630-402d-a7d8-ee31598c8d62" name="Menambah Dokumen Karyawan" actor="User, Creator" ket=""/>
+         </EmployeeDocument>
+         <Custody id="bcc50599-edbe-40ba-8ad9-91edd78f8df1" name="Custody" actor="" ket="">
+            <UC-01-51 id="49fe17e1-b047-4967-b2a1-51f211a1c79f" name="Mendaftarkan Aset Perusahaan" actor="Administrator" ket=""/>
+            <UC-01-52 id="ddce0680-f264-42df-9d3b-8040be3a4409" name="Membuat Master Data Alasan Penggunaan Aset" actor="Administrator" ket=""/>
+            <UC-01-53 id="85bd462b-f220-4a32-8732-824b4b9c6947" name="Mengajukan Penggunaan Aset Karyawan" actor="User, Creator" ket=""/>
+            <UC-01-54 id="cc5ca671-ca68-4b7d-b88a-b6dadb92f651" name="Mengajukan Penggunaan Aset Untuk Karyawan Baru" actor="Creator" ket=""/>
+            <UC-01-55 id="c95f4fa0-f5de-4def-95e1-c60b137f6175" name="Mengajukan Penggunaan Aset Untuk Karyawan Promosi" actor="Creator" ket=""/>
+            <UC-01-56 id="d82bab0c-f37f-4c37-a61c-1ce887c777a1" name="Mengajukan Peminjaman Aset Karyawan" actor="User, Creator" ket=""/>
+            <UC-01-57 id="7e019909-a924-429f-8943-168b4adc353d" name="Menyetujui Pengajuan Penggunaan Aset Karyawan" actor="Approver" ket=""/>
+            <UC-01-58 id="28901f41-226d-43e5-9a15-635df4787066" name="Menyetujui Pengajuan Penggunaan Aset Karyawan Secara Massal" actor="Approver" ket=""/>
+            <UC-01-59 id="477cd834-1158-4bea-9762-4b6fa042576b" name="Menolak Pengajuan Penggunaan Aset Karyawan" actor="Approver" ket=""/>
+            <UC-01-60 id="6105688d-7f6b-4ae3-83eb-733268640bda" name="Menolak Pengajuan Penggunaan Aset Karyawan Secara Massal" actor="Approver" ket=""/>
+            <UC-01-61 id="78d00535-bb87-44e4-ac80-5680f69843b4" name="Memperbarui Status Penerimaan Aset Karyawan" actor="User" ket=""/>
+            <UC-01-62 id="d62901b1-ea25-49ad-ab94-4862cad28860" name="Memperbarui Status Penerimaan Aset Karyawan Secara Massal" actor="User" ket=""/>
+            <UC-01-63 id="9a60c179-544b-4792-89e4-6e93f95cae76" name="Mengajukan Perpanjangan Penggunaan Aset" actor="User, Creator" ket=""/>
+            <UC-01-64 id="32ee084f-85d0-4094-b3e5-3cca0e193903" name="Mengajukan Perpanjangan Penggunaan Aset Secara Massal" actor="User, Creator" ket=""/>
+            <UC-01-65 id="1d6e92be-5def-492a-b693-fa49728a592a" name="Menyetujui Perpanjangan Penggunaan Aset" actor="Approver" ket=""/>
+            <UC-01-66 id="0fbd687d-0d11-41e4-aa23-4f2e9ffc4afe" name="Menolak Perpanjangan Penggunaan Aset" actor="Approver" ket=""/>
+            <UC-01-67 id="d670dc7c-4ce5-433c-bf0a-edd594dcd3b7" name="Memperbarui Status Pengembalian Aset Karyawan" actor="Creator" ket=""/>
+            <UC-01-68 id="7ef2ffe7-81c0-470f-b4b5-beda105a506c" name="Memperbarui Status Pengembalian Aset Karyawan Secara Massal" actor="Creator" ket=""/>
+            <UC-01-69 id="849e500e-c460-4669-916b-ad3fd75dedea" name="Melihat Rekapitulasi Penggunaan Aset Karyawan" actor="Reviewer" ket=""/>
+         </Custody>
       </UC-01>
-      <UC-02 id="3ac7b1a2-88de-49dc-9548-64085da54ce4" name="Modullll 2" actor="" ket="">
-         <Submodul4 id="a0d78c5b-5679-459a-b859-2fee1164666f" name="Submodul 4" actor="" ket="">
-            <UC-02-01 id="33afd387-8813-4d82-bad6-f504881da845" name="Proses 22" actor="Administrator" ket=""/>
-            <UC-02-02 id="a5ec2eca-274d-41cf-94c2-7014e016bff8" name="Proses 23" actor="User" ket=""/>
-            <UC-02-03 id="ea560d51-467b-40eb-b58c-243e57cb6448" name="Proses 24" actor="Approver" ket=""/>
-            <UC-02-04 id="9be04ff6-d9ca-4e2c-833d-a0afb54bda91" name="Proses 25" actor="Reviewer" ket=""/>
-            <UC-02-05 id="733b4ab3-6a1b-4da7-8c9f-b56586070cd5" name="Proses 26" actor="Creator" ket=""/>
-            <UC-02-06 id="a225b0f4-b086-4610-8f84-7d7732169626" name="Proses 27" actor="Administrator" ket=""/>
-            <UC-02-07 id="71c9a5b5-17c7-4286-89bd-0c902e5602e6" name="Proses 28" actor="User" ket=""/>
-            <UC-02-08 id="6a35e301-309b-4f17-b675-d8d81f87922b" name="Proses 29" actor="Approver" ket=""/>
-         </Submodul4>
-         <Submodul5 id="11c30d1f-b7bd-414e-98ec-382b6b44ed5c" name="Submodul 5" actor="" ket="">
-            <UC-02-09 id="2f800e72-4e99-4466-90fa-799aaba6a759" name="Proses 30" actor="User" ket=""/>
-            <UC-02-10 id="bc5a5bc5-2a77-4609-989f-6c7f25a78c86" name="Proses 31" actor="Approver" ket=""/>
-            <UC-02-11 id="d7490c1a-f5a2-495b-af8c-4c56211fc429" name="Proses 32" actor="Administrator" ket=""/>
-         </Submodul5>
+      <UC-02 id="e36f776e-7975-489e-ab67-30e2e5f4350d" name="Man Power Planning" actor="" ket="">
+         <ManPowerPlanning id="917e643f-f026-4447-954a-636d518323dd" name="Man Power Planning" actor="" ket="">
+            <UC-02-01 id="d6ece745-1702-4bca-8a7c-95f822a6e2f3" name="Membuat Master Data Rencana Tindakan MPP" actor="Administrator" ket=""/>
+            <UC-02-02 id="c680e179-b2aa-4a65-a2f1-3506a3aae29e" name="Mengajukan MPP" actor="User" ket=""/>
+            <UC-02-03 id="ec1e3c51-b5df-4a49-bef1-5f5763d333e2" name="Menyetujui Pengajuan MPP" actor="Approver" ket=""/>
+            <UC-02-04 id="9d2e63b9-2047-4984-8ea0-14cef95ea851" name="Monitoring Pengajuan MPP" actor="Reviewer" ket=""/>
+         </ManPowerPlanning>
+         <EmployeeRequest id="b086f84f-6e77-47cc-b248-536c0710d838" name="Employee Request" actor="" ket="">
+            <UC-02-05 id="656a0c10-df93-4964-8674-0b7d71f33c02" name="Mengajukan Kebutuhan Karyawan Baru" actor="User" ket=""/>
+            <UC-02-06 id="2511e450-462f-43fe-9fc8-fb8f43718a9e" name="Menyetujui Pengajuan Kebutuhan Karyawan Baru" actor="Approver" ket=""/>
+            <UC-02-07 id="feb9de44-ab9c-4884-a6c0-05b36981f654" name="Memulai Proses Rekrutmen" actor="Administrator" ket=""/>
+         </EmployeeRequest>
       </UC-02>
-      <UC-03 id="2ffbda07-06ed-4c3d-ad19-348a13e5446b" name="Modul 3" actor="" ket="">
-         <Submodul6 id="f7be304a-1de1-4fc0-8bc2-3940d0bc3b9c" name="Submodul 6" actor="" ket="">
-            <UC-03-01 id="715440c0-d5e1-420d-9382-0ddd1db07d32" name="Proses 33" actor="Administrator" ket=""/>
-            <UC-03-02 id="785daa2a-1399-4b13-98e1-8422057b4a14" name="Proses 34" actor="Administrator" ket=""/>
-            <UC-03-03 id="c923ce74-828e-4b79-b909-30b4adeff3d1" name="Proses 35" actor="Administrator" ket=""/>
-            <UC-03-04 id="5668061a-c30f-44e0-86d3-76d1b4f47868" name="Proses 36" actor="Administrator" ket=""/>
-            <UC-03-05 id="94decf96-7950-44c0-a89b-d1c46876c88f" name="Proses 37" actor="Administrator" ket=""/>
-            <UC-03-06 id="30745244-d1dc-4c62-9e65-74c94b4cd630" name="Proses 38" actor="Administrator" ket=""/>
-            <UC-03-07 id="f425cbd1-cd18-4b7c-a2fa-dbf617acf841" name="Proses 39" actor="Administrator" ket=""/>
-            <UC-03-08 id="d14c753e-dd99-4d4e-a1bd-2f742fb574f8" name="Proses 40" actor="Administrator" ket=""/>
-            <UC-03-09 id="76b5e534-f40a-449f-861d-3b4281a29073" name="Proses 41" actor="Creator" ket=""/>
-            <UC-03-10 id="889e4aa3-94e1-46ce-aa09-b9ca841a9584" name="Proses 42" actor="Creator" ket=""/>
-            <UC-03-11 id="86d2bda8-c0e8-4e47-aa75-4d2c89b3cf16" name="Proses 43" actor="Creator" ket=""/>
-            <UC-03-12 id="49330b19-e44e-4e76-a52e-7930d5e26c57" name="Proses 44" actor="Creator" ket=""/>
-            <UC-03-13 id="f268c37f-a73a-49e2-8e5c-282e027d3e27" name="Proses 45" actor="Approver" ket=""/>
-            <UC-03-14 id="e1c86b78-4958-4951-9f01-398862c60f10" name="Proses 46" actor="Approver" ket=""/>
-            <UC-03-15 id="5f9f9eaf-d97a-4b28-9a0c-c79e9814965a" name="Proses 47" actor="User, Creator" ket=""/>
-         </Submodul6>
-         <Submodul7 id="2cd386ef-47b1-47fc-ac2e-ab0d3d39e27c" name="Submodul 7" actor="" ket="">
-            <UC-03-16 id="fccd9c31-ce78-4d93-b72a-c9d439152ce8" name="Proses 48" actor="Reviewer" ket=""/>
-            <UC-03-17 id="67bcbf3e-3ed0-4177-9dc6-dc885fd2eca3" name="Proses 49" actor="Reviewer" ket=""/>
-            <UC-03-18 id="d2fe0fa8-9c6b-4244-921e-844d0c82d0e6" name="Proses 50" actor="Reviewer" ket=""/>
-            <UC-03-19 id="509b9e10-8f5e-4210-a747-2885793ee90a" name="Proses 51" actor="Reviewer" ket=""/>
-            <UC-03-20 id="a9a4d5ce-1358-47fe-b576-7de44ca50291" name="Proses 52" actor="Reviewer" ket=""/>
-            <UC-03-21 id="c6feb374-5893-4db3-af00-5add3812d22e" name="Proses 53" actor="Reviewer" ket=""/>
-            <UC-03-22 id="91da5d8c-819b-419b-9134-bb1381faccaf" name="Proses 54" actor="Reviewer" ket=""/>
-         </Submodul7>
+      <UC-03 id="30af44de-345f-429e-94af-7212b3da51c5" name="Payroll" actor="" ket="">
+         <Payroll id="4fc9f17c-715b-4016-9dd7-364adcd3448b" name="Payroll" actor="" ket="">
+            <UC-03-01 id="94812335-8119-49b0-8ba4-18eef534d42d" name="Membuat Master Data Aturan Gaji" actor="Administrator" ket=""/>
+            <UC-03-02 id="09cd5311-4986-4a0c-b087-97cea7ffb301" name="Membuat Master Data Struktur Gaji" actor="Administrator" ket=""/>
+            <UC-03-03 id="ce2ffb05-ebff-4368-a820-72b2f77b9cb0" name="Membuat Master Data PTKP" actor="Administrator" ket=""/>
+            <UC-03-04 id="19051ff1-b6e9-4f22-afdb-7d76c554f989" name="Mengisi Konfigurasi Persentase BPJS" actor="Administrator" ket=""/>
+            <UC-03-05 id="d2bee1b7-9b88-4d5d-90ba-03f2bc411d4d" name="Mengisi Konfigurasi Tanggal Cut-Off Penggajian" actor="Administrator" ket=""/>
+            <UC-03-06 id="5f930d5d-45db-4fc7-afc4-3059e71e2d89" name="Membuat Master Data Grup Penggajian" actor="Administrator" ket=""/>
+            <UC-03-07 id="77059408-9b22-48a0-9626-70622ede2539" name="Membuat Master Data Rentang Gaji" actor="Administrator" ket=""/>
+            <UC-03-08 id="7d320dcc-29d7-4c50-b676-f33b28d08c24" name="Membuat Master Data Template Tunjangan" actor="Administrator" ket=""/>
+            <UC-03-09 id="92fc8d9a-648d-4655-95a1-625f35d83861" name="Membuat Kelompok Penggajian Karyawan" actor="Creator" ket=""/>
+            <UC-03-10 id="fbfa3330-c3c1-4c6e-83c0-cd5f34e244d2" name="Membuat Kelompok Penggajian Karyawan Site" actor="Creator" ket=""/>
+            <UC-03-11 id="8924a539-fa45-4b3c-bbe3-f91cd0dca6fd" name="Membuat Kelompok Penggajian Karyawan Head Office" actor="Creator" ket=""/>
+            <UC-03-12 id="35ac9413-5579-47d5-a0b7-77ce4ac6bf2d" name="Membuat Kelompok Penggajian Karyawan Management" actor="Creator" ket=""/>
+            <UC-03-13 id="3b4a96f5-fdff-4a16-a869-ad6953c3aac2" name="Mengonfirmasi Slip Gaji Karyawan" actor="Approver" ket=""/>
+            <UC-03-14 id="03690a95-cb0f-4163-8b2f-f4bb206fec87" name="Menyetujui Slip Gaji Karyawan" actor="Approver" ket=""/>
+            <UC-03-15 id="adcf1221-5488-4813-9ff2-9885f54f167e" name="Mengunduh Dokumen Slip Gaji Karyawan" actor="User, Creator" ket=""/>
+         </Payroll>
+         <PayrollReport id="3f326b14-27fe-444c-9dc2-f6bb1f91e940" name="Payroll Report" actor="" ket="">
+            <UC-03-16 id="330b574a-10da-4f42-b5bc-d5c0e71af967" name="Mengunduh Rekapitulasi Pendapatan Karyawan" actor="Reviewer" ket=""/>
+            <UC-03-17 id="7311fa5b-adca-4448-bbfa-44cb82551cec" name="Mengunduh Bukti Pemotongan Pajak Penghasilan" actor="Reviewer" ket=""/>
+            <UC-03-18 id="91f6fa71-a5c6-445e-be9b-7e0bad68c4b7" name="Mengunduh Bukti Pemotongan Pajak Penghasilan Secara Massal" actor="Reviewer" ket=""/>
+            <UC-03-19 id="1dff3365-3b05-4fdf-9f75-dacf6ce1fb65" name="Mengunduh SPT Tahunan" actor="Reviewer" ket=""/>
+            <UC-03-20 id="0682ec23-39a1-481a-b4a9-b595a3a70aed" name="Mengunduh Laporan BPJS Ketenagakerjaan" actor="Reviewer" ket=""/>
+            <UC-03-21 id="429caf3c-f3b6-4d52-a5e8-7484da98df6a" name="Mengunduh Laporan BPJS Kesehatan" actor="Reviewer" ket=""/>
+         </PayrollReport>
+         <PPh21Calculation id="e4bcfba7-8325-4d37-9243-1ca6e4165926" name="PPh21 Calculation" actor="" ket="">
+            <UC-03-22 id="dc0fea89-1fec-4807-bcf6-6fb742909009" name="Membuat Pengajuan Rekapitulasi Perhitungan PPh21" actor="Creator" ket=""/>
+            <UC-03-23 id="e339b936-98c0-44e2-9075-833fdf4b0acf" name="Menyetujui Pengajuan Rekapitulasi Perhitungan PPh21" actor="Approver" ket=""/>
+            <UC-03-24 id="c95f737b-0b0f-4336-8e68-d81229792e53" name="Mengunduh SPT Masa (Bulanan)" actor="Reviewer" ket=""/>
+         </PPh21Calculation>
       </UC-03>
-   </SS-01>
-   <SS-02 id="970afd77-2d63-40bd-b3d0-a36399f808b3" name="Subsistem 2" actor="" ket="">
-      <UC-04 id="e60123e0-7e1a-4716-aa45-4edf01ca3fdb" name="Modul 4" actor="" ket="">
-         <Submodul8 id="af749373-6af8-40e7-8fbc-91a23c425361" name="Submodul 8" actor="" ket="">
-            <UC-04-01 id="03292967-69f5-45fe-8a6f-3f442db30eeb" name="Proses 55" actor="Administrator" ket=""/>
-            <UC-04-02 id="4661b477-87f0-447c-8538-10987ee6a10e" name="Proses 56" actor="Administrator" ket=""/>
-            <UC-04-03 id="17126a70-515a-417b-a0ed-fc12809efcb3" name="Proses 57" actor="Creator" ket=""/>
-            <UC-04-04 id="6c497473-47b9-45e7-ba6b-e02aa143a500" name="Proses 58" actor="Creator" ket=""/>
-            <UC-04-05 id="105b5a4c-dc90-4c14-adeb-2712873b9316" name="Proses 59" actor="Creator" ket=""/>
-            <UC-04-06 id="af4b254a-66a3-4454-8618-b2c69359d404" name="Proses 60" actor="Creator" ket=""/>
-            <UC-04-07 id="01ff118f-d651-484f-8af0-43d9d3180157" name="Proses 61" actor="Creator" ket=""/>
-            <UC-04-08 id="dc0eaa46-7e9b-43c8-afde-ecaf34b98a1b" name="Proses 62" actor="Reviewer" ket=""/>
-            <UC-04-09 id="1e859a9b-5e6e-4f6f-b71a-cc7a57d00868" name="Proses 63" actor="Creator" ket=""/>
-            <UC-04-10 id="ec379442-3384-413a-8aad-7c3875b53e1e" name="Proses 64" actor="Creator" ket=""/>
-            <UC-04-11 id="3ebdfdc8-1415-4f12-9804-9d26267cd8e5" name="Proses 65" actor="Reviewer" ket=""/>
-            <UC-04-12 id="37a1e5bb-0208-4902-b131-4bf967a7b5e8" name="Proses 66" actor="Reviewer" ket=""/>
-         </Submodul8>
-         <Submodul9 id="11c17ffe-344a-41ba-a6a6-c3bfc8fa6295" name="Submodul 9" actor="" ket="">
-            <UC-04-13 id="b349bdca-6982-4d6e-ae42-bf622d903000" name="Proses 67" actor="Creator" ket=""/>
-            <UC-04-14 id="05d57823-972c-4ced-91e5-37f8bba20c57" name="Proses 68" actor="User" ket=""/>
-            <UC-04-15 id="83217885-b377-4ac4-8d12-239af36267ad" name="Proses 69" actor="Reviewer" ket=""/>
-            <UC-04-16 id="85fdb5c2-56b0-442d-8dca-0d637d159418" name="Proses 70" actor="Reviewer" ket=""/>
-            <UC-04-17 id="c001b145-8cea-4187-8330-7f009397ca5b" name="Proses 71" actor="Reviewer" ket=""/>
-            <UC-04-18 id="6bf10495-05a8-4141-9e64-43c0fb11e713" name="Proses 72" actor="Reviewer" ket=""/>
-            <UC-04-19 id="2b7862a6-864c-4dd6-a993-65900993108a" name="Proses 73" actor="Reviewer" ket=""/>
-         </Submodul9>
+      <UC-04 id="752088ae-59c6-4898-a211-a59d07481ccf" name="Compensation and Benefit" actor="" ket="">
+         <BusinessTrip id="7ac2f829-3cbd-4ec9-84c4-f0af647dd6fd" name="Business Trip" actor="" ket="">
+            <UC-04-01 id="dc46fc4b-acfb-4548-9b33-49a9e14546f8" name="Membuat Master Data Biaya Perjalanan Dinas" actor="Administrator" ket=""/>
+            <UC-04-02 id="68c53bcf-13fd-44e4-a6c8-d9c4ec419391" name="Membuat Master Data Akomodasi Perjalanan Dinas" actor="Administrator" ket=""/>
+            <UC-04-03 id="33f104df-6b63-4f73-8709-e6d7ef553d24" name="Membuat Master Data Detail Biaya Perjalanan Dinas" actor="Administrator" ket=""/>
+            <UC-04-04 id="c29f58f4-0876-442c-80cd-76d7480ca7aa" name="Mengajukan Surat Tugas Perjalanan Dinas" actor="Creator" ket=""/>
+            <UC-04-05 id="bd54daed-8338-45d9-b808-5bfc96d1091b" name="Menyetujui Surat Tugas Perjalanan Dinas" actor="Approver" ket=""/>
+            <UC-04-06 id="e775e2bd-81c4-4de4-ba3e-927014f5b26e" name="Mengisi Realisasi Tugas Perjalanan Dinas" actor="Creator" ket=""/>
+            <UC-04-07 id="c3ee52c3-e0ff-4153-a2c1-17f567b3c96f" name="Menyetujui Realisasi Tugas Perjalanan Dinas" actor="Approver" ket=""/>
+         </BusinessTrip>
+         <SalaryAdjustment id="0a28457a-078f-44eb-bb05-feeb5ca9aea3" name="Salary Adjustment" actor="" ket="">
+            <UC-04-08 id="e3dab2c1-4301-437d-84b5-895487a24940" name="Membuat Master Data Inflasi" actor="Administrator" ket=""/>
+            <UC-04-09 id="459a6368-f53d-4413-9649-f2fedc14dce9" name="Membuat Master Data Upah Minimum" actor="Administrator" ket=""/>
+            <UC-04-10 id="b4513bfa-9a3a-4399-8c20-beb092e42e5b" name="Membuat Master Data Formula Penyesuaian Kenaikan Gaji" actor="Administrator" ket=""/>
+            <UC-04-11 id="b604e0c5-4409-4c10-b546-794b64e2b059" name="Membuat Penyesuaian Kenaikan Gaji" actor="Creator" ket=""/>
+            <UC-04-12 id="7dfaa287-6277-4ad9-ad99-bb54aad0a84d" name="Mengubah Parameter Perhitungan Penyesuaian Kenaikan Gaji" actor="Creator" ket=""/>
+            <UC-04-13 id="0ee53f86-9aed-49bc-bfdb-e8cdfba751c6" name="Mengajukan Penyesuaian Kenaikan Gaji" actor="Creator" ket=""/>
+            <UC-04-14 id="62a2c891-a52b-42bf-b845-90b2d64ab866" name="Menyetujui Pengajuan Penyesuaian Kenaikan Gaji" actor="Approver" ket=""/>
+         </SalaryAdjustment>
+         <PerformanceAllowance id="aa18aec5-13c5-4ed4-8897-3cbdb60334b2" name="Performance Allowance" actor="" ket="">
+            <UC-04-15 id="b552cce2-2135-49f0-a633-cac46dc2bc99" name="Membuat Master Data Formula Perhitungan PEK (Penghasilan Etos Kerja)" actor="Administrator" ket=""/>
+            <UC-04-16 id="9e8e01b9-ab89-400b-aec4-f28d090d8886" name="Membuat Pengajuan PEK (Penghasilan Etos Kerja)" actor="Creator" ket=""/>
+            <UC-04-17 id="815f5a6f-74c9-4a76-9c6d-e49c8dcfa216" name="Menyetujui Pengajuan PEK (Penghasilan Etos Kerja)" actor="Approver" ket=""/>
+         </PerformanceAllowance>
+         <Allowance id="021702cc-78f5-4d41-8011-ab66938404f0" name="Allowance" actor="" ket="">
+            <UC-04-18 id="2cc05d11-6a7b-4075-bcd7-98159c971bb6" name="Membuat Master Data Formula Tunjangan" actor="Administrator" ket=""/>
+            <UC-04-19 id="06ec2c5f-5b9a-4941-a6ad-7ad53326fc90" name="Membuat Pengajuan Rekapitulasi Tunjangan" actor="Creator" ket=""/>
+            <UC-04-20 id="e156a428-7fcc-436c-b1f4-3f62b651e909" name="Menyetujui Pengajuan Rekapitulasi Tunjangan" actor="Approver" ket=""/>
+         </Allowance>
+         <HealthAllowance id="603f3c6d-a6c3-4f58-aa3d-0904f12cb919" name="Health Allowance" actor="" ket="">
+            <UC-04-21 id="4c208b2d-565d-4705-a07d-85d61dcc2c55" name="Membuat Master Data Plafon Tunjangan Kesehatan" actor="Administrator" ket=""/>
+            <UC-04-22 id="14ad6907-b1bf-49ff-ba43-9aa4d997c680" name="Membuat Pengajuan Pembayaran Tunjangan Kesehatan" actor="Creator" ket=""/>
+            <UC-04-23 id="d22d6a76-3c1a-4dd3-aa42-5ad5e1d88f15" name="Menyetujui Pengajuan Pembayaran Tunjangan Kesehatan" actor="Approver" ket=""/>
+         </HealthAllowance>
+         <SeverancePay id="1281fcf4-b3a0-4b49-b2d2-97842826c3b1" name="Severance Pay" actor="" ket="">
+            <UC-04-24 id="404b6d71-2a80-41b4-ad27-dd0e9bd5e5b5" name="Membuat Master Data Uang Perpisahan" actor="Administrator" ket=""/>
+            <UC-04-25 id="80ed3c95-7cde-4132-83b8-05f2dd763f46" name="Membuat Master Data Uang Pesangon" actor="Administrator" ket=""/>
+            <UC-04-26 id="8b37ce44-f77b-48d5-9b17-97cdc23c0987" name="Membuat Master Data Uang Perhitungan Masa Kerja" actor="Administrator" ket=""/>
+            <UC-04-27 id="12b05882-58fc-42a0-9229-3d4c5c207ae0" name="Membuat Master Data Uang Penggantian Sisa Cuti" actor="Administrator" ket=""/>
+            <UC-04-28 id="1b755e3d-ce92-4c28-9016-0c3549ce2a77" name="Membuat Master Data Uang Kompensasi" actor="Administrator" ket=""/>
+            <UC-04-29 id="c92edb9c-cc26-4fd7-86cc-1f52cdb21765" name="Membuat Master Data Persentase Penggantian Hak" actor="Administrator" ket=""/>
+            <UC-04-30 id="86a10497-d29c-43f7-8866-a698a4381c17" name="Membuat Master Data Alasan PHK" actor="Administrator" ket=""/>
+            <UC-04-31 id="de0845ce-5104-4056-b1ae-93967b38a910" name="Membuat Formulir Pengajuan Uang Pisah" actor="Creator" ket=""/>
+            <UC-04-32 id="0a6ade42-bdc9-4937-8a6f-b0fbf523ce06" name="Menyesuaikan Nominal Uang Pisah" actor="Creator" ket=""/>
+            <UC-04-33 id="64eca757-129a-4581-a75e-f84760166dd0" name="Mengunggah Surat Kesepakatan Bersama Terkait Uang Pisah" actor="Creator" ket=""/>
+            <UC-04-34 id="875750a7-ad85-408f-8d5a-847792edce71" name="Menyetujui Formulir Pengajuan Uang Pisah" actor="Approver" ket=""/>
+         </SeverancePay>
       </UC-04>
+      <UC-05 id="0225f021-c77b-482f-aeef-a6d3cc43e92d" name="Setting" actor="" ket="">
+         <UserAccess id="c0001ad3-2437-4fc3-af03-8505cb5436ce" name="User Access" actor="" ket="">
+            <UC-05-01 id="729ffc89-53ab-4353-9b79-c92dea3cf8bd" name="Membuat Template Akses User" actor="Administrator" ket=""/>
+            <UC-05-02 id="962b63ca-9246-420a-bf1d-ab773ef352e9" name="Membuat Akun User" actor="Administrator" ket=""/>
+            <UC-05-03 id="05ce0ea5-13ea-47a4-bcc9-eb4de05b4c1f" name="Mengatur Pembatasan Akses User" actor="Administrator" ket=""/>
+            <UC-05-04 id="d90532a6-71de-4aa8-8c50-1067bba05d50" name="Mengatur Akses Berdasarkan Template Akses User" actor="Administrator" ket=""/>
+            <UC-05-05 id="53eda1c8-2684-4a7e-b371-8fe8670085ab" name="Mengatur Akses Berdasarkan User Lain" actor="Administrator" ket=""/>
+            <UC-05-06 id="8f1d8888-28d3-45ec-a448-6d1d8c619575" name="Mengirimkan Permintaan Reset Password" actor="Administrator" ket=""/>
+            <UC-05-07 id="9be6b85e-c3c7-41c3-a865-6f83bcc05b78" name="Mengubah Password" actor="Administrator" ket=""/>
+            <UC-05-08 id="5aa6f90b-02e0-4dd4-80c1-a02f50f9c6e7" name="Menghubungkan Akun User ke Karyawan" actor="Administrator" ket=""/>
+            <UC-05-09 id="c0174a20-7052-45f0-8c98-8ec8f4254234" name="Mengatur Pembatasan Akses User Secara Massal" actor="Administrator" ket=""/>
+            <UC-05-10 id="285ade04-2d88-405d-b387-77346f11bcd3" name="Mengarsipkan Akun User" actor="Administrator" ket=""/>
+         </UserAccess>
+         <FlowApproval id="78e6e8de-25ea-4c14-8b70-ffd80b4319c8" name="Flow Approval" actor="" ket="">
+            <UC-05-11 id="d59b673c-2e9f-4f81-a9a5-07e39563b0bd" name="Menambahkan Model Form yang Dapat Dipilih Pada Master Data Alur Persetujuan" actor="Administrator" ket=""/>
+            <UC-05-12 id="02ae0764-1e62-4f2e-89a5-fc4e5f6321ed" name="Mengatur Konfigurasi Default Rekomendasi Alur Persetujuan" actor="Administrator" ket=""/>
+            <UC-05-13 id="0aa9a5b4-cf90-462f-9bc8-8eb851ab4734" name="Mengatur Konfigurasi Kemunculan Alasan Penolakan" actor="Administrator" ket=""/>
+            <UC-05-14 id="d768c452-2ecd-490a-a9f4-281da7415b73" name="Mengatur Konfigurasi Kemunculan Sequence" actor="Administrator" ket=""/>
+            <UC-05-15 id="432a26e6-f430-4c70-8244-209e4499c580" name="Mengatur Konfigurasi Kemunculan Alasan Revisi" actor="Administrator" ket=""/>
+            <UC-05-16 id="eca1e8ab-8988-4d52-971b-3d0ca8edf4da" name="Membuat Master Data Alasan Penolakan" actor="Administrator" ket=""/>
+            <UC-05-17 id="a1e7fa0e-90c7-4b7c-8946-bfb32ed6b7bd" name="Membuat Master Data Alur Persetujuan Secara Massal" actor="Administrator" ket=""/>
+            <UC-05-18 id="0d9311c0-e1ed-4084-86f6-cc408b551155" name="Membuat Master Data Alur Persetujuan Berdasarkan User" actor="Administrator" ket=""/>
+            <UC-05-19 id="1fad9889-8ede-4b66-837b-81f3b545e8c2" name="Membuat Master Data Alur Persetujuan Berdasarkan Grup" actor="Administrator" ket=""/>
+            <UC-05-20 id="7cfb3574-e517-4b7c-b4a9-f5c1f2a53c90" name="Membuat Master Data Alur Persetujuan Berdasarkan Jabatan" actor="Administrator" ket=""/>
+            <UC-05-21 id="df4c6565-2778-417f-a884-18cf18bdf6d1" name="Melihat Master Data Alur Persetujuan" actor="Administrator" ket=""/>
+            <UC-05-22 id="f4ed8a1d-052a-474b-9a0f-a6423526f323" name="Memilih Alur Persetujuan Pada Form Pengajuan" actor="Administrator" ket=""/>
+         </FlowApproval>
+      </UC-05>
+   </SS-01>
+   <SS-02 id="7a693073-83a8-4477-b802-fec4a3d5d4ba" name="Attendance &amp; Transfer Management" actor="" ket="">
+      <UC-06 id="d340a2c2-149b-4953-9b25-e701e9cf482e" name="Timesheet" actor="" ket="">
+         <Timesheet id="17475d16-ea62-4157-9269-cecf0c835b9b" name="Timesheet" actor="" ket="">
+            <UC-06-01 id="608f0c1f-edbb-4eb7-b913-b5386884d010" name="Mengisi Lembar Waktu Kerja" actor="Creator" ket=""/>
+            <UC-06-02 id="b4754f67-6502-4a38-a1ce-13bfe64a1015" name="Melihat Lembar Waktu Kerja Milik Sendiri" actor="User" ket=""/>
+            <UC-06-03 id="36fe1259-7f2a-407b-bd89-a934bd463b96" name="Monitoring Lembar Waktu Kerja" actor="Reviewer" ket=""/>
+            <UC-06-04 id="a93adb4b-cfed-4e17-9e5e-e8b2a2dbe251" name="Melihat Rekapitulasi Lembar Waktu Kerja Berdasarkan Karyawan" actor="Reviewer" ket=""/>
+            <UC-06-05 id="cdb11e04-a975-43d8-89dd-9680f74f7097" name="Melihat Rekapitulasi Lembar Waktu Kerja Berdasarkan Tipe" actor="Reviewer" ket=""/>
+         </Timesheet>
+      </UC-06>
+      <UC-07 id="bf2d3ec9-4601-4916-b618-ad590414e7ef" name="Presence and Leave Management" actor="" ket="">
+         <Roster id="6e7f644e-d7b1-479b-85b0-9b260995ed61" name="Roster" actor="" ket="">
+            <UC-07-01 id="7c19c218-95bd-4410-876d-0af87011907e" name="Membuat Master Data Jenis Hari Libur" actor="Administrator" ket=""/>
+            <UC-07-02 id="8af29ce0-2c09-4d87-9543-263d1d3f5f2f" name="Membuat Master Data Hari Libur yang Ditetapkan Perusahaan" actor="Administrator" ket=""/>
+            <UC-07-03 id="d3bde4ff-6dbc-44d2-8651-120d6b4cc689" name="Membuat Master Data Shift" actor="Administrator" ket=""/>
+            <UC-07-04 id="63cb1069-53f1-4ba9-965f-761c52793099" name="Mengisi Konfigurasi Toleransi Keterlambatan Shift" actor="Administrator" ket=""/>
+            <UC-07-05 id="89bb308b-4425-470a-91d1-12a5f7f67e3e" name="Membuat Master Data Grup Kerja" actor="Administrator" ket=""/>
+            <UC-07-06 id="a26a3e61-6489-4bef-8ee1-f7dd487b07a0" name="Membuat Pola Kerja" actor="Administrator" ket=""/>
+            <UC-07-07 id="3e2cd24f-a536-4397-a449-e0676e0b744f" name="Mengajukan Jadwal Kerja" actor="Creator" ket=""/>
+            <UC-07-08 id="55e3835c-9863-449f-935d-abbf1c4cd67e" name="Menyetujui Pengajuan Jadwal Kerja" actor="Approver" ket=""/>
+            <UC-07-09 id="789c7e73-1563-4b49-b4e3-39f4c19679dd" name="Mengajukan Perubahan Jadwal Kerja" actor="User, Creator" ket=""/>
+            <UC-07-10 id="338bb988-0060-439d-975a-3824b7c6feda" name="Menyetujui Pengajuan Perubahan Jadwal Kerja" actor="Approver" ket=""/>
+            <UC-07-11 id="798ce788-20a1-4b66-a43d-21779abc6005" name="Melihat Jadwal Kerja Milik Sendiri" actor="User" ket=""/>
+            <UC-07-12 id="d00d88d3-c7fd-4700-9b5b-8af88b9cb98c" name="Melihat Jadwal Kerja Karyawan" actor="Reviewer" ket=""/>
+         </Roster>
+         <Attendances id="c8cac013-a48c-4eae-a99c-f3a964235ca6" name="Attendances" actor="" ket="">
+            <UC-07-13 id="3129ea31-391d-4931-b182-4e7e8ee3d92c" name="Membuat Master Data Tipe Kehadiran" actor="Administrator" ket=""/>
+            <UC-07-14 id="271d925c-2b95-40a6-a2de-43b627fe232a" name="Membuat Konfigurasi Toleransi Keterlambatan Secara General" actor="Administrator" ket=""/>
+            <UC-07-15 id="96ef0721-d539-4dd3-aea9-bd1b8fd34ea6" name="Melakukan Presensi" actor="User" ket=""/>
+            <UC-07-16 id="4cbefd63-2dd3-4486-949a-cec0daf4b438" name="Melihat Data Kehadiran Karyawan" actor="Viewer" ket=""/>
+            <UC-07-17 id="51d7d55b-5890-4bc3-9665-1fd45ab05d12" name="Mengisi Formulir Pelaporan Tindakan Indisipliner Karyawan Berdasarkan Data Kehadiran" actor="Creator" ket=""/>
+            <UC-07-18 id="0569b47c-f83d-43a5-99ab-8718e86f06b5" name="Monitoring Kehadiran Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-19 id="3b1b218a-2c28-4142-8a9a-e9c3ddec367c" name="Melihat Rekapitulasi Kehadiran Karyawan" actor="Reviewer" ket=""/>
+         </Attendances>
+         <AttendancesValidation id="86867003-9d02-49f5-b1a0-a2ddcb516683" name="Attendances Validation" actor="" ket="">
+            <UC-07-20 id="abab10d0-d8d3-4157-ba45-1542a655b0af" name="Mengatur Tenggat Waktu Pengajuan Perubahan Data Secara General" actor="Administrator" ket=""/>
+            <UC-07-21 id="73e315a8-f576-4292-8ccb-a6d96fd4dc2e" name="Melihat Laporan Kehadiran Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-22 id="6f2fe7b2-4e22-4222-8d74-ff3eabbb2f85" name="Mempublikasikan Laporan Kehadiran Kepada Karyawan" actor="Administrator" ket=""/>
+            <UC-07-23 id="a694b2f4-dd02-405a-97eb-231fab268931" name="Membuat Pengajuan Perubahan Data Kehadiran" actor="User" ket=""/>
+            <UC-07-24 id="161d1791-28b3-42e5-bc72-9d58abdcec34" name="Menyetujui Pengajuan Perubahan Data Kehadiran" actor="Approver" ket=""/>
+         </AttendancesValidation>
+         <Overtime id="001f8540-6b59-4fdc-a223-396cc186438b" name="Overtime" actor="" ket="">
+            <UC-07-25 id="b2a48692-5da2-4d57-979b-22f13cf708f2" name="Membuat Konfigurasi Jam Maksimal Lembur" actor="Administrator" ket=""/>
+            <UC-07-26 id="de341f48-0afb-4fb2-abfc-ee6f50d75be6" name="Membuat Master Data Formula Perhitungan Lembur" actor="Administrator" ket=""/>
+            <UC-07-27 id="09ecc3e3-1676-47e8-bc3c-276da370431f" name="Membuat Master Data Alasan Lembur" actor="Administrator" ket=""/>
+            <UC-07-28 id="f5e39281-7a4b-4abd-bdd2-a33a634b519c" name="Membuat Pengajuan Lembur Karyawan" actor="Creator" ket=""/>
+            <UC-07-29 id="aa5bb34f-7041-4bec-8364-d0c15fa90b9f" name="Menyetujui Pengajuan Lembur Karyawan" actor="Approver" ket=""/>
+            <UC-07-30 id="c11e1368-1eb9-462e-88ba-c97b8c368ea9" name="Melihat Realisasi Lembur Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-31 id="5787bb4b-3080-429f-8d66-c851e7c47021" name="Menyetujui Realisasi Lembur Karyawan" actor="Approver" ket=""/>
+            <UC-07-32 id="e97343d0-ac08-4123-8f95-e1b82bdb928f" name="Monitoring Lembur Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-33 id="ef36932e-3697-41e3-8a3a-163c38859837" name="Melihat Laporan Lembur Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-34 id="f5b7e326-1156-4095-8388-f1d4aa398de9" name="Menyetujui Laporan Lembur Karyawan" actor="Approver" ket=""/>
+         </Overtime>
+         <TimeOff id="123f23ca-c65c-4bc5-8207-458263a76bfc" name="Time Off" actor="" ket="">
+            <UC-07-35 id="6fbaba66-9fb4-47ae-a682-128e14ebe144" name="Membuat Master Data Hak Cuti dan Izin Karyawan" actor="Administrator" ket=""/>
+            <UC-07-36 id="5c93ca1e-c933-4978-8b2d-bec9a79ecf14" name="Mengajukan Alokasi Cuti dan Izin" actor="User" ket=""/>
+            <UC-07-37 id="be5f8f8d-e29f-4ff0-bedb-5c1bd793a00f" name="Menyetujui Pengajuan Alokasi Cuti dan Izin" actor="Approver" ket=""/>
+            <UC-07-38 id="ea59aa3f-b44a-4b60-933c-9a5ae9936a61" name="Mengajukan Cuti dan Izin" actor="User" ket=""/>
+            <UC-07-39 id="99476a40-a01f-437f-aa13-18bf292b979c" name="Menyetujui Pengajuan Cuti dan Izin" actor="Approver" ket=""/>
+            <UC-07-40 id="ca9a274e-ea3c-41d6-81e5-aec8650f73e4" name="Monitoring Cuti dan Izin Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-41 id="e5cf7b18-4797-4ba3-a708-6b68f57cce89" name="Melihat Statistika Cuti dan Izin Berdasarkan Karyawan" actor="Reviewer" ket=""/>
+            <UC-07-42 id="12c7999b-c58e-4e26-9898-fdfc539715a1" name="Melihat Rekapitulasi Cuti dan Izin Berdasarkan Tipe" actor="Reviewer" ket=""/>
+            <UC-07-43 id="03e971d8-875b-4ec8-96e3-f4df8e205f4a" name="Mengajukan Formulir Job Pending" actor="User" ket=""/>
+            <UC-07-44 id="ec68da55-47a3-4f68-8761-e459c76e5b9b" name="Menyetujui Pengajuan Formulir Job Pending" actor="Approver" ket=""/>
+         </TimeOff>
+      </UC-07>
+      <UC-08 id="be016dfd-97b2-422a-8343-6ba1c411a98b" name="Employee Transfer" actor="" ket="">
+         <Rotation id="26143a09-f146-40b9-b99a-1e2bb2286986" name="Rotation" actor="" ket="">
+            <UC-08-01 id="9b05a862-1837-4f92-b613-8cf67c2c26cf" name="Membuat Master Data Alasan Rotasi" actor="Administrator" ket=""/>
+            <UC-08-02 id="a4acfe08-a941-4e8f-8b60-87280c4ea518" name="Mengajukan Rotasi Karyawan" actor="Creator" ket=""/>
+            <UC-08-03 id="cf2d5838-2aa5-4168-b13c-bb35a885ca69" name="Menyetujui Pengajuan Rotasi Karyawan" actor="Approver" ket=""/>
+            <UC-08-04 id="fe45e103-e8ec-4934-a743-484a4166eb65" name="Membuat Surat Panggilan Rotasi Karyawan" actor="Creator" ket=""/>
+            <UC-08-05 id="0bc6050f-f7e5-4651-88f8-e260c4a8b021" name="Mengunggah Dokumen SK Rotasi Karyawan" actor="Reviewer" ket=""/>
+         </Rotation>
+         <Demotion id="1408dc9f-1c80-479f-8eaf-46d111ee0b07" name="Demotion" actor="" ket="">
+            <UC-08-06 id="bf244d16-8b4d-4c33-8685-176f526ef2df" name="Membuat Master Data Alasan Demosi" actor="Administrator" ket=""/>
+            <UC-08-07 id="130ce240-0781-43ae-81c1-c6a82b2bd7c2" name="Mengajukan Demosi Karyawan" actor="Creator" ket=""/>
+            <UC-08-08 id="7b2f8661-16ad-4358-8aed-10131c01bbc7" name="Menyetujui Pengajuan Demosi Karyawan" actor="Approver" ket=""/>
+            <UC-08-09 id="7980bc3c-de5d-41c1-8f80-4bd29adf0da4" name="Membuat Surat Panggilan Demosi Karyawan" actor="Creator" ket=""/>
+            <UC-08-11 id="5d96ed15-36b2-4952-9d75-8e926ea557fb" name="Mengunggah Dokumen SK Demosi Karyawan" actor="Reviewer" ket=""/>
+         </Demotion>
+         <Promotion id="8d55cd60-64cf-44b5-8ee8-189d45cf4c57" name="Promotion" actor="" ket="">
+            <UC-08-12 id="745e6505-ccef-4454-9afc-e3608cbe1c7d" name="Membuat Master Data Alasan Promosi" actor="Administrator" ket=""/>
+            <UC-08-13 id="e82c3392-46eb-48ce-946d-177f1e71164b" name="Mengajukan Promosi Karyawan" actor="Creator" ket=""/>
+            <UC-08-14 id="23255751-1486-4f42-b366-ea6e0ae349e8" name="Menyetujui Pengajuan Promosi Karyawan" actor="Approver" ket=""/>
+            <UC-08-15 id="8eb7651f-8a2e-462e-af92-6abb9a1cfb7b" name="Membuat Surat Panggilan Promosi Karyawan" actor="Creator" ket=""/>
+            <UC-08-16 id="0b46875d-82dd-4c99-b01c-69794519adc5" name="Membuat Rekapitulasi Usulan Gaji Karyawan Promosi" actor="Creator" ket=""/>
+            <UC-08-17 id="e4c624d6-163a-4233-bd14-b3cc8e1df315" name="Mengubah Nominal Gaji dan Tunjangan Karyawan Promosi" actor="Creator" ket=""/>
+            <UC-08-18 id="afd06cdf-fe5a-433b-bee7-eeafb8d010d9" name="Mengajukan Rekapitulasi Usulan Gaji Karyawan Promosi" actor="Creator" ket=""/>
+            <UC-08-19 id="f35971c5-52c4-45d2-a16c-aa6ea40b0fa4" name="Menyetujui Rekapitulasi Usulan Gaji Karyawan Promosi" actor="Approver" ket=""/>
+            <UC-08-20 id="e5474afc-b15d-4dbb-aa28-2f5879ea3111" name="Mengunggah Dokumen SK Promosi Karyawan" actor="Reviewer" ket=""/>
+            <UC-08-21 id="9e16fdba-dbd0-47b4-9aac-d1ec43256a0c" name="Monitoring Proses Promosi Karyawan" actor="Reviewer" ket=""/>
+         </Promotion>
+         <Resignation id="ce5730be-347f-41e3-972c-45efd084063e" name="Resignation" actor="" ket="">
+            <UC-08-22 id="b0de27f2-0f9e-4096-b3bd-47ebc63e3d24" name="Mengajukan Pengunduran Diri/PHK Karyawan" actor="User, Creator" ket=""/>
+            <UC-08-23 id="bfad4e9c-bfd3-490a-be14-a770e5d8b6f1" name="Menyetujui Pengajuan Pengunduran Diri/PHK Karyawan" actor="Approver" ket=""/>
+            <UC-08-24 id="6cf46cc1-b5d4-4f40-9068-8e82eaf3cbe0" name="Membuat Formulir Pengajuan Uang Pisah" actor="Creator" ket=""/>
+            <UC-08-25 id="0752deab-84ab-49d6-93a3-2772ac075f91" name="Membuat Formulir Exit Clearance" actor="Creator" ket=""/>
+            <UC-08-26 id="a51769c6-2740-4456-a3e0-1665a6a51037" name="Menambahkan Item Exit Clearance" actor="Creator" ket=""/>
+            <UC-08-27 id="f1208eda-cb2f-498f-a775-bfb761b801f4" name="Memperbarui Status Item Exit Clearance" actor="Creator" ket=""/>
+            <UC-08-28 id="844d8444-a5f7-4544-ba8b-ecd71b92326e" name="Menyetujui Formulir Exit Clearance" actor="Approver" ket=""/>
+            <UC-08-29 id="48f9368b-a76a-46a2-9c9d-9054e7714663" name="Mengajukan Formulir Job Pending" actor="User" ket=""/>
+            <UC-08-30 id="7c1c50c6-2e2f-4336-85d4-5de6e3cd1331" name="Menyetujui Pengajuan Formulir Job Pending" actor="Approver" ket=""/>
+            <UC-08-31 id="137ef5a6-cb36-4e4d-8989-fd147ca7269a" name="Mengunduh Dokumen Surat Keterangan Kerja" actor="User, Reviewer" ket=""/>
+         </Resignation>
+      </UC-08>
    </SS-02>
-   <SS-03 id="6debd77f-513a-407d-9c27-6aeeddb1d0fe" name="Subsistem 3" actor="" ket="">
-      <UC-09 id="d31722dc-4a81-4216-823e-1581fe22a04c" name="Modul 5" actor="" ket="">
-         <Submodul10 id="860f7992-62a9-4f30-9246-042245722d2c" name="Submodul 10" actor="" ket="">
-            <UC-09-01 id="ba087213-a712-476a-bf31-0f0fbede3810" name="Proses 74" actor="Administrator" ket=""/>
-            <UC-09-02 id="258070d6-05b7-43d9-a4f3-dff9d16748b2" name="Proses 75" actor="Administrator" ket=""/>
-            <UC-09-03 id="4515e291-013e-42c2-af1e-97d01e5be1d7" name="Proses 76" actor="Administrator" ket=""/>
-            <UC-09-04 id="5a335a08-f6a2-4114-a06c-96fad5f091a4" name="Proses 77" actor="Administrator" ket=""/>
-            <UC-09-05 id="531334a2-f15d-4f11-a70e-2a365516a7ec" name="Proses 78" actor="Administrator" ket=""/>
-            <UC-09-06 id="4fa78090-eee7-4ad8-87a6-cb14ad7b8dd9" name="Proses 79" actor="Administrator" ket=""/>
-            <UC-09-07 id="384eabcb-281e-46be-a3db-df8d330a2bfe" name="Proses 80" actor="Administrator" ket=""/>
-            <UC-09-08 id="b267ca8e-1403-45a8-84dc-8d86ded10920" name="Proses 81" actor="Viewer" ket=""/>
-            <UC-09-09 id="e05c393e-15bd-4a45-b2de-c3d46a1be510" name="Proses 82" actor="Viewer" ket=""/>
-            <UC-09-10 id="9ec10537-509d-4cac-91d4-9fcbead5bb76" name="Proses 83" actor="User" ket=""/>
-            <UC-09-11 id="2693866e-06dd-4251-8a8a-3f16505f8bf5" name="Proses 84" actor="User" ket=""/>
-            <UC-09-12 id="a0723db2-5ad9-4e7c-807a-9f20f836d74d" name="Proses 85" actor="User" ket=""/>
-            <UC-09-13 id="28f70ff7-3ccc-4c96-b0bc-143537c6feca" name="Proses 86" actor="User" ket=""/>
-            <UC-09-14 id="79f58c91-6591-458b-85dc-2c38e00fd7ad" name="Proses 87" actor="User" ket=""/>
-            <UC-09-15 id="82d7ff0b-db96-45c6-9a3c-0cdd2151dc6c" name="Proses 88" actor="Viewer, Reviewer" ket=""/>
-            <UC-09-16 id="1609957b-f03c-407b-877e-c623d79f5254" name="Proses 89" actor="Viewer, Reviewer" ket=""/>
-            <UC-09-17 id="003b3f1d-3140-4fb2-8e77-216a074ef5c3" name="Proses 90" actor="Viewer, Reviewer" ket=""/>
-         </Submodul10>
-         <Submodul11 id="8f5d60aa-0518-465e-acfa-caaa19b5bf51" name="Submodul 11" actor="" ket="">
-            <UC-09-18 id="7d46077a-cc5a-4474-8d54-59cbaafc0513" name="Proses 91" actor="Creator" ket=""/>
-            <UC-09-19 id="cb944ce6-074d-4772-bf11-c461df0331cf" name="Proses 92" actor="User" ket=""/>
-            <UC-09-20 id="02c99ae7-33aa-437a-80b2-bd718fea5eaf" name="Proses 93" actor="Creator" ket=""/>
-            <UC-09-21 id="fc4d0077-7581-4890-8d2e-70c5c36487ad" name="Proses 94" actor="Creator" ket=""/>
-            <UC-09-22 id="457b3b55-40db-4195-9194-dd6c3085c6b8" name="Proses 95" actor="Creator" ket=""/>
-            <UC-09-23 id="a2cdb91d-5b34-4e48-bca9-d03bbab0cf13" name="Proses 96" actor="Creator" ket=""/>
-            <UC-09-24 id="b7219ff0-f316-4c05-aca1-1bffb12a1f8d" name="Proses 97" actor="Creator" ket=""/>
-            <UC-09-25 id="08d4086b-0aa8-4762-939b-19b9f62eb465" name="Proses 98" actor="Creator" ket=""/>
-            <UC-09-26 id="19d0f301-0ca2-4a61-a5ca-ebb7bce28fae" name="Proses 99" actor="User" ket=""/>
-            <UC-09-27 id="ce960268-679c-47e0-be86-e012595e329d" name="Proses 100" actor="Approver" ket=""/>
-            <UC-09-28 id="6536dbb2-0be7-4c77-897e-d0b9fd2c8bea" name="Proses 101" actor="Creator" ket=""/>
-            <UC-09-29 id="d95127b9-dcbe-4745-a9e0-8bb292b3b4b9" name="Proses 102" actor="Creator" ket=""/>
-            <UC-09-30 id="c0cab3bd-5892-4ad5-8ec4-95a04a261b6d" name="Proses 103" actor="Reviewer" ket=""/>
-         </Submodul11>
+   <SS-03 id="1cea3b24-575a-42d4-a121-845b06c10509" name="Recruitment &amp; Development Management" actor="" ket="">
+      <UC-09 id="02a377a2-fc46-4b76-a638-d566c3b92d52" name="Recruitment Management" actor="" ket="">
+         <JobPortal id="a937f433-1109-4387-a70f-9679cfb0b704" name="Job Portal" actor="" ket="">
+            <UC-09-01 id="684ed510-216c-42e8-8600-ed33a1500428" name="Membuat Master Data Posisi Pekerjaan" actor="Administrator" ket=""/>
+            <UC-09-02 id="580b287c-cd6a-400d-9e42-f95db8ad3b28" name="Membuat Master Data Grup Posisi Pekerjaan" actor="Administrator" ket=""/>
+            <UC-09-03 id="2658a30a-8695-4fd4-beaf-15337294b771" name="Membuat Master Data Tahapan Rekrutmen" actor="Administrator" ket=""/>
+            <UC-09-04 id="408b40e0-9320-457c-8ff3-66f806982aff" name="Membuat Master Data Alasan Penolakan" actor="Administrator" ket=""/>
+            <UC-09-05 id="181fe710-2d1b-4233-b587-3c4c73156e37" name="Membuat Master Data Jenis Aktivitas" actor="Administrator" ket=""/>
+            <UC-09-06 id="3c887cec-e4fd-4654-9987-a56707e3e260" name="Mempublikasikan Lowongan Kerja External" actor="Administrator" ket=""/>
+            <UC-09-07 id="a1b86db9-f5e8-498e-9027-09bdf831f9ce" name="Melihat Informasi Lowongan Kerja External" actor="Viewer" ket=""/>
+            <UC-09-08 id="8345eed7-dd49-4ce8-9e55-95305a1dc3da" name="Membuat Akun User Pelamar" actor="User" ket=""/>
+            <UC-09-09 id="05af843e-558d-4152-b3f8-0b2e2c7a05bf" name="Mengisi Data Diri Pelamar" actor="User" ket=""/>
+            <UC-09-10 id="0dcabcb7-00d4-4aab-a2aa-af379e58249e" name="Mengubah Data Diri Pelamar" actor="User" ket=""/>
+            <UC-09-11 id="8a8b9a29-1e39-4ab7-814d-92b3e0537a33" name="Melamar Posisi Pekerjaan" actor="User" ket=""/>
+            <UC-09-12 id="2f96815e-6129-4c8c-9c01-d49cddaeff48" name="Melihat Status Tahapan Rekrutmen" actor="User" ket=""/>
+            <UC-09-13 id="a258e68f-1cae-4335-b368-8326ef149f8e" name="Monitoring Proses Rekrutmen Berdasarkan Posisi Pekerjaan" actor="Viewer, Reviewer" ket=""/>
+            <UC-09-14 id="32dc9422-6d6f-400f-9993-1e77aa05ae8c" name="Monitoring Proses Rekrutmen" actor="Viewer, Reviewer" ket=""/>
+            <UC-09-15 id="0959d14e-716a-42f9-9485-0715f3883684" name="Memfilter Data Pelamar" actor="Viewer, Reviewer" ket=""/>
+         </JobPortal>
+         <ApplicantEvaluation id="f8c8777a-7cb7-4e5a-ae3d-acef0b1fa97e" name="Applicant Evaluation" actor="" ket="">
+            <UC-09-16 id="041bdc76-6dd0-4922-a76c-507d37da2583" name="Membuat Soal Tes Tertulis" actor="Creator" ket=""/>
+            <UC-09-17 id="32678afb-94c9-4d3b-87fd-87fe01f9cc5e" name="Melakukan Tes Tertulis" actor="User" ket=""/>
+            <UC-09-18 id="98913d18-c8ab-44d7-965f-05aa36bd6490" name="Menyesuaikan Email Pemberitahuan Rekrutmen" actor="Creator" ket=""/>
+            <UC-09-19 id="9bec604c-8611-4c1b-9e2d-6167957d9051" name="Mengirimkan Email Pemberitahuan Rekrutmen" actor="Creator" ket=""/>
+            <UC-09-20 id="5157b353-8bc3-424f-a6b0-a865ff0772b9" name="Mengirimkan Email Pemberitahuan Rekrutmen Secara Massal" actor="Creator" ket=""/>
+            <UC-09-21 id="b31a9980-d7e2-4379-87c5-5a6f17e92e02" name="Membuat Jadwal Interview Rekrutmen" actor="Creator" ket=""/>
+            <UC-09-22 id="48463709-5749-4b07-8735-e1003629daab" name="Mengisi Ringkasan Hasil Interview Rekrutmen" actor="Creator" ket=""/>
+            <UC-09-23 id="dfa0c8dc-0e24-41df-8edc-5f0eddf5803d" name="Melakukan Simulasi Perhitungan Gaji" actor="Creator" ket=""/>
+            <UC-09-24 id="523692a1-2ed0-4727-a1e2-40b44546e760" name="Mengajukan Keputusan Penerimaan Karyawan Baru" actor="User" ket=""/>
+            <UC-09-25 id="56f3b5a7-bd05-4e7b-9230-2861eef45538" name="Menyetujui Keputusan Penerimaan Karyawan Baru" actor="Approver" ket=""/>
+            <UC-09-26 id="b39aea13-c581-4df0-8c18-21d47025cc63" name="Membuat Kontrak Karyawan" actor="Creator" ket=""/>
+            <UC-09-27 id="3da0154f-3039-4d2a-bb8c-7a47030f93c8" name="Membuat Data Karyawan" actor="Creator" ket=""/>
+            <UC-09-28 id="d0da09d3-7a9d-4494-aafe-eb7ddcc94fb2" name="Melihat Rekapitulasi Turnover Karyawan" actor="Reviewer" ket=""/>
+         </ApplicantEvaluation>
+         <ApplicantRejection id="a3913210-9e80-4e11-8cd2-9c374e9faef6" name="Applicant Rejection" actor="" ket="">
+            <UC-09-29 id="ca8728b5-a53f-45dc-bc62-7cbcb3278f83" name="Menolak dan Mengarsipkan Data Pelamar" actor="Approver" ket=""/>
+            <UC-09-30 id="74ba4bf3-9c52-4fc8-adb6-2a5e718b06c6" name="Melihat Bank Data Pelamar" actor="Reviewer" ket=""/>
+         </ApplicantRejection>
+         <ContractEmployeeAssessment id="9e4bef43-4b09-4602-988d-9e8aa1a906fb" name="Contract Employee Assessment" actor="" ket="">
+            <UC-09-31 id="2752e621-5b36-4b1f-8a5b-34d099bec88e" name="Mengisi Formulir Penilaian Karyawan Masa Kontrak" actor="Creator" ket=""/>
+            <UC-09-32 id="bc32391c-8b1d-4cca-8ce4-6a8f67a2cc20" name="Menyetujui Formulir Penilaian Karyawan Masa Kontrak" actor="Approver" ket=""/>
+            <UC-09-33 id="2cbfcc7b-9703-494d-84d4-feaf6b0f7474" name="Mengunduh Surat Pengangkatan Karyawan Tetap" actor="Reviewer" ket=""/>
+            <UC-09-34 id="991d3234-4138-490f-be81-6a39a95c3238" name="Mengunggah Surat Pengangkatan Karyawan Tetap" actor="Creator" ket=""/>
+         </ContractEmployeeAssessment>
       </UC-09>
+      <UC-10 id="38e34f3e-d2f6-4beb-9a92-a1a8e2e0a098" name="E-Learning" actor="" ket="">
+         <TrainingPlanning id="c5563b28-d7ea-4391-b53a-e572ed77d4ba" name="Training Planning" actor="" ket="">
+            <UC-10-01 id="d4e2c6e5-84fb-483b-8326-0f476a5e6516" name="Membuat Master Data Pelatihan" actor="Administrator" ket=""/>
+            <UC-10-02 id="35129509-2924-4e9f-a707-face0df0ff38" name="Membuat Master Data Level Evaluasi Pelatihan" actor="Administrator" ket=""/>
+            <UC-10-03 id="d668541c-c032-44bb-a98e-0ed74caa750e" name="Memetakan Pelatihan ke Kompetensi yang Sesuai" actor="Creator" ket=""/>
+            <UC-10-04 id="e739b9d6-13e7-46ff-b513-06983f350dcd" name="Mengajukan Pelatihan" actor="Creator" ket=""/>
+            <UC-10-05 id="22ad1d63-5988-47ce-8797-773ab9738e86" name="Menyetujui Pengajuan Pelatihan" actor="Approver" ket=""/>
+            <UC-10-06 id="97079f14-745c-4df3-b965-558bf966ead1" name="Mengunduh Surat Tugas Pelatihan" actor="Creator" ket=""/>
+            <UC-10-07 id="b7577434-5e03-453d-ae43-92b74a9315cc" name="Membuat Surat Tugas Perjalanan Dinas untuk Pelatihan" actor="Creator" ket=""/>
+            <UC-10-08 id="8219cbbc-32be-4184-ba16-beae541ff049" name="Mengisi Realisasi Pelatihan" actor="Creator" ket=""/>
+            <UC-10-09 id="338cf737-78e1-4674-9bf2-6f6a7dc53c75" name="Mengonfirmasi Realisasi Pelatihan" actor="Approver" ket=""/>
+            <UC-10-10 id="41f60113-ac25-4993-9e87-108557396466" name="Menambahkan Sertifikat Pelatihan" actor="Creator" ket=""/>
+            <UC-10-11 id="9a90d855-f4eb-4b9c-a4a4-03a1977b8598" name="Mengunggah Sertifikat Pelatihan" actor="Creator" ket=""/>
+         </TrainingPlanning>
+         <E-LearningManager id="f17ea7a5-d313-47f8-8cae-b1909c4bf66e" name="E-Learning Manager" actor="" ket="">
+            <UC-10-12 id="f990c464-1bb1-4c67-84c4-e3eb29aec857" name="Menambahkan Peringkat" actor="Administrator" ket=""/>
+            <UC-10-13 id="85a9f959-27ed-4fce-a25e-bb1e495f1949" name="Menambahkan Lencana" actor="Administrator" ket=""/>
+            <UC-10-14 id="43155b7f-1167-4b6f-b2bf-6d90bc3c8d8f" name="Membuat Master Data Kelompok Pelatihan" actor="Administrator" ket=""/>
+            <UC-10-15 id="1bbc82dd-ae8a-419b-b16a-a342479eaed2" name="Membuat Master Data Penanda Materi" actor="Administrator" ket=""/>
+            <UC-10-16 id="5860c830-2584-463c-9baa-34491705fa43" name="Membuat Pelatihan" actor="Creator" ket=""/>
+            <UC-10-17 id="9cc10bca-4015-4542-8669-6c5be8d34a8c" name="Membuat Konten Pelatihan" actor="Creator" ket=""/>
+            <UC-10-18 id="51f19a43-0473-4657-ba47-29cb5e3af295" name="Membuat Kuis" actor="Creator" ket=""/>
+            <UC-10-19 id="f1f390da-719d-4c61-81a1-c6ada7d90a92" name="Membuat Sertifikasi Pelatihan" actor="Creator" ket=""/>
+            <UC-10-20 id="e318640d-f1e9-405b-9426-2b5f1af981bc" name="Menambahkan Forum Pelatihan" actor="Creator" ket=""/>
+            <UC-10-21 id="8facbad2-4e9a-4efc-b1a3-bda48f4774b2" name="Mempublikasikan Pelatihan" actor="Creator" ket=""/>
+            <UC-10-22 id="3bc1dc69-dd04-4e50-940c-9aa39bc722ff" name="Mempublikasikan Konten Pelatihan" actor="Creator" ket=""/>
+            <UC-10-23 id="6da5318b-cbcc-4050-8d99-15d52ec3b571" name="Mengundang Peserta Pelatihan" actor="Creator" ket=""/>
+         </E-LearningManager>
+         <E-LearningUser id="80c1c195-625a-4b49-bfd3-3e5961d1fb11" name="E-Learning User" actor="" ket="">
+            <UC-10-24 id="46798555-b554-414c-bddd-397bb6e6f685" name="Melihat Pelatihan Yang Tersedia" actor="Viewer" ket=""/>
+            <UC-10-25 id="7928a2ba-7bad-4797-a258-ff00c8f362aa" name="Melihat Pelatihan Saya" actor="User" ket=""/>
+            <UC-10-26 id="f3b38ec4-0d35-44ff-b573-2494df8e4f55" name="Melihat Pelatihan Terpopuler" actor="Viewer" ket=""/>
+            <UC-10-27 id="8af14061-377e-4b9e-9645-454ba54daa8c" name="Melihat Pelatihan Terbaru" actor="Viewer" ket=""/>
+            <UC-10-28 id="613ee374-71c0-495e-819e-9bab3672accf" name="Mencari Pelatihan" actor="Viewer" ket=""/>
+            <UC-10-29 id="1786217a-524d-4c52-85d0-1b6c5703dc4d" name="Menyaring Pelatihan Berdasarkan Kategori Tertentu" actor="Viewer" ket=""/>
+            <UC-10-30 id="f2bbfca0-9edb-47bc-a0c0-f192619759c4" name="Menghapus Filter Kategori Pelatihan" actor="Viewer" ket=""/>
+            <UC-10-31 id="681112dd-c38c-49d1-9ebc-7511df4ab33e" name="Mendaftar Pelatihan" actor="User" ket=""/>
+            <UC-10-32 id="2549e4ac-1f53-4915-9ae5-539456cf4d42" name="Melihat Konten Pelatihan" actor="User" ket=""/>
+            <UC-10-33 id="bb000e90-6efe-44c1-b527-a194af47f36a" name="Mengisi Kuis" actor="User" ket=""/>
+            <UC-10-34 id="90dcd33e-5fc4-4a28-bb8f-ea4322ed14af" name="Mengisi Sertifikasi" actor="User" ket=""/>
+            <UC-10-35 id="100731f5-f20d-4dbb-85ca-77717d06d2ac" name="Mengunduh Sertifikat" actor="User" ket=""/>
+            <UC-10-36 id="d6fe67e6-1c5f-4a09-bd8f-3d10bab0e438" name="Memberikan Ulasan" actor="User" ket=""/>
+            <UC-10-37 id="96deb4b5-e64e-4982-92a5-8f3bd04f23ae" name="Mengubah Konfigurasi Kemunculan Ulasan" actor="User" ket=""/>
+            <UC-10-38 id="37ae1000-2b0d-45b8-b2ad-44825a440c3e" name="Memberikan Komentar Pada Ulasan" actor="User" ket=""/>
+            <UC-10-39 id="c2cc7b80-d134-44d0-a312-ff6706ddd306" name="Membagikan Link Pelatihan" actor="Viewer" ket=""/>
+            <UC-10-40 id="6c868703-57c2-4279-ad86-f90d40f9206c" name="Melihat Profil Peserta Pelatihan" actor="User" ket=""/>
+            <UC-10-41 id="ed233dfd-f468-4580-a708-f5f6ea359286" name="Melihat Pencapaian Peserta Pelatihan" actor="User" ket=""/>
+            <UC-10-42 id="a73cdb83-ba76-4542-b5d5-813fcfbd397b" name="Melihat Papan Peringkat Peserta Pelatihan" actor="Viewer" ket=""/>
+         </E-LearningUser>
+         <E-LearningForum id="734fd1f7-55fd-4af9-9a68-0fe3152fc6a5" name="E-Learning Forum" actor="" ket="">
+            <UC-10-43 id="77e95c69-bfcc-40f3-8a33-ba2f521799e0" name="Menambahkan Topik Diskusi" actor="User" ket=""/>
+            <UC-10-44 id="7ef56318-ba13-4bcb-95e2-8fcf7ec05649" name="Melihat Topik Diskusi" actor="Viewer" ket=""/>
+            <UC-10-45 id="0623ef18-3e17-403c-886c-4821c3eeeb4c" name="Menambahkan Komentar Pada Topik Diskusi" actor="User" ket=""/>
+            <UC-10-46 id="5915ebe0-c108-414b-91dd-0ec0dfc6befe" name="Menambahkan Jawaban Pada Topik Diskusi" actor="User" ket=""/>
+            <UC-10-47 id="dfda694d-a8da-4389-9e65-a13d83fe4a47" name="Melakukan Vote Pada Topik Diskusi dan Jawaban" actor="User" ket=""/>
+            <UC-10-48 id="c38ccd42-1d96-4b53-b28f-570a2fb6b2db" name="Menambahkan Status Favorit Pada Topik Diskusi" actor="User" ket=""/>
+         </E-LearningForum>
+         <E-LearningReport id="fc6f9584-294c-48a7-b136-96ef6b2699c1" name="E-Learning Report" actor="" ket="">
+            <UC-10-49 id="fa8d45ab-ad58-47af-96f8-fe9d80fbafd1" name="Melihat Laporan Pelaksanaan Pelatihan" actor="Reviewer" ket=""/>
+            <UC-10-50 id="475b5e1d-d5f6-4872-a341-a9cabd415172" name="Melihat Laporan Pengaksesan Materi Pelatihan" actor="Reviewer" ket=""/>
+            <UC-10-51 id="10afba8a-c1d5-45fb-b439-8b5fe7db4754" name="Melihat Laporan Ulasan Pelatihan" actor="Reviewer" ket=""/>
+            <UC-10-52 id="28753996-d20b-4cca-835f-41e7324d38db" name="Melihat Kuis Pelatihan" actor="Reviewer" ket=""/>
+            <UC-10-53 id="482277fe-1ead-458a-ae8f-db24ffcf7336" name="Melihat Laporan Forum Pelatihan" actor="Reviewer" ket=""/>
+            <UC-10-54 id="1808293b-e1d5-492a-a030-59ac1ae02747" name="Melihat Laporan Pelaksanaan Evaluasi Pelatihan" actor="Reviewer" ket=""/>
+         </E-LearningReport>
+         <TrainingEvaluation id="309a93de-cdc6-45d3-a217-7c02fe836571" name="Training Evaluation" actor="" ket="">
+            <UC-10-55 id="c4d4d893-191f-48af-9708-f54e63cdb0bf" name="Membuat Master Data Aspek Evaluasi Pelatihan" actor="Administrator" ket=""/>
+            <UC-10-56 id="e84db530-fe04-4315-ab71-f8a3e12d62ff" name="Mengisi Formulir Evaluasi Pelatihan" actor="Creator" ket=""/>
+            <UC-10-57 id="cae4416c-87ac-4467-8e5e-b4b56f5cb9d5" name="Menyetujui Formulir Evaluasi Pelatihan" actor="Approver" ket=""/>
+            <UC-10-58 id="8d761700-6825-4e23-b444-3309babccd65" name="Monitoring Masa Berlaku Sertifikat Pelatihan" actor="Reviewer" ket=""/>
+            <UC-11-01 id="72930f56-b510-414e-910c-b2742f7539e6" name="Membuat Form Survei" actor="Creator" ket=""/>
+            <UC-11-02 id="a2fe4ad9-e3d7-46a4-bba2-c429cdc95db6" name="Menguji Pengisian Form Survei" actor="Creator" ket=""/>
+            <UC-11-03 id="5d492c32-2423-4291-ae87-c195c2595031" name="Mengunduh Form Survei" actor="Reviewer" ket=""/>
+            <UC-11-04 id="3f9ce3fb-4217-4397-80c0-a200443fe5b1" name="Memulai Pengisian Survei" actor="Creator" ket=""/>
+            <UC-11-05 id="574803ec-2449-4ccc-875d-aeb784242cba" name="Mengirimkan Email Undangan Pengisian Survei" actor="Creator" ket=""/>
+            <UC-11-06 id="c47cef3d-ae6b-4a4a-b00a-6f0a58beb6b1" name="Membagikan Link Survei" actor="Creator" ket=""/>
+            <UC-11-07 id="d3d2a793-4ce1-4317-9176-7dee2c7abc44" name="Mengisi Survei" actor="User" ket=""/>
+            <UC-11-08 id="f175466b-eae1-4879-8f65-34cb300807eb" name="Melihat Jawaban Survei" actor="Reviewer" ket=""/>
+            <UC-11-09 id="2e3f4274-83b2-40c4-85ba-ef8f9c4c750f" name="Melihat Peserta Pengisian Survei" actor="Reviewer" ket=""/>
+            <UC-11-10 id="c4063c99-3b98-402d-bed0-769d213972ca" name="Menghentikan Proses Pengisian Survei" actor="Creator" ket=""/>
+         </TrainingEvaluation>
+      </UC-10>
+      <UC-11 id="3fc9e920-1172-401b-a4a2-76574b22caa8" name="Survey" actor="" ket="">
+         <LiveSession id="59959285-4d98-45c7-b676-7a38d4d4b8d8" name="Live Session" actor="" ket="">
+            <UC-11-11 id="2312bcbf-9ccd-4fb9-8e78-eba468b46510" name="Memulai Sesi Langsung Pengisian Survei" actor="Creator" ket=""/>
+            <UC-11-12 id="53531c8f-6425-4886-aad4-d24ca29419b3" name="Menutup Sesi Langsung Pengisian Survei" actor="Creator" ket=""/>
+         </LiveSession>
+      </UC-11>
+      <UC-12 id="9225b8f1-5db7-4609-a6c7-2d0867690faa" name="Talent Managment" actor="" ket="">
+         <Talent id="e83e58e3-0558-4569-a457-7bbdf24b9f93" name="Talent" actor="" ket="">
+            <UC-12-01 id="1535074e-63a7-4a94-9476-45ee4fafaa0f" name="Membuat Master Data Pengelompokkan Potensi dan Kinerja Karyawan" actor="Administrator" ket=""/>
+            <UC-12-02 id="0aedddea-f40a-4d4c-b5af-90a063e614f0" name="Melihat Mapping Potensi dan Kinerja Karyawan" actor="Reviewer" ket=""/>
+            <UC-12-03 id="fd75ea04-5ee3-4b3c-83b4-4ebad9bfe4d8" name="Melihat History Mapping Potensi dan Kinerja Karyawan" actor="Reviewer" ket=""/>
+         </Talent>
+         <Career id="af21d727-be7d-44ec-bb31-7895599ec433" name="Career" actor="" ket="">
+            <UC-12-04 id="f22887f3-b5cb-48f2-b389-4f10fdcea6ec" name="Membuat Master Data Jenjang Karir Jabatan" actor="Administrator" ket=""/>
+            <UC-12-05 id="2cb0bf53-abbe-494d-92ec-8bc3ed75dcaf" name="Membuat Pembaruan Master Data Jenjang Karir Jabatan" actor="Administrator" ket=""/>
+            <UC-12-06 id="16d06229-65c2-4c81-930d-7227e48c4174" name="Mengisi Rencana Karir Karyawan" actor="User, Creator" ket=""/>
+            <UC-12-07 id="121c5a3a-9bbf-4502-b38c-2c86f2fce466" name="Memilih Rencana Karir Karyawan yang Sedang Dijalankan" actor="User" ket=""/>
+            <UC-12-08 id="44558baf-ff5d-4622-ab25-fe3fa392b5ee" name="Melihat Rencana Karir Karyawan yang Aktif" actor="Reviewer" ket=""/>
+         </Career>
+         <CareerCoaching id="b3b5a5fa-28b0-46fa-8ab2-2471f9545d99" name="Career Coaching" actor="" ket="">
+            <UC-12-09 id="3e3a1365-a455-4767-858b-a7021115fbe5" name="Mengisi Formulir Pembinaan dan Penyuluhan" actor="Creator" ket=""/>
+            <UC-12-10 id="d8d8330a-386f-481d-a00e-ce4162ea598f" name="Menyetujui Formulir Pembinaan dan Penyuluhan" actor="Approver" ket=""/>
+            <UC-12-11 id="a8f1b258-6011-4694-a7be-82bbe741b51a" name="Membuat Rencana Karir Karyawan" actor="Creator" ket=""/>
+         </CareerCoaching>
+      </UC-12>
    </SS-03>
+   <SS-04 id="55ec7936-4365-4020-9f0b-4e856e7b5a7a" name="Performance &amp; Succession Management" actor="" ket="">
+      <UC-13 id="9cbd1a53-9f13-4f13-a6f6-15b5aa88cbd8" name="Performance Appraisal" actor="" ket="">
+         <PerformancePlanning id="7986be9b-74c4-4936-be1d-03e5ec4e8ac6" name="Performance Planning" actor="" ket="">
+            <UC-13-01 id="faa26ae1-7c7c-4fed-8023-c8d2674e6a82" name="Membuat Master Data Sasaran Perusahaan" actor="Administrator" ket=""/>
+            <UC-13-02 id="559f3c10-ffeb-43d9-96a0-d3d9ab00267f" name="Membuat Master Data Tujuan Bisnis" actor="Administrator" ket=""/>
+            <UC-13-03 id="4fdf7d90-8122-4219-bf52-e5df32db0dec" name="Membuat Master Data Kompetensi Perilaku" actor="Administrator" ket=""/>
+            <UC-13-04 id="24141be4-5c9e-4067-9d78-3b7421d81c00" name="Membuat Master Data Deskripsi Kompetensi Perilaku" actor="Administrator" ket=""/>
+            <UC-13-05 id="33e7f8b1-ca68-472e-a059-13dd9be20003" name="Membuat Master Data Bobot Penilaian" actor="Administrator" ket=""/>
+            <UC-13-06 id="1d7f1ad2-8f63-461b-b292-e4a3fac9297e" name="Membuat Master Data Formula KPI" actor="Administrator" ket=""/>
+            <UC-13-07 id="e76a12ab-c337-43a1-b714-73ed00b7e17f" name="Membuat Indikator Kinerja Utama" actor="Creator" ket=""/>
+            <UC-13-08 id="18c87e49-d07e-47d4-a837-dc1f5f07fbcb" name="Membuat Indikator Kinerja Utama Individu" actor="Creator" ket=""/>
+         </PerformancePlanning>
+         <PerformanceMonitoring id="00cc3e70-0390-4fff-869a-d28e3207222f" name="Performance Monitoring" actor="" ket="">
+            <UC-13-09 id="b424d100-1463-4949-87d5-3a291211a604" name="Monitoring KPI" actor="Reviewer" ket=""/>
+         </PerformanceMonitoring>
+         <PerformanceCoaching id="5b92004b-4e1c-4446-a07e-dcf5a25acdc7" name="Performance Coaching" actor="" ket="">
+            <UC-13-10 id="1df13999-29e6-4048-a51a-15a17e8f8262" name="Mengisi Formulir Pembinaan dan Penyuluhan" actor="Creator" ket=""/>
+            <UC-13-11 id="d2dd2872-ec9c-43d8-93c7-14d74776a52c" name="Menyetujui Formulir Pembinaan dan Penyuluhan" actor="Approver" ket=""/>
+            <UC-13-12 id="b47135a1-ab82-40e6-8b34-ac24a8dca6ec" name="Monitoring Kegiatan Pembinaan dan Penyuluhan" actor="Reviewer" ket=""/>
+         </PerformanceCoaching>
+         <PerformanceAppraisal id="da039ab7-fdd8-463e-b156-04eb68914ffc" name="Performance Appraisal" actor="" ket="">
+            <UC-13-13 id="de097e6d-268f-4cc5-95d2-0f9ad727d418" name="Membuat Master Data Kategori Satuan Pengukuran" actor="Administrator" ket=""/>
+            <UC-13-14 id="8a5b5b77-1e97-4793-9cc8-36a3d48fcab1" name="Membuat Master Data Satuan Pengukuran" actor="Administrator" ket=""/>
+            <UC-13-15 id="045feebb-4542-400c-8fbe-44271303f2f8" name="Membuat Master Data Penilaian Kompetensi Perilaku" actor="Administrator" ket=""/>
+            <UC-13-16 id="c37ca214-504f-4cfa-beba-94bc2e6ceffc" name="Membuat Master Data Akumulasi Penilaian" actor="Administrator" ket=""/>
+            <UC-13-17 id="5ec7283d-74c2-4834-9636-c3d67da56006" name="Membuat Master Data Kuota Distribusi Penilaian" actor="Administrator" ket=""/>
+            <UC-13-18 id="640f24ca-cd43-4790-ba82-6cdad9970c34" name="Membuat Formulir Penilaian Unjuk Kerja Secara Massal" actor="Creator" ket=""/>
+            <UC-13-19 id="a8a47bc2-89db-414b-a925-d1b6bb64974b" name="Mengisi Formulir Penilaian Unjuk Kerja" actor="Creator" ket=""/>
+            <UC-13-20 id="46decfa2-b578-484a-af6e-348675cfb17e" name="Menyetujui Formulir Penilaian Unjuk Kerja" actor="Approver" ket=""/>
+            <UC-13-21 id="dcc2ff88-943e-4879-8d35-9c9d774b67c5" name="Melihat Rekapitulasi Penilaian Unjuk Kerja" actor="Reviewer" ket=""/>
+            <UC-13-22 id="070cef0d-4ec6-4145-911d-799cfc84ffc5" name="Melihat Rekapitulasi Distribusi Penilaian" actor="Reviewer" ket=""/>
+         </PerformanceAppraisal>
+         <DisciplinaryAction id="bc670fdb-80ac-4466-80d2-c579948fae47" name="Disciplinary Action" actor="" ket="">
+            <UC-13-23 id="9da0dbef-986d-490b-873c-6683c8945175" name="Membuat Master Data Jenis Tindakan Indisipliner Karyawan" actor="Administrator" ket=""/>
+            <UC-13-24 id="eb94d6ec-5375-4e83-81a5-6c34a7fffd63" name="Membuat Master Data Jenis Tindak Lanjut Indisipliner Karyawan" actor="Administrator" ket=""/>
+            <UC-13-25 id="f6b31a9a-1e64-49fd-b876-8fd3f01b1ac2" name="Mengisi Formulir Pelaporan Tindakan Indisipliner Karyawan" actor="Creator" ket=""/>
+            <UC-13-26 id="096e90e3-6520-469f-a192-a18dd46cbfac" name="Menyetujui Pelaporan Tindakan Indisipliner Karyawan" actor="Approver" ket=""/>
+            <UC-13-27 id="2f0dc823-7b18-45ca-ac78-3558fa758d7f" name="Monitoring Tindakan Indisipliner Karyawan" actor="Reviewer" ket=""/>
+            <UC-13-28 id="022823f3-5038-4fc0-a7a2-573d66f6d4ed" name="Membuat Surat Panggilan Berdasarkan Tindakan Indisipliner Karyawan" actor="Creator" ket=""/>
+         </DisciplinaryAction>
+         <DisciplinaryCoaching id="42a04cac-c7bc-4ae1-92ac-a78dd9fe7d89" name="Disciplinary Coaching" actor="" ket="">
+            <UC-13-29 id="8923ad3e-48a6-4914-b041-7ec65ff61007" name="Mengisi Formulir Pembinaan dan Penyuluhan" actor="Creator" ket=""/>
+            <UC-13-30 id="a65c68cd-c00e-4ade-a790-c8cbe80ab9e2" name="Menyetujui Formulir Pembinaan dan Penyuluhan" actor="Approver" ket=""/>
+            <UC-13-31 id="4b7ba240-b3c7-4403-a9a0-5c427cce972a" name="Monitoring Kegiatan Pembinaan dan Penyuluhan" actor="Reviewer" ket=""/>
+         </DisciplinaryCoaching>
+         <DisciplinaryWarningLetter id="d660a91b-c6d4-4e08-9cab-cd60a2aa2c04" name="Disciplinary Warning Letter" actor="" ket="">
+            <UC-13-32 id="5d6654ee-ab49-47d4-8265-b28714ed9ded" name="Menentukan Tindak Lanjut Indisipliner Karyawan" actor="Creator" ket=""/>
+            <UC-13-33 id="3c362464-ae47-4d77-ae23-1ccd2b6fff08" name="Mengunduh Surat Peringatan" actor="Reviewer" ket=""/>
+            <UC-13-34 id="e6a77578-0a48-4f93-a7b6-2feeb7b8ebf7" name="Monitoring Tindak Lanjut Indisipliner Karyawan" actor="Reviewer" ket=""/>
+         </DisciplinaryWarningLetter>
+         <CallLetter id="520a5440-9f53-48ef-a09e-d990400ffd4a" name="Call Letter" actor="" ket="">
+            <UC-13-35 id="770a6c7d-97df-4d9d-a1b9-2df004b84ccb" name="Membuat Master Data Tipe Surat Panggilan" actor="Administrator" ket=""/>
+            <UC-13-36 id="46bf0964-92a1-42c9-a946-f42f6820bdab" name="Membuat Surat Panggilan" actor="Creator" ket=""/>
+            <UC-13-37 id="67eb702e-acbd-4ce5-9598-2df9b35611eb" name="Melihat Daftar Surat Panggilan" actor="Viewer" ket=""/>
+            <UC-13-38 id="01249e48-e205-463b-bc31-99fae69e69cc" name="Mengkonfirmasi Surat Panggilan" actor="Approver" ket=""/>
+            <UC-13-39 id="b2bba458-dfe1-4966-b669-b4869f98848c" name="Mengunduh Surat Panggilan" actor="Creator, Viewer" ket=""/>
+            <UC-13-40 id="a9428600-4c1f-4555-a75a-2e50318e5d65" name="Mengisi Daftar Surat Masuk dan Surat Keluar" actor="Creator" ket=""/>
+         </CallLetter>
+      </UC-13>
+      <UC-14 id="c2869d5a-2a65-407c-bd92-954e67414b6b" name="Job Competency" actor="" ket="">
+         <CompetencyDictionary id="6e40f0e0-5f00-43af-b6dd-8b14419f4dda" name="Competency Dictionary" actor="" ket="">
+            <UC-14-01 id="e48fa523-8762-4616-9889-9dac686c8d59" name="Membuat Master Data Kategori Kompetensi Jabatan" actor="Administrator" ket=""/>
+            <UC-14-02 id="858608fc-f58c-4c5e-9d48-0a0701da39d4" name="Membuat Master Data Aspek Kompetensi Jabatan" actor="Administrator" ket=""/>
+            <UC-14-03 id="41095337-0307-42f8-b59e-c5a7fe04c9e2" name="Membuat Kamus Kompetensi" actor="Creator" ket=""/>
+            <UC-14-04 id="24b8f324-3106-45a3-bd5b-8b1902666548" name="Membuat Pembaruan Kamus Kompetensi" actor="Creator" ket=""/>
+            <UC-14-05 id="1e209639-630b-436e-990b-233ec5a3b170" name="Mengarsipkan Kamus Kompetensi" actor="Creator" ket=""/>
+         </CompetencyDictionary>
+         <JobCompetencyMatrix id="0b0f1f07-0b46-439a-abb9-0f54c95f3957" name="Job Competency Matrix" actor="" ket="">
+            <UC-14-06 id="affaaf9e-e43b-4485-ac5a-2ab5f188485d" name="Membuat Standar Kompetensi Jabatan" actor="Creator" ket=""/>
+            <UC-14-07 id="487d48f3-f69d-4008-9663-6a6d44972e9c" name="Melihat Matriks Standar Kompetensi Jabatan" actor="Reviewer" ket=""/>
+         </JobCompetencyMatrix>
+         <JobCompetencyProfile id="dff7c0bb-b0a1-4c0c-b278-74cd61cd56ec" name="Job Competency Profile" actor="" ket="">
+            <UC-14-08 id="29825e24-99a1-4cf4-97dd-9bd631779b2f" name="Melihat Profil Kompetensi Jabatan" actor="Reviewer" ket=""/>
+         </JobCompetencyProfile>
+      </UC-14>
+      <UC-15 id="3ded173c-1bac-4ebd-90a0-37f8945ad018" name="Assessment" actor="" ket="">
+         <CompetencyAssesment id="a2490fec-09bb-40fd-a398-9769e1283248" name="Competency Assesment" actor="" ket="">
+            <UC-15-01 id="09b64e4a-584b-4798-b974-485755f6613c" name="Membuat Master Data Tindak Lanjut Kompetensi Karyawan" actor="Administrator" ket=""/>
+            <UC-15-02 id="1ca86a9e-09cf-4d26-8504-ffd645e111fc" name="Membuat Formulir Penilaian Kompetensi Karyawan Secara Massal" actor="Creator" ket=""/>
+            <UC-15-03 id="32324a49-a5a5-4dbb-8fd8-f49bbe0420b1" name="Mengisi Formulir Penilaian Kompetensi Karyawan" actor="Creator" ket=""/>
+            <UC-15-04 id="03f9127e-cf99-4418-93d4-cd5d0cea9fd9" name="Menyetujui Formulir Penilaian Kompetensi Karyawan" actor="Approver" ket=""/>
+            <UC-15-05 id="95e34205-8975-49f9-9a27-6167f745dee0" name="Mengisi Tindak Lanjut Hasil Penilaian Kompetensi Karyawan" actor="Creator" ket=""/>
+            <UC-15-06 id="f82149dd-2f6a-4ca0-a3e4-072273ebfa75" name="Melihat Rekapitulasi Penilaian Kompetensi Karyawan" actor="Reviewer" ket=""/>
+            <UC-16-01 id="fd8d3a30-ea47-40d1-9985-ef1aa1f5d15c" name="Menentukan Jabatan Kunci" actor="Creator" ket=""/>
+            <UC-16-02 id="e3f9da1b-61ba-4896-8c03-e1c836780911" name="Melihat Kriteria Jabatan Kunci" actor="Reviewer" ket=""/>
+            <UC-16-03 id="00844ec6-9c09-45c9-bff8-2e79f3476efb" name="Menentukan Kandidat Pengisi Jabatan Kunci" actor="Creator" ket=""/>
+            <UC-16-04 id="75de0a8b-a5c9-4465-8172-4c88c4ff74ef" name="Melihat Profil Kadidat Pengisi Jabatan Kunci" actor="Reviewer" ket=""/>
+            <UC-16-05 id="d0dd3ff9-38c4-49df-b4cf-7a90b1555e6e" name="Mengisi Kesenjangan Kandidat Pengisi Jabatan Kunci" actor="Creator" ket=""/>
+            <UC-16-06 id="4ea7c995-0aa3-48f2-a0a8-7293f289c89b" name="Membuat Perencanaan Pengembangan Potensi dan Suksesi Karyawan" actor="Creator" ket=""/>
+         </CompetencyAssesment>
+      </UC-15>
+      <UC-16 id="b2e064e4-f920-49bc-b889-11b0c1fb5772" name="Succession" actor="" ket=""/>
+      <UC-17 id="26dd90b3-7a11-4b8a-9ef3-0816f501eb79" name="Official Memo" actor="" ket="">
+         <OfficialMemo id="27e60df5-f4b2-412f-aa5d-3802c1cc6222" name="Official Memo" actor="" ket="">
+            <UC-17-01 id="003720c3-f3cc-42af-9a3d-4657904907a4" name="Mengajukan Nota Dinas" actor="Creator" ket=""/>
+            <UC-17-02 id="07bdb373-5b69-41c2-a2c9-a494d3c07ad1" name="Menyetujui Pengajuan Nota Dinas" actor="Approver" ket=""/>
+         </OfficialMemo>
+      </UC-17>
+   </SS-04>
 </UseCaseDiagram>

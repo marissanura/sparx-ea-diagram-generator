@@ -1,9 +1,12 @@
+import base64
+import tempfile
 from xml.dom import minidom
 from xml.etree import ElementTree
 from xml.etree.ElementTree import (Element, SubElement)
-from xml_writer import XMLWriter
 
-class SparxEAXMLWriter(XMLWriter):
+from .xml_writer import XMLWriter
+
+class UCXMLWriter(XMLWriter):
     actor = {"Administrator":"ns", "User":"ns", "Creator":"ns", "Reviewer":"ns", "Viewer":"ns", "Approver":"ns", "Sistem 1":"s"}
 
     def csv_tree_to_xml(self):
@@ -31,7 +34,7 @@ class SparxEAXMLWriter(XMLWriter):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")
         ElementTree.register_namespace('uml', "http://schema.omg.org/spec/UML/2.1")
         ElementTree.register_namespace('thecustomprofile', "http://www.sparxsystems.com/profiles/thecustomprofile/1.0")
-        tree = ElementTree.parse('template.xml')
+        tree = ElementTree.parse('/Users/marissanuramalia/Desktop/Coolyeah/Repositories/GitHub/sparx-ea-diagram-generator/nti_ea_diagram_generator/models/template.xml')
         self.xml_tree = tree.getroot()
 
         global model, elements, connectors, diagrams
@@ -121,7 +124,6 @@ class SparxEAXMLWriter(XMLWriter):
     def calculate_use_case_dimension(self, node):
         max_uc_name = ""
         for uc_name in list(node): max_uc_name = uc_name.get('name') if len(max_uc_name) < len(uc_name.get('name')) else max_uc_name
-        print(max_uc_name)
         x, y = 105, 70
         char_max = len(max_uc_name) - 40
 
@@ -193,7 +195,6 @@ class SparxEAXMLWriter(XMLWriter):
             index = 1
             for actor in list(uc.get('actor').split(", ")):
                 ex_actor = (-x/2) if actor_pos.get(actor) == 'l' else (x/2)
-                print(ex_actor)
                 self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=" + str(ex_actor) +";EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=" + str(ex_actor) + ";SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
                 index = index + 1
             if uc.get('ket') != "":
@@ -277,7 +278,6 @@ class SparxEAXMLWriter(XMLWriter):
     def tostring(self):
         return ElementTree.tostring(self.xml_tree, encoding='unicode', method='xml')
     
-    def write(self, filename):
+    def write(self):
         xmlstr = minidom.parseString(ElementTree.tostring(self.xml_tree)).toprettyxml(indent="   ") 
-        with open(filename, "w") as f:
-            f.write(xmlstr)
+        return xmlstr
