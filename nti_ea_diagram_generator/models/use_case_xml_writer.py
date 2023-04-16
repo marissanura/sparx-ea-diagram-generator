@@ -3,19 +3,19 @@ import tempfile
 from xml.dom import minidom
 from xml.etree import ElementTree
 from xml.etree.ElementTree import (Element, SubElement)
+from odoo.exceptions import ValidationError
 
 from .xml_writer import XMLWriter
 
 class UCXMLWriter(XMLWriter):
 
     def csv_tree_to_xml(self, list_actor):
+        global root_package
         self.init_template()
+        self.actor = list_actor
         self.init_actor(self.tree, self.tree[0], 0)
+        self.validate_actor()
         
-
-        global root_package, actor
-
-        actor = list_actor
         root_package = self.add_packaged_element(model, {"xmi:type":"uml:Package", "xmi:id":"root", "name":"Application use Case Diagram"})
         self.add_catalog_actor(root_package)
         use_case_package = self.add_packaged_element(root_package, {"xmi:type":"uml:Package", "xmi:id":"use_case_diagram", "name":"Use Case Diagram"})
@@ -23,13 +23,30 @@ class UCXMLWriter(XMLWriter):
     
     def init_actor(self, parent, node, index):
         if len(list(node)) > 0: self.init_actor(node, node[0], 0)
+
+        node_list = list(str(node.attrib.get('actor')).split(", "))
+        if 'Administrator' not in node_list: 
+            node_list.insert(0, 'Administrator')
+            node.set('actor', ', '.join(node_list))
+            node_list = list(str(node.attrib.get('actor')).split(", "))
+            
         if parent.attrib.get('actor') == '' or parent.attrib.get('actor') == None:
             parent.set('actor', node.attrib.get('actor')) 
         else: 
-            new_list = list(str(parent.attrib.get('actor')).split(", ")) + list(set(list(str(node.attrib.get('actor')).split(", "))) - set(list(str(parent.attrib.get('actor')).split(", "))))
+            parent_list = list(str(parent.attrib.get('actor')).split(", "))
+            new_list = parent_list + list(set(node_list) - set(parent_list))
             new_string = ', '.join(new_list)
             parent.set('actor', new_string)
+
         if len(list(parent)) - 1 > index: self.init_actor(parent, parent[index + 1], index+1)
+
+    def validate_actor(self):
+        csv_actor = list(self.tree.get('actor').split(", "))
+        actor = list(self.actor.keys())
+        print(csv_actor, actor)
+        actor_matching = list(set(csv_actor) - set(list(self.actor.keys())))
+        print(actor_matching)
+        if (not ((actor_matching) != ['']) | ((actor_matching) != [])): raise ValidationError("There is no " + ', '.join(actor_matching) + " in group actor")
 
     def init_template(self):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")

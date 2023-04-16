@@ -1,15 +1,17 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class HierarchyFolder(models.Model):
     _name = 'hierarchy.folder'
     _description = 'Hierarchy Folder'
     _rec_name = 'hierarchy_name'
 
-    hierarchy_name = fields.Char(required=True)
+    hierarchy_name = fields.Char(required=True, string='Hierarchy Name')
     folder_ids = fields.One2many(
         comodel_name='folder',
         inverse_name='folder_id',
         string='Hierarchy Folder',
+        required=True,
     )
 
     hierarchy_folder_ids = fields.One2many(
@@ -17,6 +19,12 @@ class HierarchyFolder(models.Model):
         inverse_name='hierarchy_folder_id',
         string='Hierarchy Folder',
     )
+
+    @api.constrains('folder_ids')
+    def _check_folder(self):
+        print(len(self.folder_ids))
+        if len(self.folder_ids) < 1:
+            raise ValidationError(("There is no Hierarchy Folder"))
 
 class Folder(models.Model):
     _name = "folder"

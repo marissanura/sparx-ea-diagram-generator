@@ -4,11 +4,12 @@ from xml.etree.ElementTree import (Element, SubElement)
 from xml_writer import XMLWriter
 
 class SparxEAXMLWriter(XMLWriter):
-    actor = {"Administrator":"ns", "User":"ns", "Creator":"ns", "Reviewer":"ns", "Viewer":"ns", "Approver":"ns", "Sistem 1":"s"}
+    actor = {"Administrator":"ns", "User":"ns", "Creator":"ns", "Reviewer":"ns", "Viewer":"ns", "Sistem 1":"s", "Sistem 2":"s"}
 
     def csv_tree_to_xml(self):
         self.init_template()
         self.init_actor(self.tree, self.tree[0], 0)
+        self.validate_actor()
 
         global root_package
         
@@ -19,13 +20,29 @@ class SparxEAXMLWriter(XMLWriter):
     
     def init_actor(self, parent, node, index):
         if len(list(node)) > 0: self.init_actor(node, node[0], 0)
+
+        node_list = list(str(node.attrib.get('actor')).split(", "))
+        if 'Administrator' not in node_list: 
+            node_list.insert(0, 'Administrator')
+            node.set('actor', ', '.join(node_list))
+            node_list = list(str(node.attrib.get('actor')).split(", "))
+            
         if parent.attrib.get('actor') == '' or parent.attrib.get('actor') == None:
             parent.set('actor', node.attrib.get('actor')) 
         else: 
-            new_list = list(str(parent.attrib.get('actor')).split(", ")) + list(set(list(str(node.attrib.get('actor')).split(", "))) - set(list(str(parent.attrib.get('actor')).split(", "))))
+            parent_list = list(str(parent.attrib.get('actor')).split(", "))
+            new_list = parent_list + list(set(node_list) - set(parent_list))
             new_string = ', '.join(new_list)
             parent.set('actor', new_string)
+
         if len(list(parent)) - 1 > index: self.init_actor(parent, parent[index + 1], index+1)
+
+    def validate_actor(self):
+        csv_actor = list(self.tree.get('actor').split(", "))
+        actor = list(self.actor.keys())
+        print(csv_actor, actor)
+        actor_matching = list(set(csv_actor) - set(list(self.actor.keys())))
+        if(actor_matching) != []: print("there is no " + ', '.join(actor_matching) + " sin group actor")
 
     def init_template(self):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")
@@ -121,7 +138,6 @@ class SparxEAXMLWriter(XMLWriter):
     def calculate_use_case_dimension(self, node):
         max_uc_name = ""
         for uc_name in list(node): max_uc_name = uc_name.get('name') if len(max_uc_name) < len(uc_name.get('name')) else max_uc_name
-        print(max_uc_name)
         x, y = 105, 70
         char_max = len(max_uc_name) - 40
 
@@ -193,7 +209,6 @@ class SparxEAXMLWriter(XMLWriter):
             index = 1
             for actor in list(uc.get('actor').split(", ")):
                 ex_actor = (-x/2) if actor_pos.get(actor) == 'l' else (x/2)
-                print(ex_actor)
                 self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=" + str(ex_actor) +";EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=" + str(ex_actor) + ";SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
                 index = index + 1
             if uc.get('ket') != "":

@@ -11,10 +11,10 @@ class UseCaseGenerator(models.Model):
     _description = 'Use Case Generator'
     _rec_name = 'module_name'
 
-    module_name = fields.Char(required=True)
-    group_actor_id = fields.Many2one('group.actor', string='Group Actor')
-    hierarchy_folder_id = fields.Many2one('hierarchy.folder', string='Hierarchy Folder')
-    use_case_structure = fields.Binary(string='Use Case Structure')
+    module_name = fields.Char(required=True, string='Project Name')
+    group_actor_id = fields.Many2one('group.actor', required=True, string='Group Actor')
+    hierarchy_folder_id = fields.Many2one('hierarchy.folder', required=True, string='Hierarchy Folder')
+    use_case_structure = fields.Binary(string='CSV File')
     use_case_structure_filename = fields.Char()
     generated_structure = fields.Binary(string='Generated Structure')
     generated_structure_filename = fields.Char()

@@ -1,6 +1,6 @@
 from abc import abstractmethod
 import base64
-import csv
+from odoo.exceptions import ValidationError
 
 class CSVReader():
     def __init__(self, file):
@@ -10,6 +10,11 @@ class CSVReader():
         for line in lines:
             res = line.split(";")
             self.reader.append(res)
+        
+        print(self.reader)
+        print(len(self.reader))
+        
+        if len(self.reader) <= 1: raise ValidationError(("The file is only containing 1 line, indicating the file is empty."))
 
     @abstractmethod
     def generate_tree(self):

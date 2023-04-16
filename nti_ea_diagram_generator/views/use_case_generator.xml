@@ -39,7 +39,7 @@
         <form>
           <header>
             <button name="generate_structure"
-                string="Generate EA Structure"
+                string="Generate Use Case"
                 type="object"
             />
           </header>
@@ -65,7 +65,7 @@
         <form>
             <group>
               <field name="group_name"/>
-              <field name="actor_ids">
+              <field name="actor_ids" required="1">
                   <tree>
                       <field name="actor_name"/>
                       <field name="type"/>
@@ -89,7 +89,7 @@
         <form>
             <group>
               <field name="hierarchy_name"/>
-              <field name="folder_ids">
+              <field name="folder_ids" required="1">
                   <tree>
                       <field name="hierarchy"/>
                       <field name="regex"/>
@@ -131,7 +131,7 @@
     </record>
 
     <menuitem id="enterprise_architecture_menu_root" 
-              web_icon="nti_centerprise_architecture,static/description/ea.png"
+              web_icon="nti_enterprise_architecture,static/description/ea.png"
               name="Enterprise Architecture"/>
                 
     <menuitem id="use_case_generator_menu"
