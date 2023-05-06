@@ -5,13 +5,10 @@ from odoo.exceptions import ValidationError
 
 
 class UseCaseGenerator(models.Model):
-    _name = 'use.case.generator'
-    _description = 'Use Case Generator'
+    _name = 'activity.generator'
+    _description = 'Activity Diagram Generator'
     _rec_name = 'module_name'
     _inherit = "diagram.generator"
-
-    group_actor_id = fields.Many2one('group.actor', required=True, string='Group Actor')
-    hierarchy_folder_id = fields.Many2one('hierarchy.folder', required=True, string='Hierarchy Folder')
 
     @api.constrains('use_case_structure_filename')
     def _check_filename(self):

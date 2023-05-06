@@ -1,0 +1,10 @@
+﻿Proses 1;
+Approver;HCMS
+start;
+Memilih Menu A;
+;Menampilkan Baris A
+Menekan tombol B;
+;Menampilkan C
+"Menekan Tombol ""Save""";
+;Menyimpan A
+;end

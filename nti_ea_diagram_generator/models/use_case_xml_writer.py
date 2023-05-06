@@ -9,10 +9,14 @@ from .xml_writer import XMLWriter
 
 class UCXMLWriter(XMLWriter):
 
-    def csv_tree_to_xml(self, list_actor):
+    def __init__(self, actor):
+        self.actor = actor
+
+    def csv_tree_to_xml(self, tree):
+        self.tree = tree
+
         global root_package
         self.init_template()
-        self.actor = list_actor
         self.init_actor(self.tree, self.tree[0], 0)
         self.validate_actor()
         
@@ -44,9 +48,9 @@ class UCXMLWriter(XMLWriter):
         csv_actor = list(self.tree.get('actor').split(", "))
         actor = list(self.actor.keys())
         print(csv_actor, actor)
-        actor_matching = list(set(csv_actor) - set(list(self.actor.keys())))
-        print(actor_matching)
-        if (not ((actor_matching) != ['']) | ((actor_matching) != [])): raise ValidationError("There is no " + ', '.join(actor_matching) + " in group actor")
+        actor_not_matching = list(set(csv_actor) - set(list(self.actor.keys())))
+        print((actor_not_matching))
+        if not(actor_not_matching == [''] or actor_not_matching == []): raise ValidationError("There is no " + ', '.join(actor_not_matching) + " in group actor")
 
     def init_template(self):
         ElementTree.register_namespace('xmi', "http://schema.omg.org/spec/XMI/2.1")
@@ -215,9 +219,9 @@ class UCXMLWriter(XMLWriter):
                 ex_actor = (-x/2) if actor_pos.get(actor) == 'l' else (x/2)
                 self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=" + str(ex_actor) +";EY=0;", "subject":"a" + str(index) + "_"+ uc.get('id')}) if self.actor.get(actor) == "ns" else self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=" + str(ex_actor) + ";SY=0;EX=0;EY=0;", "subject":"u" + str(index) + "_"+ uc.get('id')})
                 index = index + 1
-            if uc.get('ket') != "":
-                for ket in list(uc.attrib.get('ket').split(", ")):
-                    lists = ket.split(' ')
+            if uc.get('relation') != "":
+                for relation in list(uc.attrib.get('relation').split(", ")):
+                    lists = relation.split(' ')
                     if lists[0] == "generalization": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"g" + str(index) + "_"+ uc.get('id')})
                     elif lists[0] == "extend": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"e" + str(index) + "_"+ uc.get('id')})
                     elif lists[0] == "include": self.add_subelement(use_case_diagram, 'element', {"geometry":"SX=0;SY=0;EX=0;EY=0;", "subject":"i" + str(index) + "_"+ uc.get('id')})
@@ -233,9 +237,9 @@ class UCXMLWriter(XMLWriter):
             self.add_association(curr_package, actor, index) if self.actor.get(actor) == "ns" else self.add_usage(curr_package, actor, index)
             index = index + 1
         
-        if node.attrib.get('ket') != "": 
-            for ket in list(node.attrib.get('ket').split(", ")):
-                lists = ket.split(' ')
+        if node.attrib.get('relation') != "": 
+            for relation in list(node.attrib.get('relation').split(", ")):
+                lists = relation.split(' ')
                 for tag in self.tree.iter(str(lists[1])): target = tag
                 if lists[0] == "generalization": self.add_generalization(curr_package, target, index)
                 elif lists[0] == "extend": self.add_extend(curr_package, target, index)

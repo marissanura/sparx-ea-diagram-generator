@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+import re
 
 class HierarchyFolder(models.Model):
     _name = 'hierarchy.folder'
@@ -22,7 +23,6 @@ class HierarchyFolder(models.Model):
 
     @api.constrains('folder_ids')
     def _check_folder(self):
-        print(len(self.folder_ids))
         if len(self.folder_ids) < 1:
             raise ValidationError(("There is no Hierarchy Folder"))
 

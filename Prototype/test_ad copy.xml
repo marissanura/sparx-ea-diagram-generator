@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:BPMN2.0="http://www.sparxsystems.com/profiles/BPMN2.0/1.5">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1554"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" name="AD - Contoh">
+			<packagedElement xmi:type="uml:Activity" xmi:id="EAID_AC000001_D43B_4fd3_B64E_9D0A1F00D110" name="EA_Activity1">
+				<group xmi:type="uml:ActivityPartition" xmi:id="EAID_62592D60_4577_4368_8871_D8C71C92EAAB" name="Contoh">
+					<subpartition xmi:type="uml:ActivityPartition" xmi:id="EAID_F08B2169_BE65_434c_93E4_BFC21756DD0D" name="Actor">
+						<node xmi:idref="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97"/>
+						<node xmi:idref="EAID_0FCA08A7_9672_49b4_8A18_9D631CD66CB9"/>
+					</subpartition>
+					<node xmi:type="uml:SendSignalAction" xmi:id="EAID_0FCA08A7_9672_49b4_8A18_9D631CD66CB9" name=" "/>
+					<packagedElement xmi:type="uml:Activity" xmi:id="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97" name="Memilih  Menu A"/>
+					<!-- <containedEdge xmi:type="uml:ControlFlow" xmi:id="EAID_93ABA706_456E_4f47_B88C_981BC27D9976" source="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97" target="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B"/> -->
+					<subpartition xmi:type="uml:ActivityPartition" xmi:id="EAID_CC9ACDAC_D192_4ce0_A7C1_5DF7027055F5" name="System">
+						<node xmi:idref="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B"/>
+						<node xmi:idref="EAID_96668479_683E_46eb_BDAB_AE5A93B00A2F"/>
+					</subpartition>
+					<node xmi:type="uml:SendSignalAction" xmi:id="EAID_96668479_683E_46eb_BDAB_AE5A93B00A2F" name=" "/>
+					<packagedElement xmi:type="uml:Activity" xmi:id="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B" name="Menampilkan Menu A"/>
+					<!-- <containedEdge xmi:type="uml:ControlFlow" xmi:id="EAID_C2C006DB_6D31_4896_A82A_6F2FD1710FED" source="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B" target="EAID_96668479_683E_46eb_BDAB_AE5A93B00A2F"/> -->
+				</group>
+				
+					<!-- <outgoing xmi:idref="EAID_B1C31D44_FF87_4dbc_A4BF_C6248A991A96"/> -->
+				<!-- </node> -->
+				<!-- <edge xmi:type="uml:ControlFlow" xmi:id="EAID_B1C31D44_FF87_4dbc_A4BF_C6248A991A96" source="EAID_0FCA08A7_9672_49b4_8A18_9D631CD66CB9" target="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97"/> -->
+				
+					<!-- <incoming xmi:idref="EAID_C2C006DB_6D31_4896_A82A_6F2FD1710FED"/> -->
+				<!-- </node> -->
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" xmi:type="uml:Package" name="AD - Contoh">
+				<model package2="EAID_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" package="EAPK_B2EA52CC_76E9_45ce_9470_2FE19F6256EF"/>
+				<properties sType="Package"/>
+			</element>
+			<element xmi:idref="EAID_62592D60_4577_4368_8871_D8C71C92EAAB" xmi:type="uml:ActivityPartition" name="Contoh">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110"/>
+				<properties sType="ActivityPartition" stereotype="Pool"/>
+				<tags>
+					<tag xmi:id="EAID_D75D8F00_3B9F_673b_9125_4C7C16BE488F" name="blackBoxPool" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;" modelElement="EAID_62592D60_4577_4368_8871_D8C71C92EAAB"/>
+					<tag xmi:id="EAID_FDA39168_0CC7_370c_AA31_9EC78F303FFE" name="participantMultiplicity" value="false#NOTES#Values: true,false&#xA;Default: false&#xA;" modelElement="EAID_62592D60_4577_4368_8871_D8C71C92EAAB"/>
+				</tags>
+			</element>
+			<element xmi:idref="EAID_F08B2169_BE65_434c_93E4_BFC21756DD0D" xmi:type="uml:ActivityPartition" name="Actor">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_62592D60_4577_4368_8871_D8C71C92EAAB"/>
+				<properties sType="ActivityPartition" stereotype="Lane"/>
+			</element>
+			<element xmi:idref="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97" xmi:type="uml:Activity" name="Memilih  Menu A">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_F08B2169_BE65_434c_93E4_BFC21756DD0D"/>
+				<properties sType="Activity" stereotype="Activity"/>
+			</element>
+			<element xmi:idref="EAID_0FCA08A7_9672_49b4_8A18_9D631CD66CB9" xmi:type="uml:Event" name=" ">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_F08B2169_BE65_434c_93E4_BFC21756DD0D"/>
+				<properties sType="Event" stereotype="StartEvent"/>
+			</element>
+			<element xmi:idref="EAID_CC9ACDAC_D192_4ce0_A7C1_5DF7027055F5" xmi:type="uml:ActivityPartition" name="System">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_62592D60_4577_4368_8871_D8C71C92EAAB"/>
+				<properties sType="ActivityPartition" stereotype="Lane"/>
+			</element>
+			<element xmi:idref="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B" xmi:type="uml:Activity" name="Menampilkan Menu A">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_CC9ACDAC_D192_4ce0_A7C1_5DF7027055F5"/>
+				<properties sType="Activity" stereotype="Activity"/>
+			</element>
+			<element xmi:idref="EAID_96668479_683E_46eb_BDAB_AE5A93B00A2F" xmi:type="uml:Event" name=" ">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAID_CC9ACDAC_D192_4ce0_A7C1_5DF7027055F5"/>
+				<properties sType="Event" stereotype="EndEvent"/>
+			</element>
+		</elements>
+		<diagrams>
+			<diagram xmi:id="EAID_11154E8C_639D_4222_88B6_20CEC7EB3E0F">
+				<model package="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110" owner="EAPK_6DBD6F58_D43B_4fd3_B64E_9D0A1F00D110"/>
+				<properties name="AD - Contoh" type="Analysis"/>
+				<style2 value="MDGDgm=BPMN2.0::Business Process;"/>
+				<elements>
+					<element geometry="Left=319;Top=74;Right=349;Bottom=104;" subject="EAID_96668479_683E_46eb_BDAB_AE5A93B00A2F"/>
+					<element geometry="Left=143;Top=60;Right=253;Bottom=120;" subject="EAID_C2B2EE1C_2532_4a69_981E_EC3E60A51B7B"/>
+					<element geometry="Left=146;Top=183;Right=256;Bottom=243;" subject="EAID_2338D7A7_DAA7_427c_BC71_0BEC8BD0DA97"/>
+					<element geometry="Left=76;Top=198;Right=106;Bottom=228;" subject="EAID_0FCA08A7_9672_49b4_8A18_9D631CD66CB9"/>
+					<element geometry="Left=41;Top=151;Right=382;Bottom=280;" subject="EAID_F08B2169_BE65_434c_93E4_BFC21756DD0D"/>
+					<element geometry="Left=41;Top=24;Right=382;Bottom=151;" subject="EAID_CC9ACDAC_D192_4ce0_A7C1_5DF7027055F5"/>
+					<element geometry="Left=21;Top=24;Right=382;Bottom=280;" subject="EAID_62592D60_4577_4368_8871_D8C71C92EAAB"/>
+				</elements>
+			</diagram>
+		</diagrams>
+	</xmi:Extension>
+</xmi:XMI>

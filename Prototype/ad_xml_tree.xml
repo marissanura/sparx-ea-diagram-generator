@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<ActivityDiagram name="Proses 1" lanes="Approver, HCMS">
+   <lane0 id="2" name="start" lane="0"/>
+   <lane0 id="3" name="Memilih Menu A" lane="0"/>
+   <lane1 id="4" name="Menampilkan Baris A" lane="1"/>
+   <lane0 id="5" name="Menekan tombol B" lane="0"/>
+   <lane1 id="6" name="Menampilkan C" lane="1"/>
+   <lane0 id="7" name="Menekan Tombol &quot;Save&quot;" lane="0"/>
+   <lane1 id="8" name="Menyimpan A" lane="1"/>
+   <lane1 id="9" name="end" lane="1"/>
+</ActivityDiagram>

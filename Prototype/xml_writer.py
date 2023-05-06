@@ -5,7 +5,6 @@ class XMLWriter():
 
     def __init__(self, tree):
         self.tree = tree
-        self.csv_tree_to_xml()
     
     @abstractmethod
     def csv_tree_to_xml(self):

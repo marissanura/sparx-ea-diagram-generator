@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<xmi:XMI xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+   <xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1554"/>
+   <uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+      <packagedElement xmi:type="uml:Package" xmi:id="root" name="Activity Diagram">
+         <packagedElement xmi:type="uml:Package" xmi:id="ad_diagram" name="Proses 1">
+            <packagedElement xmi:type="uml:Activity" xmi:id="activity_diagram" name="EA_Activity1">
+               <group xmi:type="uml:ActivityPartition" xmi:id="pool" name="Proses 1">
+                  <subpartition xmi:type="uml:ActivityPartition" xmi:id="Approver" name="Approver">
+                     <node xmi:idref="2"/>
+                     <node xmi:idref="3"/>
+                     <node xmi:idref="5"/>
+                     <node xmi:idref="7"/>
+                  </subpartition>
+                  <node xmi:type="uml:SendSignalAction" xmi:id="2" name=" "/>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="3" name="Memilih Menu A"/>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="5" name="Menekan tombol B"/>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="7" name="Menekan Tombol &quot;Save&quot;"/>
+                  <subpartition xmi:type="uml:ActivityPartition" xmi:id="HCMS" name="HCMS">
+                     <node xmi:idref="4"/>
+                     <node xmi:idref="6"/>
+                     <node xmi:idref="8"/>
+                     <node xmi:idref="9"/>
+                  </subpartition>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="4" name="Menampilkan Baris A"/>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="6" name="Menampilkan C"/>
+                  <packagedElement xmi:type="uml:Activity" xmi:id="8" name="Menyimpan A"/>
+                  <node xmi:type="uml:SendSignalAction" xmi:id="9" name=" "/>
+               </group>
+            </packagedElement>
+         </packagedElement>
+      </packagedElement>
+   </uml:Model>
+   <xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+      <elements>
+         <element xmi:idref="root" xmi:type="uml:Package" name="Activity Diagram">
+            <model package="root"/>
+            <properties sType="Package"/>
+         </element>
+         <element xmi:idref="ad_diagram" xmi:type="uml:Package" name="Proses 1">
+            <model package="root"/>
+            <properties sType="Package"/>
+         </element>
+         <element xmi:idref="pool" xmi:type="uml:ActivityPartition" name="Proses 1">
+            <model package="ad_diagram"/>
+            <properties sType="ActivityPartition" stereotype="Pool"/>
+            <tags>
+               <tag xmi:id="blackboxpool" name="blackBoxPool" value="false#NOTES#Values: true,false
+Default: false
+" modelElement="Proses 1"/>
+               <tag xmi:id="participant" name="participantMultiplicity" value="false#NOTES#Values: true,false
+Default: false
+" modelElement="Proses 1"/>
+            </tags>
+         </element>
+         <element xmi:idref="Approver" xmi:type="uml:ActivityPartition" name="Approver">
+            <model package="ad_diagram" owner="pool"/>
+            <properties sType="ActivityPartition" stereotype="Lane"/>
+         </element>
+         <element xmi:idref="2" xmi:type="uml:Event" name="start">
+            <model package="ad_diagram" owner="Approver"/>
+            <properties sType="Event" stereotype="EndEvent"/>
+         </element>
+         <element xmi:idref="3" xmi:type="uml:Activity" name="Memilih Menu A">
+            <model package="ad_diagram" owner="Approver"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="5" xmi:type="uml:Activity" name="Menekan tombol B">
+            <model package="ad_diagram" owner="Approver"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="7" xmi:type="uml:Activity" name="Menekan Tombol &quot;Save&quot;">
+            <model package="ad_diagram" owner="Approver"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="HCMS" xmi:type="uml:ActivityPartition" name="HCMS">
+            <model package="ad_diagram" owner="pool"/>
+            <properties sType="ActivityPartition" stereotype="Lane"/>
+         </element>
+         <element xmi:idref="4" xmi:type="uml:Activity" name="Menampilkan Baris A">
+            <model package="ad_diagram" owner="HCMS"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="6" xmi:type="uml:Activity" name="Menampilkan C">
+            <model package="ad_diagram" owner="HCMS"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="8" xmi:type="uml:Activity" name="Menyimpan A">
+            <model package="ad_diagram" owner="HCMS"/>
+            <properties sType="Activity" stereotype="Activity"/>
+         </element>
+         <element xmi:idref="9" xmi:type="uml:Event" name="end">
+            <model package="ad_diagram" owner="HCMS"/>
+            <properties sType="Event" stereotype="StartEvent"/>
+         </element>
+      </elements>
+      <connectors/>
+      <diagrams>
+         <diagram xmi:id="diagram">
+            <model package="ad_diagram" owner="ad_diagram"/>
+            <properties name="EA_Activity1" type="Analysis"/>
+            <style2 value="MDGDgm=BPMN2.0::Business Process;"/>
+            <elements>
+               <element geometry="Left=20;Top=20;Right=1140;Bottom=260;" subject="pool"/>
+               <element geometry="Left=40;Top=20;Right=1140;Bottom=170;" subject="Approver"/>
+               <element geometry="Left=40;Top=170;Right=1140;Bottom=320;" subject="HCMS"/>
+               <element geometry="Left=70;Top=65;Right=100;Bottom=95;" subject="2"/>
+               <element geometry="Left=120;Top=50;Right=230;Bottom=110;" subject="3"/>
+               <element geometry="Left=250;Top=200;Right=360;Bottom=260;" subject="4"/>
+               <element geometry="Left=380;Top=50;Right=490;Bottom=110;" subject="5"/>
+               <element geometry="Left=510;Top=200;Right=620;Bottom=260;" subject="6"/>
+               <element geometry="Left=640;Top=50;Right=750;Bottom=110;" subject="7"/>
+               <element geometry="Left=770;Top=200;Right=880;Bottom=260;" subject="8"/>
+               <element geometry="Left=900;Top=215;Right=930;Bottom=245;" subject="9"/>
+            </elements>
+         </diagram>
+      </diagrams>
+   </xmi:Extension>
+</xmi:XMI>
