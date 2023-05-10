@@ -45,12 +45,12 @@
             <model package="ad_diagram"/>
             <properties sType="ActivityPartition" stereotype="Pool"/>
             <tags>
-               <tag xmi:id="blackboxpool" name="blackBoxPool" value="false#NOTES#Values: true,false
-Default: false
-" modelElement="Proses 1"/>
-               <tag xmi:id="participant" name="participantMultiplicity" value="false#NOTES#Values: true,false
-Default: false
-" modelElement="Proses 1"/>
+               <tag xmi:id="blackboxpool" name="blackBoxPool" value="false#NOTES#Values:true,false
+Default:false
+;" modelElement="pool"/>
+               <tag xmi:id="participant" name="participantMultiplicity" value="false#NOTES#Values:true,false
+Default:false
+;" modelElement="pool"/>
             </tags>
          </element>
          <element xmi:idref="Approver" xmi:type="uml:ActivityPartition" name="Approver">

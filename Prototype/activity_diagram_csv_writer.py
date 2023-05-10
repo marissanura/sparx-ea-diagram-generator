@@ -48,8 +48,8 @@ class ADXMLWriter(XMLWriter):
         self.add_subelement(pool_element, "model", {"package": "ad_diagram"})
         self.add_subelement(pool_element, "properties", {"sType":"ActivityPartition", "stereotype":"Pool"})
         tag = self.add_subelement(pool_element, "tags", {})
-        self.add_subelement(tag, "tag", {"xmi:id": "blackboxpool", "name":"blackBoxPool", "value":"false#NOTES#Values: true,false\nDefault: false\n", "modelElement": node.get("name")})
-        self.add_subelement(tag, "tag", {"xmi:id":"participant", "name":"participantMultiplicity", "value":"false#NOTES#Values: true,false\nDefault: false\n", "modelElement": node.get("name")})
+        self.add_subelement(tag, "tag", {"xmi:id": "blackboxpool", "name":"blackBoxPool", "value":"false#NOTES#Values:true,false\nDefault:false\n;", "modelElement": "pool"})
+        self.add_subelement(tag, "tag", {"xmi:id":"participant", "name":"participantMultiplicity", "value":"false#NOTES#Values:true,false\nDefault:false\n;", "modelElement": "pool"})
 
         lanes = list(str(node.get('lanes')).split(", "))
         lane_index = 0
