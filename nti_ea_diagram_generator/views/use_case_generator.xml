@@ -38,7 +38,7 @@
       <field name="arch" type="xml">
         <form>
           <header>
-            <button name="generate_structure"
+            <button name="generate_diagram"
                 string="Generate Use Case"
                 type="object"
             />

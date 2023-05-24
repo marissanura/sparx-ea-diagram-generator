@@ -12,20 +12,8 @@ class UseCaseGenerator(models.Model):
 
     group_actor_id = fields.Many2one('group.actor', required=True, string='Group Actor')
     hierarchy_folder_id = fields.Many2one('hierarchy.folder', required=True, string='Hierarchy Folder')
-
-    @api.constrains('use_case_structure_filename')
-    def _check_filename(self):
-        if self.use_case_structure:
-            if not self.use_case_structure_filename:
-                raise ValidationError(("There is no file"))
-            else:
-                # Check the file's extension
-                tmp = self.use_case_structure_filename.split('.')
-                ext = tmp[len(tmp)-1]
-                if ext != 'csv':
-                    raise ValidationError(("The file must be a csv file"))
     
-    def generate_structure(self):
+    def generate_diagram(self):
         actors = self.get_group_actor()
         folder_hierarcy = self.get_hierarchy_folder()
         csv_reader = UCCSVReader(self.use_case_structure, folder_hierarcy)
