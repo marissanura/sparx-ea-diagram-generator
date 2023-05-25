@@ -35,7 +35,7 @@ class ADXMLWriter(XMLWriter):
     def add_folder_element(self, parent):
         print(self.tree)
         ad_package = self.add_packaged_element(parent, {"xmi:type":"uml:Package", "xmi:id":"ad_diagram", "name": self.tree.get("name")})
-        activity = self.add_packaged_element(ad_package, {"xmi:type":"uml:Activity", "xmi:id":"activity_diagram", "name":self.tree.get("name")})
+        activity = self.add_packaged_element(ad_package, {"xmi:type":"uml:Activity", "xmi:id":"activity_diagram", "name": self.tree.get("name")})
         package_element = self.add_subelement(elements, "element", {"xmi:idref": "ad_diagram", "xmi:type":"uml:Package", "name": self.tree.get("name")})
         self.add_subelement(package_element, "model", {"package": "root"})
         self.add_subelement(package_element, "properties", {"sType":"Package"})
@@ -81,13 +81,13 @@ class ADXMLWriter(XMLWriter):
                 lane_element = self.add_subelement(elements, "element", {"xmi:idref": activity.get("id"), "xmi:type":"uml:Activity", "name": activity.get("name")})
                 self.add_subelement(lane_element, "model", {"package": "ad_diagram", "owner": lanes[int(activity.get("lane"))]})
                 self.add_subelement(lane_element, "properties", {"sType":"Activity", "stereotype":"Activity"})
-            elif (activity.get("name") == "end"):
+            elif (activity.get("name") == "start"):
                 self.add_subelement(parent, "node", {"xmi:idref": activity.get("id")})
                 self.add_subelement(pool, "node", {"xmi:type":"uml:SendSignalAction", "xmi:id":activity.get("id"), "name":" "})
                 lane_element = self.add_subelement(elements, "element", {"xmi:idref": activity.get("id"), "xmi:type":"uml:Event", "name": activity.get("name")})
                 self.add_subelement(lane_element, "model", {"package": "ad_diagram", "owner": lanes[int(activity.get("lane"))]})
                 self.add_subelement(lane_element, "properties", {"sType":"Event", "stereotype":"StartEvent"})
-            elif (activity.get("name") == "start"):
+            elif (activity.get("name") == "end"):
                 self.add_subelement(parent, "node", {"xmi:idref": activity.get("id")})
                 self.add_subelement(pool, "node", {"xmi:type":"uml:SendSignalAction", "xmi:id":activity.get("id"), "name":" "})
                 lane_element = self.add_subelement(elements, "element", {"xmi:idref": activity.get("id"), "xmi:type":"uml:Event", "name": activity.get("name")})
@@ -107,7 +107,7 @@ class ADXMLWriter(XMLWriter):
         lanes = list(str(self.tree.get('lanes')).split(", "))
         lane_nodes = list(self.tree)
 
-        height = len(lanes) * 120
+        height = len(lanes) * 150
         width = len(self.tree) * 140
         self.add_subelement(elements, "element", {"geometry":"Left=20;Top=20;Right=" + str(20 + width) + ";Bottom=" + str(20 + height) +";", "subject":"pool"})
 

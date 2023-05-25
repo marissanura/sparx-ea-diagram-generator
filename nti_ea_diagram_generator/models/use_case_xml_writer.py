@@ -193,7 +193,7 @@ class UCXMLWriter(XMLWriter):
                     a_right = a_left + 45
                     a_top = height + 20
                     a_bottom = a_top + 90
-                elif(top > height + 20):
+                elif(a_top >= height + 20):
                     a_left = 200 + x
                     a_right = a_left + 45
                     a_top = height + 20
@@ -202,7 +202,7 @@ class UCXMLWriter(XMLWriter):
                     a_left = 305 + x
                     a_right = a_left + 45
                     a_top = 20
-                    a_bottom = a_top + y  
+                    a_bottom = a_top + 90
 
         bottom = top + y
         left = 185
